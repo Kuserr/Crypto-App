@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7BBD7417-237A-4E76-A769-A155F4E2C641"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "63CB98D1-76A1-48C5-A86A-9E8FB981FD50"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "addId()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "63CB98D1-76A1-48C5-A86A-9E8FB981FD50 - ce3191c7d576395e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.addId() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "63CB98D1-76A1-48C5-A86A-9E8FB981FD50 - ce3191c7d576395e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.addId() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "45"
+                  endingLineNumber = "45"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A278CED2-1DD5-4E94-A67E-4D1248DAAED4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "CoinDetailViewModel"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0377AD2E-1E2E-4D74-9D8F-540801B98C04"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "removeId()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0377AD2E-1E2E-4D74-9D8F-540801B98C04 - 8a95ffd786f8dd53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.removeId() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "0377AD2E-1E2E-4D74-9D8F-540801B98C04 - 8a95ffd786f8dd70"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.removeId() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "488">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13C9302F-6CBD-42A1-994B-70C803B1F94B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "removeId()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "13C9302F-6CBD-42A1-994B-70C803B1F94B - 8a95ffd786f8ddce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.removeId() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "13C9302F-6CBD-42A1-994B-70C803B1F94B - 8a95ffd786f8ddce"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.removeId() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DD07E0D8-6FC0-4FDF-9EB8-4E0C42A0F408"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
+            landmarkName = "init(coin:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DD07E0D8-6FC0-4FDF-9EB8-4E0C42A0F408 - 9a160885be4da217"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.init(coin: Crypto_1_Edition.Coin) -&gt; Crypto_1_Edition.CoinDetailViewModel"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "53"
+                  endingLineNumber = "53"
+                  offsetFromSymbolStart = "424">
+               </Location>
+               <Location
+                  uuid = "DD07E0D8-6FC0-4FDF-9EB8-4E0C42A0F408 - 9a26e92c6a68723f"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.__allocating_init(coin: Crypto_1_Edition.Coin) -&gt; Crypto_1_Edition.CoinDetailViewModel"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "24">
+               </Location>
+               <Location
+                  uuid = "DD07E0D8-6FC0-4FDF-9EB8-4E0C42A0F408 - 9a160885be4dafb5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.init(coin: Crypto_1_Edition.Coin) -&gt; Crypto_1_Edition.CoinDetailViewModel"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "200">
+               </Location>
+               <Location
+                  uuid = "DD07E0D8-6FC0-4FDF-9EB8-4E0C42A0F408 - 9a160885be4da255"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.init(coin: Crypto_1_Edition.Coin) -&gt; Crypto_1_Edition.CoinDetailViewModel"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "324">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "48043590-B332-44D4-AFBE-595B100117F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinsList/CoinsListView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B5496E79-5F59-4A47-8302-4299BD694EA2"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/Favourites/FavouriteViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
+            landmarkName = "updateUI()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "B5496E79-5F59-4A47-8302-4299BD694EA2 - 6eb87b390e313ad3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.FavouriteViewModel.updateUI() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/Favourites/FavouriteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "B5496E79-5F59-4A47-8302-4299BD694EA2 - 5b3338a01abb8c76"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Crypto_1_Edition.Coin) -&gt; Swift.Bool in Crypto_1_Edition.FavouriteViewModel.updateUI() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/Favourites/FavouriteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "104">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5435BBF0-9ABA-4D7D-B3AE-DBEE59E5412B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/Favourites/Database.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "save(items:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A27C371B-FFF3-427F-A92E-BBEA353450D9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "init(coin:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A27C371B-FFF3-427F-A92E-BBEA353450D9 - 9a160885be4da1e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.init(coin: Crypto_1_Edition.Coin) -&gt; Crypto_1_Edition.CoinDetailViewModel"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1288">
+               </Location>
+               <Location
+                  uuid = "A27C371B-FFF3-427F-A92E-BBEA353450D9 - 9a160885be4da1e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.init(coin: Crypto_1_Edition.Coin) -&gt; Crypto_1_Edition.CoinDetailViewModel"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1528">
+               </Location>
+               <Location
+                  uuid = "A27C371B-FFF3-427F-A92E-BBEA353450D9 - 9a160885be4da1e2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.init(coin: Crypto_1_Edition.Coin) -&gt; Crypto_1_Edition.CoinDetailViewModel"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Downloads/Final%20%D1%81%20%D0%BC%D0%BE%D0%B4%D0%B5%D0%BB%D1%8C:%D0%B2%D1%8C%D1%8E%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D1%87%D0%B8%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B8%CC%86%202/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "64"
+                  endingLineNumber = "64"
+                  offsetFromSymbolStart = "1428">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
