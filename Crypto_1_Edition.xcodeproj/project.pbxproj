@@ -19,6 +19,8 @@
 		F19FAF5C2A48C36400777138 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F19FAF5B2A48C36400777138 /* Preview Assets.xcassets */; };
 		F1D84F3F2A54216E00AA4C8D /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D84F3E2A54216E00AA4C8D /* FavouriteViewModel.swift */; };
 		F1DCD89B2A49FBBA0037868A /* FavouritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1DCD89A2A49FBBA0037868A /* FavouritesView.swift */; };
+		F1F764E62A65EA6A00967E9A /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F764E52A65EA6A00967E9A /* CoreDataManager.swift */; };
+		F1F764E92A65EA8600967E9A /* CoinsContainer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = F1F764E72A65EA8600967E9A /* CoinsContainer.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +37,8 @@
 		F19FAF5B2A48C36400777138 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		F1D84F3E2A54216E00AA4C8D /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
 		F1DCD89A2A49FBBA0037868A /* FavouritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouritesView.swift; sourceTree = "<group>"; };
+		F1F764E52A65EA6A00967E9A /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		F1F764E82A65EA8600967E9A /* CoinsContainer.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoinsContainer.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,8 +108,10 @@
 		F17758BD2A4E2B11006D1818 /* Favourites */ = {
 			isa = PBXGroup;
 			children = (
+				F1F764E72A65EA8600967E9A /* CoinsContainer.xcdatamodeld */,
 				F17758C02A4EDC53006D1818 /* Database.swift */,
 				F1DCD89A2A49FBBA0037868A /* FavouritesView.swift */,
+				F1F764E52A65EA6A00967E9A /* CoreDataManager.swift */,
 				F1D84F3E2A54216E00AA4C8D /* FavouriteViewModel.swift */,
 			);
 			path = Favourites;
@@ -227,6 +233,8 @@
 				F19FAF552A48C36200777138 /* Crypto_1_EditionApp.swift in Sources */,
 				F17758C12A4EDC53006D1818 /* Database.swift in Sources */,
 				3096D5B62A4D6F8400F3FB2E /* CoinDetailViewModel.swift in Sources */,
+				F1F764E92A65EA8600967E9A /* CoinsContainer.xcdatamodeld in Sources */,
+				F1F764E62A65EA6A00967E9A /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +433,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		F1F764E72A65EA8600967E9A /* CoinsContainer.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				F1F764E82A65EA8600967E9A /* CoinsContainer.xcdatamodel */,
+			);
+			currentVersion = F1F764E82A65EA8600967E9A /* CoinsContainer.xcdatamodel */;
+			path = CoinsContainer.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = F19FAF492A48C36100777138 /* Project object */;
 }

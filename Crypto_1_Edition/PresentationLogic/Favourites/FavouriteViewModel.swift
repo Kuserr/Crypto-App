@@ -5,27 +5,33 @@
 //  Created by Сергей Курьян on 04.07.2023.
 //
 
-import Foundation
+import SwiftUI
 
-final class FavouriteViewModel: ObservableObject {
-    private var db = Database()
-    @Published var items = [Coin]()
-
-    private var dbItems = Set<String>()
-
-    // upd data for our view
-    func onAppear() {
-        load()
-        updateUI()
-    }
-
-    // MARK: - Private
-
-    private func load() {
-        dbItems = db.load()
-    }
-
-    private func updateUI() {
-        items = Coin.coins.filter { dbItems.contains($0.id) }
+struct FavouritesView: View {
+    @ObservedObject var clvm: FavouriteViewModel
+    var body: some View {
+        Form {
+            Section {
+                ForEach(clvm.items) { coin in
+                    List { Label {
+                        Text(clvm.name) + Text(" (\(clvm.shortName))").foregroundColor(Color.gray)
+                    }
+                icon: {
+                    Image(clvm.name)
+                        .resizable()
+                        .scaledToFit()
+                }}
+                }
+            }
+        header: {
+            Text("Favourites")
+        }
+        }.onAppear(perform: clvm.onAppear)
     }
 }
+struct FavouritesView_Previews: PreviewProvider {
+    static var previews: some View {
+        FavouritesView(clvm: FavouriteViewModel(coinss: Coinss()))
+    }
+}
+

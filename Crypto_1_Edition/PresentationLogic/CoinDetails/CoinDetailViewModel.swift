@@ -10,11 +10,11 @@ import Foundation
 final class CoinDetailViewModel: ObservableObject {
     var name: String
     var url: URL
-    var description: String
+    var descriptions: String
     var shortName: String
     var foundersDescription: String
     var id: String
-    var savedItems = Set<String>()
+    var savedItems = Set([Coinss]())
     var aboutSectionTitle: String {
         return "What Is \(name) (\(shortName))?"
     }
@@ -27,14 +27,16 @@ final class CoinDetailViewModel: ObservableObject {
         return "About \(name)"
     }
 
-    var db = Database()
+    //var db = Database()
+    var cdm = CoreDataManager()
     
+    /*
     //removes the Coin Id if load already contains that Id
     func removeId() {
         if savedItems.contains(id) {
           savedItems.remove(id)
         }
-        db.save(items: savedItems)
+        cdm.save(items: savedItems)
     }
     
     // adds the Coin Id to saveditems and saves to UserDefaults
@@ -44,15 +46,31 @@ final class CoinDetailViewModel: ObservableObject {
         }
         db.save(items: savedItems)
     }
-
+*/
+    
+    func removeId() {
+        if savedItems.contains(Coinss()) {
+            savedItems.remove(Coinss())
+        }
+        cdm.save(id: id, name: name, shortName: shortName, url: url, descriptions: descriptions, foundersDescription: foundersDescription)
+    }
+                
+    func addId() {
+        if !savedItems.contains(Coinss())  {
+            savedItems.insert(Coinss())
+        }
+            cdm.save(id: id, name: name, shortName: shortName, url: url, descriptions: descriptions, foundersDescription: foundersDescription)
+                }
+                
+     
     init(coin: Coin) {
         self.id = coin.id
         self.name = coin.name
         self.url = coin.url
-        self.description = coin.description
+        self.descriptions = coin.descriptions
         self.shortName = coin.shortName
         self.foundersDescription = coin.foundersDescription
-        savedItems = db.load()
+        savedItems = Set(cdm.load())
+        
     }
 }
-

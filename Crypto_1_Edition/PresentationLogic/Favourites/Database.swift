@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+/*
 final class Database {
     private let FAV_COIN = "fav_coin"
     
@@ -21,4 +21,4 @@ final class Database {
         return Set(array)
     }
 }
-
+*/

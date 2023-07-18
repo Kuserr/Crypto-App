@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G531" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Coinss" representedClassName="Coinss" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptions" attributeType="String"/>
+        <attribute name="foundersDescription" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <attribute name="shortName" attributeType="String"/>
+        <attribute name="url" attributeType="URI"/>
+    </entity>
+</model>
