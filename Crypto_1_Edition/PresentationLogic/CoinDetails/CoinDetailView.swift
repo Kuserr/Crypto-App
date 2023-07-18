@@ -2,7 +2,7 @@
 //  CoinDetailView.swift
 //  Crypto_1_Edition
 //
-//  Created by Anton Marunko on 29.06.2023.
+//  Created by Siarhei Kuryan on 29.06.2023.
 //
 
 import SwiftUI
@@ -19,7 +19,7 @@ struct CoinDetailView: View {
                         Text(Image(systemName: "link.circle.fill")) + Text("Learn More")
                     }
                     
-                    Text(viewModel.description)
+                    Text(viewModel.descriptions)
                         .multilineTextAlignment(.leading)
                 }
             } header: {

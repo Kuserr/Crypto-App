@@ -2,7 +2,7 @@
 //  CoinDetailViewModel.swift
 //  Crypto_1_Edition
 //
-//  Created by Anton Marunko on 29.06.2023.
+//  Created by Siarhei Kuryan on 29.06.2023.
 //
 
 import Foundation
@@ -14,7 +14,7 @@ final class CoinDetailViewModel: ObservableObject {
     var shortName: String
     var foundersDescription: String
     var id: String
-    var savedItems = Set([Coinss]())
+    var savedItems = Set([String]())
     var aboutSectionTitle: String {
         return "What Is \(name) (\(shortName))?"
     }
@@ -49,19 +49,22 @@ final class CoinDetailViewModel: ObservableObject {
 */
     
     func removeId() {
-        if savedItems.contains(Coinss()) {
-            savedItems.remove(Coinss())
+        if savedItems.contains(id) {
+            savedItems.remove(id)
         }
-        cdm.save(id: id, name: name, shortName: shortName, url: url, descriptions: descriptions, foundersDescription: foundersDescription)
+        cdm.removeCoin(withId: id)
     }
                 
     func addId() {
-        if !savedItems.contains(Coinss())  {
-            savedItems.insert(Coinss())
+        if !savedItems.contains(id)  {
+            savedItems.insert(id)
         }
-            cdm.save(id: id, name: name, shortName: shortName, url: url, descriptions: descriptions, foundersDescription: foundersDescription)
-                }
-                
+        cdm.save(coin: Coin(name: self.name,
+                            shortName: self.shortName,
+                            url: self.url,
+                            descriptions: self.descriptions,
+                            foundersDescription: self.foundersDescription))
+    }
      
     init(coin: Coin) {
         self.id = coin.id
@@ -70,7 +73,6 @@ final class CoinDetailViewModel: ObservableObject {
         self.descriptions = coin.descriptions
         self.shortName = coin.shortName
         self.foundersDescription = coin.foundersDescription
-        savedItems = Set(cdm.load())
-        
     }
 }
+

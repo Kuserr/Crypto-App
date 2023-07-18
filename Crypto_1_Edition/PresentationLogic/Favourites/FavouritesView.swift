@@ -2,7 +2,7 @@
 //  FavouritesView.swift
 //  Crypto_1_Edition
 //
-//  Created by Сергей Курьян on 26.06.2023.
+//  Created by Siarhei Kuryan on 26.06.2023.
 //
 
 import SwiftUI
@@ -12,8 +12,15 @@ struct FavouritesView: View {
     var body: some View {
         Form {
             Section {
-                ForEach(clvm.items, id: \.id) { coin in
-                    List { CoinListRow(coin: coin) }
+                ForEach(clvm.items) { coin in
+                    List { Label {
+                        Text(coin.name) + Text(" (\(coin.shortName))").foregroundColor(Color.gray)
+                    }
+                icon: {
+                    Image(coin.name)
+                        .resizable()
+                        .scaledToFit()
+                }}
                 }
             }
         header: {
@@ -22,8 +29,9 @@ struct FavouritesView: View {
         }.onAppear(perform: clvm.onAppear)
     }
 }
-struct FavouritesView_Previews: PreviewProvider {
-    static var previews: some View {
-        FavouritesView(clvm: FavouriteViewModel())
-    }
-}
+
+//struct FavouritesView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        FavouritesView(clvm: FavouriteViewModel(coinss: Coin()))
+//    }
+//}

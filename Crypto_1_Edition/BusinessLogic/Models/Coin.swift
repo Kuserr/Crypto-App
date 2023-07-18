@@ -8,6 +8,7 @@
 import Foundation
 
 struct Coin: Identifiable, Codable {
+
     var id: String {
         return shortName
     }
@@ -16,6 +17,29 @@ struct Coin: Identifiable, Codable {
     let url: URL
     let descriptions: String
     let foundersDescription: String
+
+    init(name: String, shortName: String, url: URL, descriptions: String, foundersDescription: String) {
+        self.name = name
+        self.shortName = shortName
+        self.url = url
+        self.descriptions = descriptions
+        self.foundersDescription = foundersDescription
+    }
+
+    init(databaseObject: Coinss) {
+        self.name = databaseObject.name
+        self.shortName = databaseObject.shortName
+        self.url = databaseObject.url
+        self.descriptions = databaseObject.descriptions
+        self.foundersDescription = databaseObject.foundersDescription
+    }
+}
+
+extension Coin: Hashable {
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(name)
+    }
 }
 
 extension Coin {

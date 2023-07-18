@@ -2,7 +2,7 @@
 //  CoreDataManager.swift
 //  Crypto_1_Edition
 //
-//  Created by Сергей Курьян on 17.07.2023.
+//  Created by Siarhei Kuryan on 10.07.2023.
 //
 
 import CoreData
@@ -21,30 +21,42 @@ class CoreDataManager {
         }
     }
     
-    func save(id: String, name: String, shortName: String, url: URL, descriptions: String, foundersDescription: String) {
+    func save(coin: Coin) {
         let coinss = Coinss(context: persistentContainer.viewContext)
-        coinss.id = id
-        coinss.name = name
-        coinss.shortName = shortName
-        coinss.url = url
-        coinss.descriptions = descriptions
-        coinss.foundersDescription = foundersDescription
-        
+        coinss.name = coin.name
+        coinss.shortName = coin.shortName
+        coinss.url = coin.url
+        coinss.descriptions = coin.descriptions
+        coinss.foundersDescription = coin.foundersDescription
+
         do {
             try persistentContainer.viewContext.save()
         } catch {
             print("Failed to save movie \(error)")
         }
     }
+
+    func removeCoin(withId id: String) {
+        let predicate = NSPredicate(format: "id == %@", id)
+        let request = Coinss.getAllCoinsRequest()
+        request.predicate = predicate
+
+        do {
+            let coin = try persistentContainer.viewContext.fetch(request)
+            if let coin = coin.first {
+                persistentContainer.viewContext.delete(coin)
+            }
+        } catch {
+            print("Error - coin nit found or already deleted")
+        }
+    }
     
     func load() -> [Coinss] {
-        let fetchRequest: NSFetchRequest<Coinss> = Coinss.fetchRequest()
+        let request = Coinss.getAllCoinsRequest()
         do {
-            return try persistentContainer.viewContext.fetch(fetchRequest)
+            return try persistentContainer.viewContext.fetch(request)
         } catch {
             return []
         }
     }
-    
-    
 }
