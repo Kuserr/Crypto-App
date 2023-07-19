@@ -14,6 +14,7 @@ final class Coinss: NSManagedObject {
     @NSManaged public var name: String
     @NSManaged public var shortName: String
     @NSManaged public var url: URL
+    @NSManaged public var id: String
 
     static func getAllCoinsRequest() -> NSFetchRequest<Coinss> {
         return NSFetchRequest<Coinss>(entityName: String(describing: Coinss.self))

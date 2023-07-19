@@ -30,8 +30,9 @@ struct FavouritesView: View {
     }
 }
 
-//struct FavouritesView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        FavouritesView(clvm: FavouriteViewModel(coinss: Coin()))
-//    }
-//}
+struct FavouritesView_Previews: PreviewProvider {
+    static var previews: some View {
+        FavouritesView(clvm: FavouriteViewModel())
+    }
+
+}

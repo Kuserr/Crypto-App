@@ -27,26 +27,7 @@ final class CoinDetailViewModel: ObservableObject {
         return "About \(name)"
     }
 
-    //var db = Database()
     var cdm = CoreDataManager()
-    
-    /*
-    //removes the Coin Id if load already contains that Id
-    func removeId() {
-        if savedItems.contains(id) {
-          savedItems.remove(id)
-        }
-        cdm.save(items: savedItems)
-    }
-    
-    // adds the Coin Id to saveditems and saves to UserDefaults
-    func addId() {
-        if !savedItems.contains(id)  {
-            savedItems.insert(id)
-        }
-        db.save(items: savedItems)
-    }
-*/
     
     func removeId() {
         if savedItems.contains(id) {

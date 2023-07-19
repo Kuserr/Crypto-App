@@ -2,7 +2,7 @@
 //  Database.swift
 //  Crypto_1_Edition
 //
-//  Created by Сергей Курьян on 30.06.2023.
+//  Created by Siarhei Kuryan on 30.06.2023.
 //
 
 import Foundation

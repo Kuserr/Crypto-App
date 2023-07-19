@@ -3,6 +3,7 @@
     <entity name="Coinss" representedClassName=".Coinss" syncable="YES">
         <attribute name="descriptions" attributeType="String"/>
         <attribute name="foundersDescription" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
         <attribute name="shortName" attributeType="String"/>
         <attribute name="url" attributeType="URI"/>

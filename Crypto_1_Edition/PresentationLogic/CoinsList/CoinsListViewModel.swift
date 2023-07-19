@@ -2,7 +2,7 @@
 //  CoinsListViewModel.swift
 //  Crypto_1_Edition
 //
-//  Created by Anton Marunko on 29.06.2023.
+//  Created by Siarhei Kuryan on 29.06.2023.
 //
 
 import Combine

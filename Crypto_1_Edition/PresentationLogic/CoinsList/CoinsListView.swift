@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  Crypto_1_Edition
 //
-//  Created by Сергей Курьян on 25.06.2023.
+//  Created by Siarhei Kuryan on 25.06.2023.
 //
 
 import SwiftUI

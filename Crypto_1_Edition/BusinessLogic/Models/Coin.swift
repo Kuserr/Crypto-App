@@ -2,7 +2,7 @@
 //  Coin.swift
 //  Crypto_1_Edition
 //
-//  Created by Anton Marunko on 29.06.2023.
+//  Created by Siarhei Kuryan on 29.06.2023.
 //
 
 import Foundation
@@ -38,7 +38,7 @@ struct Coin: Identifiable, Codable {
 extension Coin: Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(id)
-        hasher.combine(name)
+        hasher.combine(shortName)
     }
 }
 
