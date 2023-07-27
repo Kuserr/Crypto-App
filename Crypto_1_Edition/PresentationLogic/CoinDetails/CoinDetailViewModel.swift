@@ -15,6 +15,9 @@ final class CoinDetailViewModel: ObservableObject {
     var foundersDescription: String
     var id: String
     var savedItems = Set([String]())
+    // Portfolio
+    var savedPortfolioItems = Set([String]())
+    
     var aboutSectionTitle: String {
         return "What Is \(name) (\(shortName))?"
     }
@@ -26,13 +29,11 @@ final class CoinDetailViewModel: ObservableObject {
     var navigationBarTitle: String {
         return "About \(name)"
     }
-
+    
+// Functions for favourites
     var cdm = CoreDataManager()
     
     func removeId() {
-        if savedItems.contains(id) {
-            savedItems.remove(id)
-        }
         cdm.removeCoin(withId: id)
     }
                 
@@ -47,6 +48,26 @@ final class CoinDetailViewModel: ObservableObject {
                             foundersDescription: self.foundersDescription))
     }
      
+    // Functions for Portfolio
+    var cdp = CoreDataPortfolio()
+    
+    
+   func addPortfolioId() {
+        if !savedPortfolioItems.contains(id)  {
+            savedPortfolioItems.insert(id)
+        }
+        cdp.save(coinn: Coin(name: self.name,
+                            shortName: self.shortName,
+                            url: self.url,
+                            descriptions: self.descriptions,
+                            foundersDescription: self.foundersDescription))
+    }
+    
+   func removePortfolioId() {
+       cdp.removeCoin(withId: self.id)
+    }
+    
+     
     init(coin: Coin) {
         self.id = coin.id
         self.name = coin.name
@@ -55,5 +76,6 @@ final class CoinDetailViewModel: ObservableObject {
         self.shortName = coin.shortName
         self.foundersDescription = coin.foundersDescription
     }
+    
 }
 

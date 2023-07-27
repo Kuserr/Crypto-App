@@ -9,19 +9,6 @@ import CoreData
 import Foundation
 
 class CoreDataManager {
-    
-    /*
-    let persistentContainer: NSPersistentContainer
-    
-    init() {
-        persistentContainer = NSPersistentContainer(name: "CoinsContainer")
-        persistentContainer.loadPersistentStores { (description, error) in
-            if let error = error {
-                fatalError("Core Data Store failed \(error.localizedDescription)")
-            }
-        }
-     */
-    
     private static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoinsContainer")
         container.loadPersistentStores { description, error in
@@ -32,12 +19,15 @@ class CoreDataManager {
         return container
     }()
     
-    var context: NSManagedObjectContext {
-        return Self.persistentContainer.viewContext
-    }
+    //var context: NSManagedObjectContext {
+        //return Self.persistentContainer.viewContext
+    //}
+    
+    // Get a reference to a managed object context
+    let context = CoreDataManager.persistentContainer.viewContext
     
     func save(coin: Coin) {
-        let coinss = Coinss(context: CoreDataManager.persistentContainer.viewContext)
+        let coinss = Coinss(context: context)
         coinss.name = coin.name
         coinss.shortName = coin.shortName
         coinss.url = coin.url
@@ -46,7 +36,7 @@ class CoreDataManager {
         coinss.id = coin.id
 
         do {
-            try CoreDataManager.persistentContainer.viewContext.save()
+            try context.save()
         } catch {
             print("Failed to save coin \(error)")
         }
@@ -56,12 +46,12 @@ class CoreDataManager {
         let predicate = NSPredicate(format: "id == %@", id)
         let request = Coinss.getAllCoinsRequest()
         request.predicate = predicate
-
         do {
-            let coin = try CoreDataManager.persistentContainer.viewContext.fetch(request)
+            let coin = try context.fetch(request)
             if let coin = coin.first {
-                CoreDataManager.persistentContainer.viewContext.delete(coin)
+                context.delete(coin)
             }
+            try context.save()
         } catch {
             print("Error - coin not found or already deleted")
         }
@@ -70,7 +60,7 @@ class CoreDataManager {
     func load() -> [Coinss] {
         let request = Coinss.getAllCoinsRequest()
         do {
-            return try CoreDataManager.persistentContainer.viewContext.fetch(request)
+            return try context.fetch(request)
         } catch {
             return []
         }

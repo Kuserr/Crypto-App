@@ -20,6 +20,10 @@ struct Crypto_1_EditionApp: App {
                     .tabItem {
                         Label("Favourites", systemImage: "list.star")
                     }
+                PortfolioView(pvm: PortfolioViewModel(coin: Coin.coins.first!))
+                    .tabItem {
+                        Label("Portfolio", systemImage: "chart.pie.fill")
+                    }
             }
         }
     }
