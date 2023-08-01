@@ -6,8 +6,11 @@
 //
 
 import Foundation
+import Combine
 
 final class CoinDetailViewModel: ObservableObject {
+
+    @Published var quantity = ""
     var name: String
     var url: URL
     var descriptions: String
@@ -32,7 +35,9 @@ final class CoinDetailViewModel: ObservableObject {
     
 // Functions for favourites
     var cdm = CoreDataManager()
-    
+    var portfolioManager = CoreDataPortfolio()
+
+
     func removeId() {
         cdm.removeCoin(withId: id)
     }
@@ -52,17 +57,14 @@ final class CoinDetailViewModel: ObservableObject {
     var cdp = CoreDataPortfolio()
     
     
-   func addPortfolioId() {
+    func addPortfolioId() {
         if !savedPortfolioItems.contains(id)  {
             savedPortfolioItems.insert(id)
         }
-        cdp.save(coinn: Coin(name: self.name,
-                            shortName: self.shortName,
-                            url: self.url,
-                            descriptions: self.descriptions,
-                            foundersDescription: self.foundersDescription))
+       portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0,
+                                                       shortId: id))
     }
-    
+
    func removePortfolioId() {
        cdp.removeCoin(withId: self.id)
     }

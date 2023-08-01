@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="21G651" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="CoinsQuantity" representedClassName=".CoinsQuantity" syncable="YES">
-        <attribute name="quantity" optional="YES" attributeType="Decimal" defaultValueString="0.0"/>
-    </entity>
-    <entity name="MyCoins" representedClassName=".MyCoins" syncable="YES">
-        <attribute name="descriptions" attributeType="String"/>
-        <attribute name="foundersDescription" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
-        <attribute name="name" attributeType="String"/>
-        <attribute name="shortName" attributeType="String"/>
-        <attribute name="url" attributeType="URI"/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="PortfolioCoin" representedClassName=".PortfolioCoin" syncable="YES">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="quantity" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
 </model>

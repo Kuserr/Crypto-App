@@ -32,15 +32,6 @@ struct Coin: Identifiable, Codable {
         self.descriptions = databaseObject.descriptions
         self.foundersDescription = databaseObject.foundersDescription
     }
-    
-    init(databaseObject: MyCoins) {
-        self.name = databaseObject.name
-        self.shortName = databaseObject.shortName
-        self.url = databaseObject.url
-        self.descriptions = databaseObject.descriptions
-        self.foundersDescription = databaseObject.foundersDescription
-    }
-    
 }
 
 extension Coin: Hashable {

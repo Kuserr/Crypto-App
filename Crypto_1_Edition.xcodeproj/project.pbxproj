@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		302A1F3F2A78E76C008C78FD /* PortfolioCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A1F3E2A78E76C008C78FD /* PortfolioCoin.swift */; };
+		302A1F412A78EA33008C78FD /* PortfolioCoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 302A1F402A78EA33008C78FD /* PortfolioCoinModel.swift */; };
 		3096D5AC2A4D6CC100F3FB2E /* CoinDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096D5AB2A4D6CC100F3FB2E /* CoinDetailView.swift */; };
 		3096D5B02A4D6D0900F3FB2E /* Coin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096D5AF2A4D6D0900F3FB2E /* Coin.swift */; };
 		3096D5B42A4D6ED000F3FB2E /* CoinsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3096D5B32A4D6ED000F3FB2E /* CoinsListViewModel.swift */; };
@@ -31,6 +33,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		302A1F3E2A78E76C008C78FD /* PortfolioCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCoin.swift; sourceTree = "<group>"; };
+		302A1F402A78EA33008C78FD /* PortfolioCoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioCoinModel.swift; sourceTree = "<group>"; };
 		3096D5AB2A4D6CC100F3FB2E /* CoinDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinDetailView.swift; sourceTree = "<group>"; };
 		3096D5AF2A4D6D0900F3FB2E /* Coin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coin.swift; sourceTree = "<group>"; };
 		3096D5B32A4D6ED000F3FB2E /* CoinsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsListViewModel.swift; sourceTree = "<group>"; };
@@ -78,6 +82,7 @@
 		3096D5AE2A4D6CF700F3FB2E /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				302A1F3E2A78E76C008C78FD /* PortfolioCoin.swift */,
 				3096D5AF2A4D6D0900F3FB2E /* Coin.swift */,
 			);
 			path = Models;
@@ -126,6 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				F19455A12A6EE18A002E5A3F /* CoinsQuantity.swift */,
+				302A1F402A78EA33008C78FD /* PortfolioCoinModel.swift */,
 				F135DEDA2A6F12F0000F7B23 /* MyCoins.swift */,
 			);
 			path = Entities;
@@ -281,7 +287,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3096D5B42A4D6ED000F3FB2E /* CoinsListViewModel.swift in Sources */,
+				302A1F3F2A78E76C008C78FD /* PortfolioCoin.swift in Sources */,
 				F19173D12A672A7E0071F231 /* Coinss.swift in Sources */,
+				302A1F412A78EA33008C78FD /* PortfolioCoinModel.swift in Sources */,
 				3096D5B92A4D75AA00F3FB2E /* CoinListRow.swift in Sources */,
 				F19455A62A6EE1C9002E5A3F /* PortfolioViewModel.swift in Sources */,
 				F1DCD89B2A49FBBA0037868A /* FavouritesView.swift in Sources */,
@@ -424,9 +432,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto_1_Edition/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crypto-1-Edition-Info.plist";
@@ -441,6 +450,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Siarhei.Kuryan.Crypto-1-Edition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -452,9 +462,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
+				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto_1_Edition/Preview Content\"";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Crypto-1-Edition-Info.plist";
@@ -469,6 +480,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Siarhei.Kuryan.Crypto-1-Edition";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

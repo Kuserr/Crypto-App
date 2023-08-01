@@ -11,30 +11,22 @@ final class PortfolioViewModel: ObservableObject {
     // tests, trying to save quantity
     //let manager = CoreDataPortfolio.instance
     //var savedPortfolioItems = Set([String]())
-    var name: String
-    var url: URL
-    var descriptions: String
-    var shortName: String
-    var foundersDescription: String
-    var id: String
-    
-    init(coin: Coin) {
-        self.id = coin.id
-        self.name = coin.name
-        self.url = coin.url
-        self.descriptions = coin.descriptions
-        self.shortName = coin.shortName
-        self.foundersDescription = coin.foundersDescription
-    }
-    @Published var portfolioItems = Array([Coin]())
+//    var name: String
+//    var url: URL
+//    var descriptions: String
+//    var shortName: String
+//    var foundersDescription: String
+//    var id: String
+
+    @Published var portfolioItems = [PortfolioCoinModel]()
     
     // MARK: - Private
     var cdp = CoreDataPortfolio()
-    private var portItems = Set([Coin]())
+    private var portItems = Set([PortfolioCoinModel]())
     
     //load Coins
     private func load() {
-        portItems = Set(cdp.load().map({ Coin(databaseObject: $0)}))
+        portItems = Set(cdp.load().map({ PortfolioCoinModel(databaseObject: $0)}))
     }
     //Update UI
     private func updateUI() {
@@ -50,11 +42,16 @@ final class PortfolioViewModel: ObservableObject {
     func cancel() {
         print("Operation was cancelled!")
     }
-    
-    func removePortfolioId() {
-         cdp.removeCoin(withId: shortName)
+
+    func removeCoin(withIndex index: Int) {
+        let coin = portfolioItems[index]
+        removePortfolioId(id: coin.shortId)
+        onAppear()
+    }
+
+    private func removePortfolioId(id: String) {
+         cdp.removeCoin(withId: id)
      }
-   
     
     /*
     // add id after toggle the button add

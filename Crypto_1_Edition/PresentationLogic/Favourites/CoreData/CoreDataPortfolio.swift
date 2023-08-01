@@ -26,16 +26,11 @@ class CoreDataPortfolio {
     //}
     
     let context = CoreDataPortfolio.persistentContainer.viewContext
-    
-    
+
     // Functions for PortfolioView (save, remove, load - only Coins)
-    func save(coinn: Coin) {
-        let coinss = MyCoins(context: context)
-        coinss.name = coinn.name
-        coinss.shortName = coinn.shortName
-        coinss.url = coinn.url
-        coinss.descriptions = coinn.descriptions
-        coinss.foundersDescription = coinn.foundersDescription
+    func save(coinn: PortfolioCoinModel) {
+        let coinss = PortfolioCoin(context: context)
+        coinss.quantity = coinn.quantity
         coinss.id = coinn.id
         do {
             try context.save()
@@ -46,7 +41,7 @@ class CoreDataPortfolio {
     
     func removeCoin(withId id: String) {
         let predicate = NSPredicate(format: "id == %@", id)
-        let request = MyCoins.getAllMyCoinsRequest()
+        let request = PortfolioCoin.getAllMyCoinsRequest()
         request.predicate = predicate
         do {
             let coinn = try context.fetch(request)
@@ -59,25 +54,12 @@ class CoreDataPortfolio {
         }
     }
     
-    func load() -> [MyCoins] {
-        let request = MyCoins.getAllMyCoinsRequest()
+    func load() -> [PortfolioCoin] {
+        let request = PortfolioCoin.getAllMyCoinsRequest()
         do {
             return try context.fetch(request)
         } catch {
             return []
         }
     }
-    
-    //quantity save
-    /*
-    func saveQuantity() {
-        do {
-            try context.save()
-            print("Saved successfully!")
-        } catch let error {
-            print("Error saving Core Data. \(error.localizedDescription)")
-        }
-    }
-    */
-    
 }

@@ -19,21 +19,20 @@ struct PortfolioView: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
                 }
                 .frame(width: 330.0)
-                List { ForEach(pvm.portfolioItems, id: \.self) { coin in
-                        Label {
-                        Text(coin.name) + Text(" (\(coin.shortName))").foregroundColor(Color.gray)
-                        Text("100000")
+                List { ForEach(pvm.portfolioItems, id: \.id) { coin in
+                    Label {
+                        Text( "\(coin.shortId) - \(coin.quantity)")
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
                     icon: {
-                        Image(coin.name)
+                        Image(coin.shortId)
                             .resizable()
                             .scaledToFit()
                     }
                         .frame(width: 330.0)}
                     .onDelete(perform: removeRows)
                     .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
-                        Button("Remove") { pvm.removePortfolioId()}
+                        Button("Remove") { pvm.removeCoin(withIndex: 0)}
                         Button("Cancel", action: pvm.cancel)
                     }
                 }
@@ -59,7 +58,7 @@ struct PortfolioView: View {
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView(pvm: PortfolioViewModel(coin: Coin.coins.first!))
+        PortfolioView(pvm: PortfolioViewModel())
     }
 }
 

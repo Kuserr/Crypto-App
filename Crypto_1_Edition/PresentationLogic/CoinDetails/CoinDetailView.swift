@@ -10,7 +10,6 @@ import SwiftUI
 struct CoinDetailView: View {
     @ObservedObject var viewModel: CoinDetailViewModel
     @State private var showingAlert = false
-    @State private var quantity = ""
     
     var body: some View {
         Form {
@@ -37,13 +36,13 @@ struct CoinDetailView: View {
                 .navigationBarTitle(viewModel.navigationBarTitle)
             
             Section {
-                Button("Add") {viewModel.addPortfolioId()}
-                Button("Remove") {viewModel.removePortfolioId()}
+//                Button("Add") {viewModel.addPortfolioId()}
+//                Button("Remove") {viewModel.removePortfolioId()}
                 Button("Add to Portfolio") {
                     showingAlert.toggle()
                 }
                 .alert("How much coins of \(viewModel.shortName) you want to add?", isPresented: $showingAlert) {
-                    TextField("Enter the quantity", text: $quantity)
+                    TextField("Enter the quantity", text: $viewModel.quantity)
                         .keyboardType(.numberPad)
                     Button("Save", action: submit)
                     Button("Cancel", action: cancel)
@@ -53,7 +52,7 @@ struct CoinDetailView: View {
     }
     
     func submit() {
-        print("\(quantity) coins of \(viewModel.shortName) was saved successfully!")
+        viewModel.addPortfolioId()
     }
     
     func cancel() {

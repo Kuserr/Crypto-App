@@ -14,8 +14,8 @@
             filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "addId()"
             landmarkType = "7">
             <Locations>
@@ -62,10 +62,10 @@
             filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "CoinDetailViewModel"
-            landmarkType = "3">
+            startingLineNumber = "46"
+            endingLineNumber = "46"
+            landmarkName = "addId()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -78,10 +78,10 @@
             filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
-            landmarkName = "removeId()"
-            landmarkType = "7">
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "CoinDetailViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "0377AD2E-1E2E-4D74-9D8F-540801B98C04 - 8a95ffd786f8dd53"
@@ -126,8 +126,8 @@
             filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
             landmarkName = "removeId()"
             landmarkType = "7">
             <Locations>
@@ -174,10 +174,10 @@
             filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
-            landmarkName = "init(coin:)"
-            landmarkType = "7">
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "CoinDetailViewModel"
+            landmarkType = "3">
             <Locations>
                <Location
                   uuid = "DD07E0D8-6FC0-4FDF-9EB8-4E0C42A0F408 - 9a160885be4da217"
@@ -270,7 +270,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "28"
             endingLineNumber = "28"
-            landmarkName = "updateUI()"
+            landmarkName = "onAppear()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -318,8 +318,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "14"
             endingLineNumber = "14"
-            landmarkName = "save(items:)"
-            landmarkType = "7">
+            landmarkName = "unknown"
+            landmarkType = "0">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -332,9 +332,9 @@
             filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "64"
-            endingLineNumber = "64"
-            landmarkName = "init(coin:)"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "addPortfolioId()"
             landmarkType = "7">
             <Locations>
                <Location
@@ -383,6 +383,102 @@
                   offsetFromSymbolStart = "1428">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BE3FE082-021F-4612-9A26-F60D193E670F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "61"
+            endingLineNumber = "61"
+            landmarkName = "addPortfolioId()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "BE3FE082-021F-4612-9A26-F60D193E670F - 6270178b42a29430"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.addPortfolioId() -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Projects/Crypto-App/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "56"
+                  endingLineNumber = "56"
+                  offsetFromSymbolStart = "32">
+               </Location>
+               <Location
+                  uuid = "BE3FE082-021F-4612-9A26-F60D193E670F - 1900c4bd4c8d6e53"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Crypto_1_Edition.CoinDetailViewModel.addPortfolioId(quantity: Swift.String) -&gt; ()"
+                  moduleName = "Crypto_1_Edition"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/antonmarunko/Projects/Crypto-App/Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC11E474-3521-4A76-9099-4E87B020C702"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/Favourites/CoreData/CoreDataPortfolio.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
+            landmarkName = "save(coinn:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9755BD0F-2E47-4A25-B23C-F3041E8B85F9"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F648E8AB-A680-45DE-B07D-C165449AA48B"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/Favourites/CoreData/Portfolio/PortfolioViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
+            landmarkName = "onAppear()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
