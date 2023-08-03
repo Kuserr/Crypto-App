@@ -36,8 +36,6 @@ struct CoinDetailView: View {
                 .navigationBarTitle(viewModel.navigationBarTitle)
             
             Section {
-//                Button("Add") {viewModel.addPortfolioId()}
-//                Button("Remove") {viewModel.removePortfolioId()}
                 Button("Add to Portfolio") {
                     showingAlert.toggle()
                 }

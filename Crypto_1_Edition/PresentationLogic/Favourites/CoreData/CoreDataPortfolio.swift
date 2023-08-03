@@ -10,8 +10,6 @@ import CoreData
 import Foundation
 
 class CoreDataPortfolio {
-    //static let instance = CoreDataPortfolio()
-    
     private static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "PortfolioContainer")
         container.loadPersistentStores { description, error in
@@ -20,7 +18,6 @@ class CoreDataPortfolio {
         }
         return container
     }()
-   
     let context = CoreDataPortfolio.persistentContainer.viewContext
 
     // Functions for PortfolioView (save, remove, load - only Coins)
