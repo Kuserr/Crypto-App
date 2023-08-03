@@ -56,11 +56,8 @@ final class CoinDetailViewModel: ObservableObject {
         if !savedPortfolioItems.contains(id)  {
             savedPortfolioItems.insert(id)
         }
-        cdp.save(coinn: Coin(name: self.name,
-                            shortName: self.shortName,
-                            url: self.url,
-                            descriptions: self.descriptions,
-                            foundersDescription: self.foundersDescription))
+       portfolioManager.save(coinn:
+                                PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
     }
     
    func removePortfolioId() {

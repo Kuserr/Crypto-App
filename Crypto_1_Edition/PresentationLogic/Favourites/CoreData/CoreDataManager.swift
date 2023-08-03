@@ -19,10 +19,6 @@ class CoreDataManager {
         return container
     }()
     
-    //var context: NSManagedObjectContext {
-        //return Self.persistentContainer.viewContext
-    //}
-    
     // Get a reference to a managed object context
     let context = CoreDataManager.persistentContainer.viewContext
     
