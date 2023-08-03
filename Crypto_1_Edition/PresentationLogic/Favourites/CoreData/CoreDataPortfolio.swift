@@ -20,11 +20,7 @@ class CoreDataPortfolio {
         }
         return container
     }()
-    
-    //var context: NSManagedObjectContext {
-        //return Self.persistentContainer.viewContext
-    //}
-    
+   
     let context = CoreDataPortfolio.persistentContainer.viewContext
 
     // Functions for PortfolioView (save, remove, load - only Coins)
