@@ -23,6 +23,7 @@ struct PortfolioCoinModel: Identifiable {
         self.quantity = databaseObject.quantity
         self.shortId = databaseObject.id
     }
+    
 }
 
 extension PortfolioCoinModel: Hashable {

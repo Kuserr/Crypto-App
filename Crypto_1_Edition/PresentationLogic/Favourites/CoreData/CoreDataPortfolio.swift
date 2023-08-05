@@ -34,7 +34,7 @@ class CoreDataPortfolio {
     
     func removeCoin(withId id: String) {
         let predicate = NSPredicate(format: "id == %@", id)
-        let request = PortfolioCoin.getAllMyCoinsRequest()
+        let request = PortfolioCoin.getAllPortfolioCoinRequest()
         request.predicate = predicate
         do {
             let coinn = try context.fetch(request)
@@ -47,8 +47,9 @@ class CoreDataPortfolio {
         }
     }
     
+    
     func load() -> [PortfolioCoin] {
-        let request = PortfolioCoin.getAllMyCoinsRequest()
+        let request = PortfolioCoin.getAllPortfolioCoinRequest()
         do {
             return try context.fetch(request)
         } catch {

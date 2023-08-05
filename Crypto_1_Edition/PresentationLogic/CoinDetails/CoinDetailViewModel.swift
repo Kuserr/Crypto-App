@@ -19,8 +19,6 @@ final class CoinDetailViewModel: ObservableObject {
     var id: String
     var savedItems = Set([String]())
     // Portfolio
-    var savedPortfolioItems = Set([String]())
-    
     var aboutSectionTitle: String {
         return "What Is \(name) (\(shortName))?"
     }
@@ -58,13 +56,15 @@ final class CoinDetailViewModel: ObservableObject {
     
     
     func addPortfolioId() {
-        if !savedPortfolioItems.contains(id)  {
-            savedPortfolioItems.insert(id)
-        }
-       portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0,
-                                                       shortId: id))
+       portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
     }
 
+    func updateCoin() {
+        removePortfolioId()
+        cdp.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
+        
+    }
+    
    func removePortfolioId() {
        cdp.removeCoin(withId: self.id)
     }

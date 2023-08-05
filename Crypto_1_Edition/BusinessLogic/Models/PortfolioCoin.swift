@@ -12,7 +12,7 @@ final class PortfolioCoin: NSManagedObject {
     @NSManaged public var quantity: Double
     @NSManaged public var id: String
 
-    static func getAllMyCoinsRequest() -> NSFetchRequest<PortfolioCoin> {
+    static func getAllPortfolioCoinRequest() -> NSFetchRequest<PortfolioCoin> {
         return NSFetchRequest<PortfolioCoin>(entityName: String(describing: PortfolioCoin.self))
     }
 }

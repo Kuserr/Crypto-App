@@ -35,30 +35,20 @@ struct CoinDetailView: View {
             Button("Remove from fav") {viewModel.removeId() }
                 .navigationBarTitle(viewModel.navigationBarTitle)
             
-            Section {
+            Section { 
                 Button("Add to Portfolio") {
                     showingAlert.toggle()
                 }
                 .alert("How much coins of \(viewModel.shortName) you want to add?", isPresented: $showingAlert) {
                     TextField("Enter the quantity", text: $viewModel.quantity)
                         .keyboardType(.numberPad)
-                    Button("Save", action: submit)
-                    Button("Cancel", action: cancel)
+                    Button("Save", action: viewModel.updateCoin)
+                    Button("Cancel", role: .cancel) {}
                 }
             }
         }
-    }
-    
-    func submit() {
-        viewModel.addPortfolioId()
-    }
-    
-    func cancel() {
-        print("Operation was cancelled!")
-    }
-    
+    } 
 }
-
 
 
 struct CoinDetailView_Previews: PreviewProvider {

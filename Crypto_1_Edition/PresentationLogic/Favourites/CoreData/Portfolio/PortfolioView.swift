@@ -20,22 +20,22 @@ struct PortfolioView: View {
                 }
                 .frame(width: 330.0)
                 List {
-                    ForEach(Array(pvm.portfolioItems), id: \.id) { coin in
-                    PortfolioListRow(coin: PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId))}
+                    ForEach(pvm.portfolioItems, id: \.id) { coin in
+                        PortfolioListRow(coin:
+                                            PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId))}
                     .onDelete(perform: removeRows)
                     .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
                         Button("Remove") { pvm.removeCoin(withIndex: 0)}
-                        Button("Cancel", action: pvm.cancel)
+                        Button("Cancel", role: .cancel) {}
                     }
                 }
                 .lineLimit(1)
                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.961))
-                
             }
         header: {
-                Text("Portfolio")
+            Text("Portfolio")
                 .frame(maxWidth: .infinity, alignment: .center)
-            }
+        }
         .cornerRadius(25)
         }
         .onAppear(perform: pvm.onAppear)
@@ -43,10 +43,12 @@ struct PortfolioView: View {
     
     
     func removeRows(at offsets: IndexSet) {
-        showingAlert.toggle()
-        pvm.portfolioItems.remove(atOffsets: offsets)
+            showingAlert.toggle()
+            pvm.portfolioItems.remove(atOffsets: offsets)
+        }
     }
-}
+
+
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {

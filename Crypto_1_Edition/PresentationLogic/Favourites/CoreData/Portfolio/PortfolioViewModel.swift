@@ -28,11 +28,7 @@ final class PortfolioViewModel: ObservableObject {
         load()
         updateUI()
     }
-    //Cancel an alert
-    func cancel() {
-        print("Operation was cancelled!")
-    }
-
+    
     func removeCoin(withIndex index: Int) {
         let coin = portfolioItems[index]
         removePortfolioId(id: coin.shortId)
