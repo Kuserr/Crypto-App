@@ -8,14 +8,21 @@
 import SwiftUI
 
 struct PortfolioListRow: View {
-    var coin: PortfolioCoinModel
+    var pcm: PortfolioCoinModel
+    var pvm: PortfolioViewModel
     var body: some View {
         Label {
-            Text( "\(coin.id) - \(coin.quantity)")
-                .frame(maxWidth: .infinity, alignment: .trailing)
+            if pcm.quantity <= 0.0001 {Text( "\(pvm.fetchNameById(withId: pcm.id)) - \(pcm.id) - \(pcm.quantity)")
+                    .frame(maxWidth: .infinity, alignment: .trailing)
+                    .foregroundColor(.gray)
+            } else {
+                Text( "\(pvm.fetchNameById(withId: pcm.id)) - \(pcm.id) - \(pcm.quantity)")
+                        .frame(maxWidth: .infinity, alignment: .trailing)
+            }
+            
         }
     icon: {
-        Image(coin.id)
+        Image(pcm.id)
             .resizable()
             .scaledToFit()
     }
@@ -26,6 +33,6 @@ struct PortfolioListRow: View {
 
 struct PortfolioListRow_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioListRow(coin: PortfolioCoinModel(databaseObject: PortfolioCoin()))
+        PortfolioListRow(pcm: PortfolioCoinModel(databaseObject: PortfolioCoin()), pvm: PortfolioViewModel())
     }
 }

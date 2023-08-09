@@ -41,7 +41,7 @@ struct CoinDetailView: View {
                 }
                 .alert("How much coins of \(viewModel.shortName) you want to add?", isPresented: $showingAlert) {
                     TextField("Enter the quantity", text: $viewModel.quantity)
-                        .keyboardType(.numberPad)
+                        .keyboardType(.decimalPad)
                     Button("Save", action: viewModel.updateCoin)
                     Button("Cancel", role: .cancel) {}
                 }

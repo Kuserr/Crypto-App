@@ -21,8 +21,8 @@ struct PortfolioView: View {
                 .frame(width: 330.0)
                 List {
                     ForEach(pvm.portfolioItems, id: \.id) { coin in
-                        PortfolioListRow(coin:
-                                            PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId))}
+                        PortfolioListRow(pcm:
+                                            PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())}
                     .onDelete(perform: removeRows)
                     .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
                         Button("Remove") { pvm.removeCoin(withIndex: 0)}
@@ -40,7 +40,6 @@ struct PortfolioView: View {
         }
         .onAppear(perform: pvm.onAppear)
     }
-    
     
     func removeRows(at offsets: IndexSet) {
             showingAlert.toggle()

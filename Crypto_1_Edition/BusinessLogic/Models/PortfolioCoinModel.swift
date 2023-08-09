@@ -13,7 +13,7 @@ struct PortfolioCoinModel: Identifiable {
     var id: String {
         return shortId
     }
-
+    
     init(quantity: Double, shortId: String) {
         self.quantity = quantity
         self.shortId = shortId
@@ -23,7 +23,6 @@ struct PortfolioCoinModel: Identifiable {
         self.quantity = databaseObject.quantity
         self.shortId = databaseObject.id
     }
-    
 }
 
 extension PortfolioCoinModel: Hashable {

@@ -53,22 +53,6 @@ class CoreDataManager {
         }
     }
     
-    func fetchNameById(with id: String) {
-        let predicate = NSPredicate(format: "id == %@", id)
-        let request = PortfolioCoin.getAllPortfolioCoinRequest()
-        request.predicate = predicate
-        do {
-            let coinn = try context.fetch(request)
-            if let coinn = coinn.first {
-                context.delete(coinn)
-            }
-            try context.save()
-        } catch {
-            print("Error - coin not found or already deleted")
-        }
-    }
-    
-    
     func load() -> [Coinss] {
         let request = Coinss.getAllCoinsRequest()
         do {
