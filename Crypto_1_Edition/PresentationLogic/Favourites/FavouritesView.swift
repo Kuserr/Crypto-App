@@ -26,7 +26,8 @@ struct FavouritesView: View {
         header: {
             Text("Favourites")
         }
-        }.onAppear(perform: clvm.onAppear)
+        }
+        .onAppear(perform: clvm.onAppear)
     }
 }
 

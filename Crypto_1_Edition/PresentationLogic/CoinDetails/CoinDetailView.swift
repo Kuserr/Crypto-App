@@ -39,13 +39,13 @@ struct CoinDetailView: View {
                 Button("Add to Portfolio") {
                     showingAlert.toggle()
                 }
-                .alert("How much coins of \(viewModel.shortName) you want to add?", isPresented: $showingAlert) {
-                    TextField("Enter the quantity", text: $viewModel.quantity)
-                        .keyboardType(.decimalPad)
-                    Button("Save", action: viewModel.updateCoin)
-                    Button("Cancel", role: .cancel) {}
-                }
             }
+        }
+        .alert("How much coins of \(viewModel.shortName) you want to add?", isPresented: $showingAlert) {
+            TextField("Enter the quantity", text: $viewModel.quantity)
+                .keyboardType(.decimalPad)
+            Button("Save", action: viewModel.updateCoin)
+            Button("Cancel", role: .cancel) {}
         }
     } 
 }

@@ -10,7 +10,7 @@ import Foundation
 final class FavouriteViewModel: ObservableObject {
     
     @Published var items = [Coin]().sorted {
-        $0.name > $1.name
+        $0.name < $1.name
     }
    
     // MARK: - Private
@@ -20,13 +20,13 @@ final class FavouriteViewModel: ObservableObject {
 
     private func load() {
         cdmItems = Array(Set(cdm.load().map({ Coin(databaseObject: $0)}))).sorted {
-            $0.name > $1.name
+            $0.name < $1.name
         }
     }
     
     private func updateUI() {
         items = Array(cdmItems).sorted {
-            $0.name > $1.name
+            $0.name < $1.name
         }
     }
 

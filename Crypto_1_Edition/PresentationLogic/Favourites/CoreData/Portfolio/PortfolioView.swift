@@ -24,10 +24,6 @@ struct PortfolioView: View {
                         PortfolioListRow(pcm:
                                             PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())}
                     .onDelete(perform: removeRows)
-                    .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
-                        Button("Remove") { pvm.removeCoin(withIndex: pvm.coinIndex())}
-                        Button("Cancel", role: .cancel) {}
-                    }
                 }
                 .lineLimit(1)
                 .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.961))
@@ -37,6 +33,10 @@ struct PortfolioView: View {
                 .frame(maxWidth: .infinity, alignment: .center)
         }
         .cornerRadius(25)
+        }
+        .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
+            Button("Remove") { pvm.removeCoin(withIndex: pvm.coinIndex())}
+            Button("Cancel", role: .cancel) {}
         }
         .onAppear(perform: pvm.onAppear)
     }
