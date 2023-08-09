@@ -25,7 +25,7 @@ struct PortfolioView: View {
                                             PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())}
                     .onDelete(perform: removeRows)
                     .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
-                        Button("Remove") { pvm.removeCoin(withIndex: 0)}
+                        Button("Remove") { pvm.removeCoin(withIndex: pvm.coinIndex())}
                         Button("Cancel", role: .cancel) {}
                     }
                 }

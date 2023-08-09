@@ -8,7 +8,7 @@
 import Foundation
 
 final class PortfolioViewModel: ObservableObject {
-    @Published var portfolioItems = [PortfolioCoinModel]()
+    @Published var portfolioItems = [PortfolioCoinModel]().sorted {$0.quantity > $1.quantity}
     var myCoinName: String = ""
     var myCoinIndex: Int = 0
     let allDefaultCoins: [Coin] = Coin.coins
@@ -18,41 +18,38 @@ final class PortfolioViewModel: ObservableObject {
         load()
         updateUI()
     }
-    func a() {
-        
-    }
+    
+      func fetchNameById(withId id: String) -> String {
+          if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
+            myCoinName = coinWithId.name
+          }
+          return myCoinName
+      }
+    
     func removeCoin(withIndex index: Int) {
         let coin = portfolioItems[index]
         removePortfolioId(id: coin.shortId)
-        onAppear()
     }
-/*
-    func coinIndex(withId id: String) -> Int {
-        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == id}) {
+
+    func coinIndex() -> Int {
+        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == "BTC" }) {
             myCoinIndex = takeIndex
         }
         return myCoinIndex
     }
-  */
-    func fetchNameById(withId id: String) -> String {
-        if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
-          myCoinName = coinWithId.name
-        }
-        return myCoinName
-    }
-    
+  
     
     // MARK: - Private
     var cdp = CoreDataPortfolio()
-    private var portItems = Set([PortfolioCoinModel]())
+    private var portItems = Array(Set([PortfolioCoinModel]())).sorted {$0.quantity > $1.quantity}
     
     //load Coins
     private func load() {
-        portItems = Set(cdp.load().map({ PortfolioCoinModel(databaseObject: $0)}))
+        portItems = Array(Set(cdp.load().map({ PortfolioCoinModel(databaseObject: $0)}))).sorted {$0.quantity > $1.quantity}
     }
     //Update UI
     private func updateUI() {
-        portfolioItems = Array(portItems)
+        portfolioItems = Array(portItems).sorted {$0.quantity > $1.quantity}
     }
     
     private func removePortfolioId(id: String) {
