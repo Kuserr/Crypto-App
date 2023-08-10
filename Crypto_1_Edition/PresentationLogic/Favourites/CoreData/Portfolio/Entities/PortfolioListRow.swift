@@ -20,15 +20,15 @@ struct PortfolioListRow: View {
                         .frame(maxWidth: .infinity, alignment: .trailing)
             }
             
-        }
+        } 
     icon: {
         Image(pcm.id)
             .resizable()
             .scaledToFit()
     }
     .frame(width: 330.0)
-    }
-}
+    } 
+} 
 
 
 struct PortfolioListRow_Previews: PreviewProvider {

@@ -10,8 +10,9 @@ import Foundation
 final class PortfolioViewModel: ObservableObject {
     @Published var portfolioItems = [PortfolioCoinModel]().sorted {$0.quantity > $1.quantity}
     var myCoinName: String = ""
-    var myCoinIndex: Int = 0
+    var myCoinIndex: Int?
     let allDefaultCoins: [Coin] = Coin.coins
+    
     
     //Update View
     func onAppear() {
@@ -31,8 +32,8 @@ final class PortfolioViewModel: ObservableObject {
         removePortfolioId(id: coin.shortId)
     }
 
-    func coinIndex() -> Int {
-        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == "BTC" }) {
+    func coinIndex(withId id: String) -> Int? {
+        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == id }) {
             myCoinIndex = takeIndex
         }
         return myCoinIndex
