@@ -11,8 +11,12 @@ final class PortfolioViewModel: ObservableObject {
     @Published var portfolioItems = [PortfolioCoinModel]().sorted {$0.quantity > $1.quantity}
     var myCoinName: String = ""
     var myCoinIndex: Int?
+    var gavenName: Coin?
+    //var gavenName: [Coin]
     let allDefaultCoins: [Coin] = Coin.coins
-    
+    //init(coinsa: Coin) {
+      //  self.gavenName = Coin.coins
+    //}
     
     //Update View
     func onAppear() {
@@ -20,12 +24,20 @@ final class PortfolioViewModel: ObservableObject {
         updateUI()
     }
     
-      func fetchNameById(withId id: String) -> String {
+    func fetchNameById(withId id: String) -> String {
           if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
             myCoinName = coinWithId.name
           }
           return myCoinName
       }
+    
+    func giveMeCoin(withId id: String) -> Coin? {
+        if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
+            gavenName = coinWithId
+            
+        }
+        return gavenName
+    }
     
     func removeCoin(withIndex index: Int) {
         let coin = portfolioItems[index]

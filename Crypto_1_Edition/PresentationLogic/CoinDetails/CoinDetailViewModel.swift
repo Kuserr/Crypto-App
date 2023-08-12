@@ -17,6 +17,7 @@ final class CoinDetailViewModel: ObservableObject {
     var shortName: String
     var foundersDescription: String
     var id: String
+    //var a: Coin
     var savedItems = Set([String]())
     // Portfolio
     var aboutSectionTitle: String {
