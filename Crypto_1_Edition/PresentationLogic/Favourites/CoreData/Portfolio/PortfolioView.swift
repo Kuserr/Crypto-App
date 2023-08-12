@@ -23,10 +23,7 @@ struct PortfolioView: View {
                     ForEach(pvm.portfolioItems, id: \.id) { coin in
                         PortfolioListRow(pcm:
                                             PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())
-                        .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
-                            Button("Remove") { pvm.removeCoin(withIndex: pvm.coinIndex(withId: coin.shortId )!)}
-                            Button("Cancel", role: .cancel) {}
-                        }}
+                        }
                     .onDelete(perform: removeRows)
                 }
                 .lineLimit(1)
