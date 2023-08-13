@@ -17,7 +17,6 @@ final class CoinDetailViewModel: ObservableObject {
     var shortName: String
     var foundersDescription: String
     var id: String
-    //var a: Coin
     var savedItems = Set([String]())
     // Portfolio
     var aboutSectionTitle: String {
@@ -31,9 +30,11 @@ final class CoinDetailViewModel: ObservableObject {
     var navigationBarTitle: String {
         return "About \(name)"
     }
+    var cdp = CoreDataPortfolio()
+    var cdm = CoreDataManager()
+    let context = CoreDataPortfolio.persistentContainer.viewContext
     
 // Functions for favourites
-    var cdm = CoreDataManager()
     var portfolioManager = CoreDataPortfolio()
 
 
@@ -53,19 +54,30 @@ final class CoinDetailViewModel: ObservableObject {
     }
      
     // Functions for Portfolio
-    var cdp = CoreDataPortfolio()
-    
-    
     func addPortfolioId() {
        portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
     }
-
+    
     func updateCoin() {
-        removePortfolioId()
-        cdp.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
-        
+        let predicate = NSPredicate(format: "id == %@", self.id)
+        let request = PortfolioCoin.getAllPortfolioCoinRequest()
+        request.predicate = predicate
+        do {
+           let coinn = try? context.fetch(request)
+            if let coinn = coinn?.first {
+                coinn.quantity = coinn.quantity + (Double(self.quantity) ?? 0)
+            } else {
+                cdp.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: self.id))
+            }
+            try context.save()
+        } catch {
+            print("Error - coin not found or already deleted")
+        }
     }
     
+    func updateCoinQuantity () {
+        cdp.coinUpdate(withId: self.id, withQuantity: Double(self.quantity) ?? 0)
+    }
    func removePortfolioId() {
        cdp.removeCoin(withId: self.id)
     }

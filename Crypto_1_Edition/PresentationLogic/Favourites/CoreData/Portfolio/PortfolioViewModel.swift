@@ -12,11 +12,7 @@ final class PortfolioViewModel: ObservableObject {
     var myCoinName: String = ""
     var myCoinIndex: Int?
     var gavenName: Coin?
-    //var gavenName: [Coin]
     let allDefaultCoins: [Coin] = Coin.coins
-    //init(coinsa: Coin) {
-      //  self.gavenName = Coin.coins
-    //}
     
     //Update View
     func onAppear() {

@@ -10,7 +10,7 @@ import CoreData
 import Foundation
 
 class CoreDataPortfolio {
-    private static var persistentContainer: NSPersistentContainer = {
+    static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "PortfolioContainer")
         container.loadPersistentStores { description, error in
             if let error = error { fatalError("Core Data Store failed: \(error.localizedDescription)")
@@ -20,7 +20,7 @@ class CoreDataPortfolio {
     }()
     let context = CoreDataPortfolio.persistentContainer.viewContext
 
-    // Functions for PortfolioView (save, remove, load - only Coins)
+    // Save coins to CoreData
     func save(coinn: PortfolioCoinModel) {
         let coinss = PortfolioCoin(context: context)
         coinss.quantity = coinn.quantity
@@ -32,6 +32,23 @@ class CoreDataPortfolio {
         }
     }
     
+    //Update coins quantity in CoreData
+    func coinUpdate(withId id: String, withQuantity: Double) {
+        let predicate = NSPredicate(format: "id == %@", id)
+        let request = PortfolioCoin.getAllPortfolioCoinRequest()
+        request.predicate = predicate
+        do {
+            let coinn = try context.fetch(request)
+            if let coinn = coinn.first {
+                coinn.quantity = coinn.quantity + withQuantity
+            }
+            try context.save()
+        } catch {
+            print("Error - coin not found or already deleted")
+        }
+    }
+    
+    //Remove coin from CoreData
     func removeCoin(withId id: String) {
         let predicate = NSPredicate(format: "id == %@", id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -47,7 +64,7 @@ class CoreDataPortfolio {
         }
     }
     
-    
+    // load all existed coins from CoreData
     func load() -> [PortfolioCoin] {
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
         do {
