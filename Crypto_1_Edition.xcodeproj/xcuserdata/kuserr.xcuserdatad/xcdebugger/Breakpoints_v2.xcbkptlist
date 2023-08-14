@@ -158,10 +158,10 @@
             filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "CoinDetailViewModel"
-            landmarkType = "3">
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "addPortfolioId()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -272,6 +272,22 @@
             startingLineNumber = "47"
             endingLineNumber = "47"
             landmarkName = "coinIndex(withId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3FADE0C-88B4-4A6D-B5E8-D7EB0B67A7CB"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Crypto_1_Edition/PresentationLogic/CoinDetails/CoinDetailViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "coinQuantityDel()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -33,7 +33,8 @@ final class CoinDetailViewModel: ObservableObject {
     var maxToDelete: Double?
     var cdp = CoreDataPortfolio()
     var cdm = CoreDataManager()
-    let context = CoreDataPortfolio.persistentContainer.viewContext
+    var myCoinQuantity: Double?
+    private let context = CoreDataPortfolio.persistentContainer.viewContext
     
 // Functions for favourites
     var portfolioManager = CoreDataPortfolio()
@@ -59,6 +60,7 @@ final class CoinDetailViewModel: ObservableObject {
        portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
     }
     
+    //Update coins quantity in CoreData
     func updateCoin() {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -76,13 +78,53 @@ final class CoinDetailViewModel: ObservableObject {
         }
     }
     
-    func deleteCoinQuantity() {
-        cdp.coinQuantityDel(withId: self.id, withQuantity: Double(self.quantity) ?? 0)
+    //Delete coins quantity in CoreData
+    func coinQuantityDel() {
+        let predicate = NSPredicate(format: "id == %@", self.id)
+        let request = PortfolioCoin.getAllPortfolioCoinRequest()
+        request.predicate = predicate
+        do {
+            let coinn = try context.fetch(request)
+            if let coinn = coinn.first {
+                coinn.quantity = coinn.quantity - (Double(self.quantity) ?? 0)
+                if coinn.quantity >= 0 {
+                    try context.save()
+                } else {
+                    coinn.quantity = 0
+                }
+            }
+            try context.save()
+        } catch {
+            print("Error - coin not found or already deleted")
+        }
     }
     
    func removePortfolioId() {
        cdp.removeCoin(withId: self.id)
     }
+   
+    //Check the quantity of coin in CoreData
+    func checkQuantity() -> Double {
+        let predicate = NSPredicate(format: "id == %@", self.id)
+        let request = PortfolioCoin.getAllPortfolioCoinRequest()
+        request.predicate = predicate
+        do {
+            let coinn = try context.fetch(request)
+            if let coinn = coinn.first {
+                if coinn.quantity >= 0 {
+                    myCoinQuantity = coinn.quantity
+                    return myCoinQuantity!
+                } else {
+                    myCoinQuantity = 0
+                    return myCoinQuantity!
+                }
+            }
+        } catch {
+            print("Error - coin not found or already deleted")
+        }
+        return myCoinQuantity ?? 0
+    }
+    
     
     init(coin: Coin) {
         self.id = coin.id

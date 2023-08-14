@@ -43,6 +43,7 @@ struct CoinDetailView: View {
                 Button("Delete from Portfolio") {
                     alertForDelete.toggle()
                 }
+                .disabled(viewModel.checkQuantity() <= Double(0))
             }
         }
         .alert("How much coins of \(viewModel.shortName) you want to add?", isPresented: $showingAlert) {
@@ -54,7 +55,7 @@ struct CoinDetailView: View {
         .alert("How much coins of \(viewModel.shortName) you want to delete?", isPresented: $alertForDelete) {
             TextField("Enter the quantity", text: $viewModel.quantity)
                 .keyboardType(.decimalPad)
-            Button("Save", action: viewModel.deleteCoinQuantity)
+            Button("Save", action: viewModel.coinQuantityDel)
             Button("Cancel", role: .cancel) {}
         }
     } 
