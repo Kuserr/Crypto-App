@@ -30,6 +30,7 @@ final class CoinDetailViewModel: ObservableObject {
     var navigationBarTitle: String {
         return "About \(name)"
     }
+    var maxToDelete: Double?
     var cdp = CoreDataPortfolio()
     var cdm = CoreDataManager()
     let context = CoreDataPortfolio.persistentContainer.viewContext
@@ -75,14 +76,14 @@ final class CoinDetailViewModel: ObservableObject {
         }
     }
     
-    func updateCoinQuantity () {
-        cdp.coinUpdate(withId: self.id, withQuantity: Double(self.quantity) ?? 0)
+    func deleteCoinQuantity() {
+        cdp.coinQuantityDel(withId: self.id, withQuantity: Double(self.quantity) ?? 0)
     }
+    
    func removePortfolioId() {
        cdp.removeCoin(withId: self.id)
     }
     
-     
     init(coin: Coin) {
         self.id = coin.id
         self.name = coin.name

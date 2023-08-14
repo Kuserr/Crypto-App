@@ -33,6 +33,22 @@ class CoreDataPortfolio {
     }
     
     //Update coins quantity in CoreData
+    
+    func coinQuantityDel(withId id: String, withQuantity: Double){
+        let predicate = NSPredicate(format: "id == %@", id)
+        let request = PortfolioCoin.getAllPortfolioCoinRequest()
+        request.predicate = predicate
+        do {
+            let coinn = try context.fetch(request)
+            if let coinn = coinn.first {
+                coinn.quantity = coinn.quantity - withQuantity
+            }
+            try context.save()
+        } catch {
+            print("Error - coin not found or already deleted")
+        }
+    }
+    
     func coinUpdate(withId id: String, withQuantity: Double) {
         let predicate = NSPredicate(format: "id == %@", id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()

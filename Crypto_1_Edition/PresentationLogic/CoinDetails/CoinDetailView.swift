@@ -10,6 +10,7 @@ import SwiftUI
 struct CoinDetailView: View {
     @ObservedObject var viewModel: CoinDetailViewModel
     @State private var showingAlert = false
+    @State private var alertForDelete = false
     
     var body: some View {
         Form {
@@ -39,12 +40,21 @@ struct CoinDetailView: View {
                 Button("Add to Portfolio") {
                     showingAlert.toggle()
                 }
+                Button("Delete from Portfolio") {
+                    alertForDelete.toggle()
+                }
             }
         }
         .alert("How much coins of \(viewModel.shortName) you want to add?", isPresented: $showingAlert) {
             TextField("Enter the quantity", text: $viewModel.quantity)
                 .keyboardType(.decimalPad)
             Button("Save", action: viewModel.updateCoin)
+            Button("Cancel", role: .cancel) {}
+        }
+        .alert("How much coins of \(viewModel.shortName) you want to delete?", isPresented: $alertForDelete) {
+            TextField("Enter the quantity", text: $viewModel.quantity)
+                .keyboardType(.decimalPad)
+            Button("Save", action: viewModel.deleteCoinQuantity)
             Button("Cancel", role: .cancel) {}
         }
     } 
