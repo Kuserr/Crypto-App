@@ -17,6 +17,7 @@ final class CoinDetailViewModel: ObservableObject {
     var shortName: String
     var foundersDescription: String
     var id: String
+    var myCoinQuantity: Double?
     var savedItems = Set([String]())
     // Portfolio
     var aboutSectionTitle: String {
@@ -30,10 +31,7 @@ final class CoinDetailViewModel: ObservableObject {
     var navigationBarTitle: String {
         return "About \(name)"
     }
-    var maxToDelete: Double?
-    var cdp = CoreDataPortfolio()
     var cdm = CoreDataManager()
-    var myCoinQuantity: Double?
     private var portfolioManager = CoreDataPortfolio()
     private let context = CoreDataPortfolio.persistentContainer.viewContext
     
@@ -69,7 +67,7 @@ final class CoinDetailViewModel: ObservableObject {
             if let coinn = coinn?.first {
                 coinn.quantity = coinn.quantity + (Double(self.quantity) ?? 0)
             } else {
-                cdp.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: self.id))
+                portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: self.id))
             }
             try context.save()
         } catch {
@@ -100,7 +98,7 @@ final class CoinDetailViewModel: ObservableObject {
 
     // Remove coin from CoreData - Portfolio
    func removePortfolioId() {
-       cdp.removeCoin(withId: self.id)
+       portfolioManager.removeCoin(withId: self.id)
     }
    
     //Check the quantity of coins in CoreData

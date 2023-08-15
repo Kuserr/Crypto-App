@@ -10,7 +10,6 @@ import SwiftUI
 struct PortfolioView: View {
     @StateObject var pvm: PortfolioViewModel
     @ObservedObject var viewModel: CoinsListViewModel
-    @State private var showingAlert = false
     var body: some View {
         NavigationView {
             Form {
@@ -27,7 +26,7 @@ struct PortfolioView: View {
                                            label: {PortfolioListRow(pcm:
                                                                         PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())})
                         }
-                        .onDelete(perform: removeRows)
+                        .onDelete(perform: pvm.removeRows)
                     }
                     .lineLimit(1)
                     .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.961))
@@ -41,12 +40,6 @@ struct PortfolioView: View {
             .onAppear(perform: pvm.onAppear)
         }
     }
-    
-    func removeRows(at offsets: IndexSet) {
-            showingAlert.toggle()
-        pvm.removeCoin(withIndex: offsets)
-            pvm.portfolioItems.remove(atOffsets: offsets)
-        }
     }
 
 
