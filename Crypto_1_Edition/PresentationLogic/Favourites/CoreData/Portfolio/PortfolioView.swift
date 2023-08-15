@@ -22,8 +22,8 @@ struct PortfolioView: View {
                     List {
                         ForEach(pvm.portfolioItems, id: \.id) { coin in
                             NavigationLink(destination: CoinDetailView(viewModel: CoinDetailViewModel(coin: pvm.giveMeCoin(withId: coin.shortId)!)),
-                                           label: {PortfolioListRow(pcm:
-                                                                        PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())})
+                            label: {PortfolioListRow(pcm: PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())})
+                        .deleteDisabled(coin.quantity != 0)
                         }
                         .onDelete(perform: pvm.removeRows)
                     }
