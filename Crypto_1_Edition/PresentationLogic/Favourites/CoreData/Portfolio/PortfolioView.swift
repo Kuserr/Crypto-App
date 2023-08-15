@@ -44,6 +44,7 @@ struct PortfolioView: View {
     
     func removeRows(at offsets: IndexSet) {
             showingAlert.toggle()
+        pvm.removeCoin(withIndex: offsets)
             pvm.portfolioItems.remove(atOffsets: offsets)
         }
     }

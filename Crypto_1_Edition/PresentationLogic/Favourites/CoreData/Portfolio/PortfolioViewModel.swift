@@ -10,7 +10,7 @@ import Foundation
 final class PortfolioViewModel: ObservableObject {
     @Published var portfolioItems = [PortfolioCoinModel]().sorted {$0.quantity > $1.quantity}
     var myCoinName: String = ""
-    var myCoinIndex: Int?
+    var myCoinId: String?
     var gavenName: Coin?
     let allDefaultCoins: [Coin] = Coin.coins
     
@@ -35,19 +35,13 @@ final class PortfolioViewModel: ObservableObject {
         return gavenName
     }
     
-    func removeCoin(withIndex index: Int) {
-        let coin = portfolioItems[index]
-        removePortfolioId(id: coin.shortId)
-    }
-
-    func coinIndex(withId id: String) -> Int? {
-        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == id }) {
-            myCoinIndex = takeIndex
+    func removeCoin(withIndex indeX: IndexSet) {
+        for index in indeX {
+            let coin = portfolioItems[index]
+            removePortfolioId(id: coin.shortId)
         }
-        return myCoinIndex
     }
   
-    
     // MARK: - Private
     var cdp = CoreDataPortfolio()
     private var portItems = Array(Set([PortfolioCoinModel]())).sorted {$0.quantity > $1.quantity}
