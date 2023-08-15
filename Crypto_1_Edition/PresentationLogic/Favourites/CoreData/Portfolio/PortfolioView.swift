@@ -9,7 +9,6 @@ import SwiftUI
 
 struct PortfolioView: View {
     @StateObject var pvm: PortfolioViewModel
-    @ObservedObject var viewModel: CoinsListViewModel
     var body: some View {
         NavigationView {
             Form {
@@ -46,6 +45,6 @@ struct PortfolioView: View {
 
 struct PortfolioView_Previews: PreviewProvider {
     static var previews: some View {
-        PortfolioView(pvm: PortfolioViewModel(), viewModel: CoinsListViewModel())
+        PortfolioView(pvm: PortfolioViewModel())
     }
 }
