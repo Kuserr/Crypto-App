@@ -34,16 +34,15 @@ final class CoinDetailViewModel: ObservableObject {
     var cdp = CoreDataPortfolio()
     var cdm = CoreDataManager()
     var myCoinQuantity: Double?
+    private var portfolioManager = CoreDataPortfolio()
     private let context = CoreDataPortfolio.persistentContainer.viewContext
     
-// Functions for favourites
-    var portfolioManager = CoreDataPortfolio()
-
-
+    // Remove coin from CoreData - Favourite
     func removeId() {
         cdm.removeCoin(withId: id)
     }
-                
+    
+    // Save coin in CoreData - Add coin to Favourite
     func addId() {
         if !savedItems.contains(id)  {
             savedItems.insert(id)
@@ -55,12 +54,12 @@ final class CoinDetailViewModel: ObservableObject {
                             foundersDescription: self.foundersDescription))
     }
      
-    // Functions for Portfolio
+    // Save Coin to CoreData - Portfolio
     func addPortfolioId() {
        portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
     }
     
-    //Update coins quantity in CoreData
+    //Update coins quantity in CoreData - Portfolio
     func updateCoin() {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -78,7 +77,7 @@ final class CoinDetailViewModel: ObservableObject {
         }
     }
     
-    //Delete coins quantity in CoreData
+    //Delete coins quantity in CoreData - Portfolio
     func coinQuantityDel() {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -98,12 +97,13 @@ final class CoinDetailViewModel: ObservableObject {
             print("Error - coin not found or already deleted")
         }
     }
-    
+
+    // Remove coin from CoreData - Portfolio
    func removePortfolioId() {
        cdp.removeCoin(withId: self.id)
     }
    
-    //Check the quantity of coin in CoreData
+    //Check the quantity of coins in CoreData
     func checkQuantity() -> Double {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -124,7 +124,7 @@ final class CoinDetailViewModel: ObservableObject {
         }
         return myCoinQuantity ?? 0
     }
-    //return coin quantity from CoreData
+    // Return coin quantity from CoreData
     func giveQuantity() -> Double {
             let predicate = NSPredicate(format: "id == %@", self.id)
             let request = PortfolioCoin.getAllPortfolioCoinRequest()
