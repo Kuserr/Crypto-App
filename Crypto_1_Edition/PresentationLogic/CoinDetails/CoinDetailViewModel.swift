@@ -124,6 +124,21 @@ final class CoinDetailViewModel: ObservableObject {
         }
         return myCoinQuantity ?? 0
     }
+    //return coin quantity from CoreData
+    func giveQuantity() -> Double {
+            let predicate = NSPredicate(format: "id == %@", self.id)
+            let request = PortfolioCoin.getAllPortfolioCoinRequest()
+            request.predicate = predicate
+            do {
+                let coinn = try context.fetch(request)
+                if let coinn = coinn.first {
+                    myCoinQuantity = coinn.quantity
+                }
+            } catch {
+                print("Error - coin not found!")
+            }
+            return myCoinQuantity ?? 0
+        }
     
     
     init(coin: Coin) {
