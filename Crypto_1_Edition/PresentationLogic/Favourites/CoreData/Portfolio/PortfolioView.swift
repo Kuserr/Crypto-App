@@ -18,7 +18,7 @@ struct PortfolioView: View {
                         Text("Quantity")
                             .frame(maxWidth: .infinity, alignment: .trailing)
                     }
-                    .frame(width: 330.0)
+                    .frame(width: 306.0)
                     List {
                         ForEach(pvm.portfolioItems, id: \.id) { coin in
                             NavigationLink(destination: CoinDetailView(viewModel: CoinDetailViewModel(coin: pvm.giveMeCoin(withId: coin.shortId)!)),
@@ -32,7 +32,7 @@ struct PortfolioView: View {
                 }
             header: {
                 Text("Portfolio")
-                    .frame(maxWidth: .infinity, alignment: .center)
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
             .cornerRadius(25)
             }
