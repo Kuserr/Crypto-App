@@ -9,44 +9,36 @@ import SwiftUI
 
 struct PortfolioView: View {
     @StateObject var pvm: PortfolioViewModel
-    @State private var showingAlert = false
     var body: some View {
-        Form {
-            Section {
-                HStack {
-                    Text("Coins")
-                    Text("Quantity")
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+        NavigationView {
+            Form {
+                Section {
+                    HStack {
+                        Text("Coins")
+                        Text("Quantity")
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                    }
+                    .frame(width: 306.0)
+                    List {
+                        ForEach(pvm.portfolioItems, id: \.id) { coin in
+                            NavigationLink(destination: CoinDetailView(viewModel: CoinDetailViewModel(coin: pvm.giveMeCoin(withId: coin.shortId)!)),
+                            label: {PortfolioListRow(pcm: PortfolioCoinModel(quantity: coin.quantity, shortId: coin.shortId), pvm: PortfolioViewModel())})
+                        .deleteDisabled(coin.quantity != 0)
+                        }
+                        .onDelete(perform: pvm.removeRows)
+                    }
+                    .lineLimit(1)
+                    .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.961))
                 }
-                .frame(width: 330.0)
-                List {
-                    ForEach(pvm.portfolioItems, id: \.id) { coin in
-                        PortfolioListRow(pcm:
-                                            PortfolioCoinModel(quantity: coin.quantity,
-                                                               shortId: coin.shortId),
-                                         pvm: PortfolioViewModel())
-                        .alert("Do you really want to delete this coin?", isPresented: $showingAlert) {
-                            Button("Remove") { pvm.removeCoin(withId: coin.shortId)}
-                            Button("Cancel", role: .cancel) {}
-                        }}
-                    .onDelete(perform: removeRows)
-                }
-                .lineLimit(1)
-                .background(Color(hue: 1.0, saturation: 0.0, brightness: 0.961))
+            header: {
+                Text("Portfolio")
+                    .frame(maxWidth: .infinity, alignment: .leading)
             }
-        header: {
-            Text("Portfolio")
-                .frame(maxWidth: .infinity, alignment: .center)
+            .cornerRadius(25)
+            }
+            .onAppear(perform: pvm.onAppear)
         }
-        .cornerRadius(25)
-        }
-        .onAppear(perform: pvm.onAppear)
     }
-    
-    func removeRows(at offsets: IndexSet) {
-            showingAlert.toggle()
-            pvm.portfolioItems.remove(atOffsets: offsets)
-        }
     }
 
 

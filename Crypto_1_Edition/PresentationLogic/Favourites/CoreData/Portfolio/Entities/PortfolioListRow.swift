@@ -12,12 +12,19 @@ struct PortfolioListRow: View {
     var pvm: PortfolioViewModel
     var body: some View {
         Label {
-            if pcm.quantity <= 0.0001 {Text( "\(pvm.fetchNameById(withId: pcm.id)) - \(pcm.id) - \(pcm.quantity)")
-                    .frame(maxWidth: .infinity, alignment: .trailing)
+            if pcm.quantity <= 0.0001 {
+                HStack {
+                    Text("\(pvm.fetchNameById(withId: pcm.id))") +  Text("(\(pcm.id))")
+                        .foregroundColor(.gray)
+                    Text("\(pcm.quantity)")
+                    .frame(maxWidth: .infinity, alignment: .trailing)}
                     .foregroundColor(.gray)
             } else {
-                Text( "\(pvm.fetchNameById(withId: pcm.id)) - \(pcm.id) - \(pcm.quantity)")
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                HStack {
+                    Text("\(pvm.fetchNameById(withId: pcm.id))") +  Text("(\(pcm.id))")
+                        .foregroundColor(.gray)
+                    Text("\(pcm.quantity)")
+                    .frame(maxWidth: .infinity, alignment: .trailing)}
             }
             
         } 
@@ -26,7 +33,7 @@ struct PortfolioListRow: View {
             .resizable()
             .scaledToFit()
     }
-    .frame(width: 330.0)
+    .frame(width: 320.0)
     } 
 } 
 

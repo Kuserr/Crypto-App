@@ -10,34 +10,39 @@ import Foundation
 final class PortfolioViewModel: ObservableObject {
     @Published var portfolioItems = [PortfolioCoinModel]().sorted {$0.quantity > $1.quantity}
     var myCoinName: String = ""
-    var myCoinIndex: Int?
+    var gavenName: Coin?
     let allDefaultCoins: [Coin] = Coin.coins
-    
-    
+    var cdp = CoreDataPortfolio()
     //Update View
     func onAppear() {
         load()
         updateUI()
     }
-    
-      func fetchNameById(withId id: String) -> String {
+    // Return Coin's name by id
+    func fetchNameById(withId id: String) -> String {
           if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
             myCoinName = coinWithId.name
           }
           return myCoinName
       }
-    
-    func removeCoin(withId id: String) {
-        guard let index = coinIndex(withId: id) else {
-            return
+
+    // Return Coin by id
+    func giveMeCoin(withId id: String) -> Coin? {
+        if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
+            gavenName = coinWithId
+            
         }
-        let coin = portfolioItems[index]
-        removePortfolioId(id: coin.shortId)
+        return gavenName
     }
     
+    // Remove coin by swipe from CoreData
+    func removeRows(at offsets: IndexSet) {
+        removeCoin(withIndex: offsets)
+        portfolioItems.remove(atOffsets: offsets)
+        }
+  
     // MARK: - Private
 
-    var cdp = CoreDataPortfolio()
     private var portItems = Array(Set([PortfolioCoinModel]())).sorted {$0.quantity > $1.quantity}
     
     //load Coins
@@ -49,14 +54,16 @@ final class PortfolioViewModel: ObservableObject {
         portfolioItems = Array(portItems).sorted {$0.quantity > $1.quantity}
     }
 
-    private func coinIndex(withId id: String) -> Int? {
-        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == id }) {
-            myCoinIndex = takeIndex
-        }
-        return myCoinIndex
-    }
-    
+    // Remove coin from CoreData
     private func removePortfolioId(id: String) {
          cdp.removeCoin(withId: id)
      }
+    
+    //to remove Coin by Swipe from Portfolio
+    private func removeCoin(withIndex indeX: IndexSet) {
+        for index in indeX {
+            let coin = portfolioItems[index]
+            removePortfolioId(id: coin.shortId)
+        }
+    }
 }

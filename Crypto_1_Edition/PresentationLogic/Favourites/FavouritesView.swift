@@ -20,8 +20,10 @@ struct FavouritesView: View {
                     Image(coin.name)
                         .resizable()
                         .scaledToFit()
-                }}
                 }
+                    }
+                }
+                .onDelete(perform: clvm.swipeRemove)
             }
         header: {
             Text("Favourites")

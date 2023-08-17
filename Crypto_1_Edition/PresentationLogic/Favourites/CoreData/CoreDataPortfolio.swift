@@ -10,7 +10,7 @@ import CoreData
 import Foundation
 
 class CoreDataPortfolio {
-    private static var persistentContainer: NSPersistentContainer = {
+    static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "PortfolioContainer")
         container.loadPersistentStores { description, error in
             if let error = error { fatalError("Core Data Store failed: \(error.localizedDescription)")
@@ -20,7 +20,7 @@ class CoreDataPortfolio {
     }()
     let context = CoreDataPortfolio.persistentContainer.viewContext
 
-    // Functions for PortfolioView (save, remove, load - only Coins)
+    // Save coins to CoreData
     func save(coinn: PortfolioCoinModel) {
         let coinss = PortfolioCoin(context: context)
         coinss.quantity = coinn.quantity
@@ -31,7 +31,8 @@ class CoreDataPortfolio {
             print("Failed to save coin \(error)")
         }
     }
-    
+  
+    //Remove coin from CoreData
     func removeCoin(withId id: String) {
         let predicate = NSPredicate(format: "id == %@", id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -47,7 +48,7 @@ class CoreDataPortfolio {
         }
     }
     
-    
+    // load all existed coins from CoreData
     func load() -> [PortfolioCoin] {
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
         do {
