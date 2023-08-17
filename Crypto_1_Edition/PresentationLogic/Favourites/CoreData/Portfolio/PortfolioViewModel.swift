@@ -27,20 +27,16 @@ final class PortfolioViewModel: ObservableObject {
           return myCoinName
       }
     
-    func removeCoin(withIndex index: Int) {
+    func removeCoin(withId id: String) {
+        guard let index = coinIndex(withId: id) else {
+            return
+        }
         let coin = portfolioItems[index]
         removePortfolioId(id: coin.shortId)
     }
-
-    func coinIndex(withId id: String) -> Int? {
-        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == id }) {
-            myCoinIndex = takeIndex
-        }
-        return myCoinIndex
-    }
-  
     
     // MARK: - Private
+
     var cdp = CoreDataPortfolio()
     private var portItems = Array(Set([PortfolioCoinModel]())).sorted {$0.quantity > $1.quantity}
     
@@ -51,6 +47,13 @@ final class PortfolioViewModel: ObservableObject {
     //Update UI
     private func updateUI() {
         portfolioItems = Array(portItems).sorted {$0.quantity > $1.quantity}
+    }
+
+    private func coinIndex(withId id: String) -> Int? {
+        if let takeIndex = portfolioItems.firstIndex(where: {$0.id == id }) {
+            myCoinIndex = takeIndex
+        }
+        return myCoinIndex
     }
     
     private func removePortfolioId(id: String) {
