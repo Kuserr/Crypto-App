@@ -25,7 +25,7 @@ final class PortfolioViewModel: ObservableObject {
           }
           return myCoinName
       }
-    
+
     // Return Coin by id
     func giveMeCoin(withId id: String) -> Coin? {
         if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
@@ -42,6 +42,7 @@ final class PortfolioViewModel: ObservableObject {
         }
   
     // MARK: - Private
+
     private var portItems = Array(Set([PortfolioCoinModel]())).sorted {$0.quantity > $1.quantity}
     
     //load Coins
@@ -52,6 +53,7 @@ final class PortfolioViewModel: ObservableObject {
     private func updateUI() {
         portfolioItems = Array(portItems).sorted {$0.quantity > $1.quantity}
     }
+
     // Remove coin from CoreData
     private func removePortfolioId(id: String) {
          cdp.removeCoin(withId: id)
