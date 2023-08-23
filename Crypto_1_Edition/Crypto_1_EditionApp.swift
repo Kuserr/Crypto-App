@@ -24,6 +24,10 @@ struct Crypto_1_EditionApp: App {
                     .tabItem {
                         Label("Portfolio", systemImage: "chart.pie.fill")
                     }
+                CoinFullListView()
+                    .tabItem {
+                        Label("TestView", systemImage: "chart.pie.fill")
+                    }
             }
         }
     }
