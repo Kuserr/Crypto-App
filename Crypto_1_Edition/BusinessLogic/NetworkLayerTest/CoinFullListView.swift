@@ -12,11 +12,12 @@ struct CoinFullListView: View {
     @StateObject private var viewModels = ContentViewModel()
     @State private var results = [CoinModel]()
     @State private var showAlert = false
+    
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModels.allCoins, id: \.self) { coin in
-                    CoinRowView(coina: coin)
+                    CoinRowView(coina: coin, coinImage: viewModels.allImages[String(coin.id)] ?? CoinImage.sample)
                 }
             }
             .onReceive(viewModels.$error, perform: { error in

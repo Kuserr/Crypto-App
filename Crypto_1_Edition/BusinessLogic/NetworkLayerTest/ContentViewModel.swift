@@ -10,21 +10,24 @@ import SwiftUI
 import Combine
 
 class ContentViewModel: ObservableObject {
-    @Published var allCoins: [CoinModel] = []
     @Published var error: Error?
-    let BASE_URL = "https://pro-api.coinmarketcap.com/v1/cryptocurrency/map"
-    var urlString: String {
-        return  "\(BASE_URL)?start=1&limit=50&sort=cmc_rank"
-    }
+    @Published var allCoins: [CoinModel] = []
+    @Published var allImages: [String: CoinImage] = [:]
+    let BASE_URL = "https://pro-api.coinmarketcap.com"
+    let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
+    var ids: [String] = []
+    var stringIds: String = ""
     
     init() {
         loadData()
     }
     
     //MARK: - Async/Await code
-    @MainActor
+  @MainActor
     func fetchCoinsAsync() async throws {
-        let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
+        var urlString: String {
+            return  "\(BASE_URL)/v1/cryptocurrency/map?start=1&limit=100&sort=cmc_rank"
+        }
         guard let url = URL(string: urlString) else {
             print("DEBUG: Invalid URL")
             return
@@ -45,18 +48,22 @@ class ContentViewModel: ObservableObject {
         } catch {
             self.error = error
         }
+        idsAsString()
+        try await fetchAllImages()
     }
     
-    func loadData() {
-        Task(priority: .medium) {
-            try await fetchCoinsAsync()
-        }
+    //All ids as a String to make a request for logos
+    func idsAsString() {
+        ids = allCoins.map {String($0.id)}
+        stringIds = ids.map {String($0)}.joined(separator: ",")
     }
-}
-/*
-// MARK: - URLSession
-    func fetchCoinsWithURLSession() {
-        let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
+    
+    //Load Logos for Coins
+    @MainActor
+    func fetchAllImages() async throws {
+        var urlString: String {
+            return  "\(BASE_URL)/v2/cryptocurrency/info?id=\(stringIds)&aux=logo"
+        }
         guard let url = URL(string: urlString) else {
             print("DEBUG: Invalid URL")
             return
@@ -66,35 +73,19 @@ class ContentViewModel: ObservableObject {
         request.setValue("deflate, gzip", forHTTPHeaderField: "Accept-Encoding")
         request.httpMethod = "GET"
         request.addValue("\(token)", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
-        
-        URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
-            guard let self = self else { return }
-                        
-            DispatchQueue.main.async {
-                if let error = error {
-                    print("DEBUG: Error \(error)")
-                    return
-                }
-                
-                guard (response as? HTTPURLResponse)?.statusCode == 200 else {
-                    self.error = CoinError.serverError
-                    return
-                }
-                
-                guard let data = data else {
-                    print("DEBUG: Invalid data")
-                    return
-                }
-                let decoder = JSONDecoder()
-                guard let allCoins = try? decoder.decode(Response.self, from: data) else {
-                    print("DEBUG: Could not decode coins!")
-                    return
-                }
-                self.allCoins = (allCoins.data).reduce([]) { (result, element) in
-                    result.contains(element) ? result : result + [element]
-                }
-            }
-        }.resume()
+        do {
+            let (data, response) = try await URLSession.shared.data(for: request)
+            guard (response as? HTTPURLResponse)?.statusCode == 200 else {throw CoinError.serverError }
+            guard let allImages = try? JSONDecoder().decode(ResponseImage.self, from: data) else {throw CoinError.invalidData}
+            self.allImages = allImages.data
+        } catch {
+            self.error = error
+        }
+    }
+    
+    func loadData() {
+        Task(priority: .medium) {
+            try await fetchCoinsAsync()
+        }
     }
 }
-*/

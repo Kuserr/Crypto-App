@@ -9,6 +9,7 @@ import SwiftUI
 
 struct CoinRowView: View {
     let coina: CoinModel
+    let coinImage: CoinImage
     
     var body: some View {
         HStack {
@@ -16,9 +17,9 @@ struct CoinRowView: View {
             Text("\(coina.rank)")
                 .font(.caption)
                 .foregroundColor(.gray)
+            
             // image
-            /*
-            AsyncImage(url: coina.imageUrl) { image in
+            AsyncImage(url: coinImage.imageUrl) { image in
                 image
                     .resizable()
                     .scaledToFit()
@@ -29,7 +30,7 @@ struct CoinRowView: View {
                     .frame(width: 32, height:32)
                     .background(Color(.systemGray5))
             }
-             */
+            
             //coin name info
             VStack(alignment: .leading, spacing: 4) {
                 Text(coina.name)
@@ -65,6 +66,7 @@ struct CoinRowView: View {
 
 struct CoinRowView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinRowView(coina: CoinModel.sample)
+        CoinRowView(coina: CoinModel.sample, coinImage: CoinImage.sample)
     }
 }
+
