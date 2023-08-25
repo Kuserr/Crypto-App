@@ -14,7 +14,7 @@ struct CoinRowView: View {
     var body: some View {
         HStack {
             //market cap rank
-            Text("\(coina.rank)")
+            Text("\(coina.cmcRank)")
                 .font(.caption)
                 .foregroundColor(.gray)
             
@@ -37,26 +37,28 @@ struct CoinRowView: View {
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
+                
                 Text(coina.symbol.uppercased())
                     .font(.caption)
                     .padding(.leading, 6)
             }
             .padding(.leading, 2)
+            
             Spacer()
-            /*
+            
             //coin price info
-            VStack(alignment: .leading, spacing: 4) {
-                Text(String(coina.price.toCurrency()))
+            VStack(alignment: .trailing, spacing: 4) {
+                Text(coina.quote.usd.price.toCurrency())
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .padding(.leading, 4)
-                Text(coina.percentChange24H.toPercentString())
+                
+                Text(coina.quote.usd.volumeChange24H.toPercentString())
                     .font(.caption)
                     .padding(.leading, 6)
-                    .foregroundColor(coina.percentChange24H > 0 ? .green : .red)
+                    .foregroundColor(coina.quote.usd.percentChange24H > 0 ? .green : .red)
             }
             .padding(.leading, 2)
-            */
         }
         .padding(.horizontal)
         .padding(.vertical, 4)

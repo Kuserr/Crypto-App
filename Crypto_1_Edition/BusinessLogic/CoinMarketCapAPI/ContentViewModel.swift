@@ -26,7 +26,7 @@ class ContentViewModel: ObservableObject {
   @MainActor
     func fetchCoinsAsync() async throws {
         var urlString: String {
-            return  "\(BASE_URL)/v1/cryptocurrency/map?start=1&limit=100&sort=cmc_rank"
+            return  "\(BASE_URL)/v1/cryptocurrency/listings/latest?start=1&limit=100&sort=market_cap&cryptocurrency_type=all&tag=all"
         }
         guard let url = URL(string: urlString) else {
             print("DEBUG: Invalid URL")
@@ -41,10 +41,8 @@ class ContentViewModel: ObservableObject {
             let (data, response) = try await URLSession.shared.data(for: request)
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {throw CoinError.serverError }
             guard let allCoins = try? JSONDecoder().decode(Response.self, from: data) else {throw CoinError.invalidData}
-            self.allCoins = (allCoins.data).reduce([]) {
-                (result, element) in
-                result.contains(element) ? result : result + [element]
-            }
+            self.allCoins = allCoins.data
+            
         } catch {
             self.error = error
         }

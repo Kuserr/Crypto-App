@@ -4,7 +4,7 @@
 //
 //  Created by Сергей Курьян on 18.08.2023.
 //
-/*
+
 import Foundation
 extension Double {
     
@@ -38,4 +38,3 @@ extension Double {
         return numberAsString + "%"
     }
 }
-*/

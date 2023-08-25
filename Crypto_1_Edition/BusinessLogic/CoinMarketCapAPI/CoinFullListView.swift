@@ -16,7 +16,7 @@ struct CoinFullListView: View {
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModels.allCoins, id: \.self) { coin in
+                ForEach(viewModels.allCoins) { coin in
                     CoinRowView(coina: coin, coinImage: viewModels.allImages[String(coin.id)] ?? CoinImage.sample)
                 }
             }
