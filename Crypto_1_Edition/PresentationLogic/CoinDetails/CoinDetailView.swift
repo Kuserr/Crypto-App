@@ -19,7 +19,7 @@ struct CoinDetailView: View {
                     Image(viewModel.name)
                     Link(destination: viewModel.url) {
                         Text(Image(systemName: "link.circle.fill")) + Text("Learn More")
-                    }
+                                        }
                     Text(viewModel.descriptions)
                         .multilineTextAlignment(.leading)
                 }

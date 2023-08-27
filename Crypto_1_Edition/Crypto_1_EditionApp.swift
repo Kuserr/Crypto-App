@@ -12,21 +12,21 @@ struct Crypto_1_EditionApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
+                CoinFullListView()
+                    .tabItem {
+                        Label("Cryptocurrencies", systemImage: "list.bullet")
+                    }
                 CoinsListView(viewModel: CoinsListViewModel())
                     .tabItem {
                         Label("Overview", systemImage: "list.clipboard")
                     }
                 FavouritesView(clvm: FavouriteViewModel())
                     .tabItem {
-                        Label("Favourites", systemImage: "list.star")
+                        Label("Favourites", systemImage: "star")
                     }
                 PortfolioView(pvm: PortfolioViewModel())
                     .tabItem {
                         Label("Portfolio", systemImage: "chart.pie.fill")
-                    }
-                CoinFullListView()
-                    .tabItem {
-                        Label("TestView", systemImage: "chart.pie.fill")
                     }
             }
         }

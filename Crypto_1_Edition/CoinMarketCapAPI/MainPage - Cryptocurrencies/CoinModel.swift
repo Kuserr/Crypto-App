@@ -47,6 +47,8 @@ struct Usd: Codable {
 //Images
 struct CoinImage: Codable {
     let logo: String
+    let description: String
+    let urls: Urls
     
     var imageUrl: URL? {
         return URL(string: logo)
@@ -55,6 +57,10 @@ struct CoinImage: Codable {
 
 struct ResponseImage: Codable {
     var data: [String: CoinImage]
+}
+
+struct Urls: Codable {
+    let website: [String]
 }
 
 //Coin Example
@@ -68,5 +74,5 @@ extension CoinModel {
 }
 
 extension CoinImage {
-    static var sample = CoinImage(logo: "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png")
+    static var sample = CoinImage(logo: "https://s2.coinmarketcap.com/static/img/coins/64x64/1.png", description: "ETH is a COIN!", urls: Urls(website: ["https://s2.coinmarketcap.com"]))
 }

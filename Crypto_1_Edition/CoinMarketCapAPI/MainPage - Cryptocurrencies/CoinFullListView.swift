@@ -10,14 +10,24 @@ import SwiftUI
 
 struct CoinFullListView: View {
     @StateObject private var viewModels = ContentViewModel()
-    @State private var results = [CoinModel]()
     @State private var showAlert = false
     
     var body: some View {
         NavigationStack {
             List {
                 ForEach(viewModels.allCoins) { coin in
-                    CoinRowView(coina: coin, coinImage: viewModels.allImages[String(coin.id)] ?? CoinImage.sample)
+                    if let coinImage = viewModels.allImages[String(coin.id)] {
+                    NavigationLink(destination:
+                                    AboutCoinView(coinModel: coin,
+                                                  coinImage: viewModels.allImages[String(coin.id)] ?? CoinImage.sample,
+                                                  urls: coinImage.urls),
+                label: {
+                        CoinRowView(
+                            coina: coin,
+                            coinImage: viewModels.allImages[String(coin.id)] ?? CoinImage.sample)})
+                    } else {
+                        Text("Loading...") // Show loading indicator if image is not yet fetched
+                    }
                 }
             }
             .onReceive(viewModels.$error, perform: { error in

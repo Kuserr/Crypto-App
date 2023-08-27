@@ -17,6 +17,7 @@ class ContentViewModel: ObservableObject {
     let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
     var ids: [String] = []
     var stringIds: String = ""
+    @Published var imagesLoaded = false
     
     init() {
         loadData()
@@ -42,12 +43,11 @@ class ContentViewModel: ObservableObject {
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {throw CoinError.serverError }
             guard let allCoins = try? JSONDecoder().decode(Response.self, from: data) else {throw CoinError.invalidData}
             self.allCoins = allCoins.data
-            
+            idsAsString()
+            try await fetchAllImages()
         } catch {
             self.error = error
         }
-        idsAsString()
-        try await fetchAllImages()
     }
     
     //All ids as a String to make a request for logos
@@ -60,7 +60,7 @@ class ContentViewModel: ObservableObject {
     @MainActor
     func fetchAllImages() async throws {
         var urlString: String {
-            return  "\(BASE_URL)/v2/cryptocurrency/info?id=\(stringIds)&aux=logo"
+            return  "\(BASE_URL)/v2/cryptocurrency/info?id=\(stringIds)&aux=urls,logo,description"
         }
         guard let url = URL(string: urlString) else {
             print("DEBUG: Invalid URL")
@@ -76,6 +76,7 @@ class ContentViewModel: ObservableObject {
             guard (response as? HTTPURLResponse)?.statusCode == 200 else {throw CoinError.serverError }
             guard let allImages = try? JSONDecoder().decode(ResponseImage.self, from: data) else {throw CoinError.invalidData}
             self.allImages = allImages.data
+            self.imagesLoaded = true
         } catch {
             self.error = error
         }
