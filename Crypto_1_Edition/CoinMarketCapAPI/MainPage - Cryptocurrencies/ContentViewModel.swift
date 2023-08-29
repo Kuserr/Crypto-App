@@ -18,7 +18,6 @@ class ContentViewModel: ObservableObject {
     init() {
         loadData()
     }
-    
     //MARK: - Private variables and functions
     
     private var networkLayer = NetworkLayer()
@@ -26,7 +25,6 @@ class ContentViewModel: ObservableObject {
     private let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
     private var ids: [String] = []
     private var stringIds: String = ""
-    
         //All ids as a String to make a request for logos
     private func idsAsString() {
             ids = allCoins.map {String($0.id)}

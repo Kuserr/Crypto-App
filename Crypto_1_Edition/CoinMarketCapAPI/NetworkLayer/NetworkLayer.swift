@@ -30,14 +30,8 @@ final class NetworkLayer: ObservableObject {
             print("DEBUG: Invalid URL")
             return
         }
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("deflate, gzip", forHTTPHeaderField: "Accept-Encoding")
-        request.httpMethod = "GET"
-        request.addValue("\(token)", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
-        
         cancellable?.cancel()
-        cancellable = session.dataTaskPublisher(for: request).tryMap() { element -> Data in
+        cancellable = session.dataTaskPublisher(for: (urlRequest(withUrl: url))).tryMap() { element -> Data in
             guard let httpResponse = element.response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
                 throw CoinError.invalidURL
@@ -53,7 +47,6 @@ final class NetworkLayer: ObservableObject {
         }
     }
     
-    
     //Loading Images, descriptions, urls from API
     func fetchAllImages(stringId: String, completion: @escaping ImagesCallback) {
         var urlString: String {
@@ -63,14 +56,8 @@ final class NetworkLayer: ObservableObject {
             print("DEBUG: Invalid URL")
             return
         }
-        var request = URLRequest(url: url)
-        request.setValue("application/json", forHTTPHeaderField: "Accept")
-        request.setValue("deflate, gzip", forHTTPHeaderField: "Accept-Encoding")
-        request.httpMethod = "GET"
-        request.addValue("\(token)", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
-        
         cancellable?.cancel()
-        cancellable = session.dataTaskPublisher(for: request).tryMap() { element -> Data in
+        cancellable = session.dataTaskPublisher(for: (urlRequest(withUrl: url))).tryMap() { element -> Data in
             guard let httpResponse = element.response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
                 throw CoinError.invalidURL
@@ -85,7 +72,6 @@ final class NetworkLayer: ObservableObject {
             completion(.success(result))
         }
     }
-    
     //MARK: - Private
     private let BASE_URL = "https://pro-api.coinmarketcap.com"
     private let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
@@ -102,4 +88,12 @@ final class NetworkLayer: ObservableObject {
     
     private var cancellable: AnyCancellable?
     
+    private func urlRequest(withUrl: URL) -> URLRequest{
+        var request = URLRequest(url: withUrl)
+        request.setValue("application/json", forHTTPHeaderField: "Accept")
+        request.setValue("deflate, gzip", forHTTPHeaderField: "Accept-Encoding")
+        request.httpMethod = "GET"
+        request.addValue("\(token)", forHTTPHeaderField: "X-CMC_PRO_API_KEY")
+        return request
+    }
 }
