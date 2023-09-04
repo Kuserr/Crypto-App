@@ -8,6 +8,7 @@
 import Foundation
 import SwiftUI
 import Combine
+import Moya
 
 protocol NetworkLayerProtocol {
     func fetchAllImages(completion: @escaping ImagesCallback)

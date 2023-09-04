@@ -18,6 +18,9 @@
 		F135DEE82A7BD8A3000F7B23 /* PortfolioListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F135DEE72A7BD8A3000F7B23 /* PortfolioListRow.swift */; };
 		F135DEEA2A7BD938000F7B23 /* Coinss.swift in Sources */ = {isa = PBXBuildFile; fileRef = F135DEE92A7BD938000F7B23 /* Coinss.swift */; };
 		F14118B02A9951C800240A8F /* AboutCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14118AF2A9951C800240A8F /* AboutCoinView.swift */; };
+		F14B62F62AA0F2C200B80AC4 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F14B62F52AA0F2C200B80AC4 /* Moya */; };
+		F14B62F82AA103A500B80AC4 /* NetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B62F72AA103A500B80AC4 /* NetworkTarget.swift */; };
+		F14B62FC2AA1332E00B80AC4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B62FB2AA1332E00B80AC4 /* NetworkManager.swift */; };
 		F16A05202A8F8CB80052489F /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A051F2A8F8CB80052489F /* CoinModel.swift */; };
 		F16A05272A8F9A020052489F /* CoinFullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A05262A8F9A020052489F /* CoinFullListView.swift */; };
 		F16A05292A8F9A8F0052489F /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A05282A8F9A8F0052489F /* CoinRowView.swift */; };
@@ -51,6 +54,8 @@
 		F135DEE72A7BD8A3000F7B23 /* PortfolioListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListRow.swift; sourceTree = "<group>"; };
 		F135DEE92A7BD938000F7B23 /* Coinss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinss.swift; sourceTree = "<group>"; };
 		F14118AF2A9951C800240A8F /* AboutCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCoinView.swift; sourceTree = "<group>"; };
+		F14B62F72AA103A500B80AC4 /* NetworkTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTarget.swift; sourceTree = "<group>"; };
+		F14B62FB2AA1332E00B80AC4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F16A051F2A8F8CB80052489F /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		F16A05262A8F9A020052489F /* CoinFullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFullListView.swift; sourceTree = "<group>"; };
 		F16A05282A8F9A8F0052489F /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F14B62F62AA0F2C200B80AC4 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -223,6 +229,8 @@
 			isa = PBXGroup;
 			children = (
 				F19DE3442A9DE86200C4CAEB /* NetworkLayer.swift */,
+				F14B62F72AA103A500B80AC4 /* NetworkTarget.swift */,
+				F14B62FB2AA1332E00B80AC4 /* NetworkManager.swift */,
 				F16A052A2A8F9DD90052489F /* Extensions */,
 			);
 			path = NetworkLayer;
@@ -282,6 +290,9 @@
 			dependencies = (
 			);
 			name = Crypto_1_Edition;
+			packageProductDependencies = (
+				F14B62F52AA0F2C200B80AC4 /* Moya */,
+			);
 			productName = Crypto_1_Edition;
 			productReference = F19FAF512A48C36200777138 /* Crypto_1_Edition.app */;
 			productType = "com.apple.product-type.application";
@@ -310,6 +321,9 @@
 				Base,
 			);
 			mainGroup = F19FAF482A48C36100777138;
+			packageReferences = (
+				F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */,
+			);
 			productRefGroup = F19FAF522A48C36200777138 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -348,6 +362,7 @@
 				F16A052E2A8FA9B10052489F /* ContentViewModel.swift in Sources */,
 				F19DE3452A9DE86200C4CAEB /* NetworkLayer.swift in Sources */,
 				F135DEEA2A7BD938000F7B23 /* Coinss.swift in Sources */,
+				F14B62FC2AA1332E00B80AC4 /* NetworkManager.swift in Sources */,
 				F16A052C2A8F9DEF0052489F /* Double.swift in Sources */,
 				F16A05272A8F9A020052489F /* CoinFullListView.swift in Sources */,
 				F19455A42A6EE1A7002E5A3F /* PortfolioView.swift in Sources */,
@@ -359,6 +374,7 @@
 				F16A05292A8F9A8F0052489F /* CoinRowView.swift in Sources */,
 				3096D5B62A4D6F8400F3FB2E /* CoinDetailViewModel.swift in Sources */,
 				F19455A92A6EE20F002E5A3F /* PortfolioContainer.xcdatamodeld in Sources */,
+				F14B62F82AA103A500B80AC4 /* NetworkTarget.swift in Sources */,
 				F19455A02A6EE169002E5A3F /* CoreDataPortfolio.swift in Sources */,
 				F1F764E92A65EA8600967E9A /* CoinsContainer.xcdatamodeld in Sources */,
 				F1F764E62A65EA6A00967E9A /* CoreDataManager.swift in Sources */,
@@ -565,6 +581,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F14B62F52AA0F2C200B80AC4 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		F19455A72A6EE20F002E5A3F /* PortfolioContainer.xcdatamodeld */ = {
