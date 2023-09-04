@@ -12,24 +12,17 @@ enum NetworkTarget {
     case getCoinModels
 }
 
-extension NetworkTarget: TargetType, AccessTokenAuthorizable {
-    
-    var authorizationType: AuthorizationType? {
-        switch self {
-        case .getCoinModels:
-            return .custom("X-CMC_PRO_API_KEY")
-        }
-    }
+extension NetworkTarget: TargetType {
     
     var baseURL: URL {
-        guard let url = URL(string: "https://pro-api.coinmarketcap.com/v1/cryptocurrency/listings/latest") else {fatalError()}
+        guard let url = URL(string: "https://pro-api.coinmarketcap.com/v1/") else {fatalError()}
             return url
         }
     
     var path: String {
         switch self {
         case .getCoinModels:
-        return "?start=1&limit=90&sort=market_cap&cryptocurrency_type=all&tag=all"
+        return "cryptocurrency/listings/latest?start=1&limit=90&sort=market_cap&cryptocurrency_type=all&tag=all"
         }
     }
     
@@ -52,7 +45,8 @@ extension NetworkTarget: TargetType, AccessTokenAuthorizable {
     
     var headers: [String : String]? {
         return ["Accept" : "application/json",
-                "Accept-Encoding": "deflate, gzip" ]
+                "Accept-Encoding": "deflate, gzip",
+                "X-CMC_PRO_API_KEY": token]
     }
 }
 
