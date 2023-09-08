@@ -12,7 +12,7 @@ struct Crypto_1_EditionApp: App {
     var body: some Scene {
         WindowGroup {
             TabView {
-                CoinFullListView()
+                CoinFullListView(moyaViewModel: MoyaViewModel())
                     .tabItem {
                         Label("Cryptocurrencies", systemImage: "list.bullet")
                     }
@@ -28,6 +28,10 @@ struct Crypto_1_EditionApp: App {
                     .tabItem {
                         Label("Portfolio", systemImage: "chart.pie.fill")
                     }
+//                TestViewMoya()
+//                    .tabItem {
+//                        Label("Test", systemImage: "chart.pie.fill")
+//                    }
             }
         }
     }

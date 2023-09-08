@@ -9,28 +9,29 @@ import SwiftUI
 
 
 struct CoinFullListView: View {
-    @StateObject private var viewModels = ContentViewModel()
+    //@StateObject private var viewModels = ContentViewModel()
+    @StateObject var moyaViewModel = MoyaViewModel()
     @State private var showAlert = false
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(viewModels.allCoins) { coin in
-                    if let coinImage = viewModels.allImages[String(coin.id)] {
+                ForEach(moyaViewModel.moyaCoins) { coin in
+                    if let coinImage = moyaViewModel.moyaImages[String(coin.id)] {
                     NavigationLink(destination:
                                     AboutCoinView(coinModel: coin,
-                                                  coinImage: viewModels.allImages[String(coin.id)] ?? CoinImage.sample,
+                                                  coinImage: moyaViewModel.moyaImages[String(coin.id)] ?? CoinImage.sample,
                                                   urls: coinImage.urls),
                 label: {
                         CoinRowView(
                             coina: coin,
-                            coinImage: viewModels.allImages[String(coin.id)] ?? CoinImage.sample)})
+                            coinImage: moyaViewModel.moyaImages[String(coin.id)] ?? CoinImage.sample)})
                     } else {
                         Text("Loading...") // Show loading indicator if image is not yet fetched
                     }
                 }
             }
-            .onReceive(viewModels.$error, perform: { error in
+            .onReceive(moyaViewModel.$error, perform: { error in
                 if error != nil {
                     showAlert.toggle()
                 }
@@ -38,7 +39,7 @@ struct CoinFullListView: View {
             .alert(isPresented: $showAlert, content: {
                 Alert(
                     title: Text("Error"),
-                    message: Text(viewModels.error?.localizedDescription ?? "")
+                    message: Text(moyaViewModel.error?.localizedDescription ?? "")
                 )
             })
             .navigationTitle("Cryptocurrencies")

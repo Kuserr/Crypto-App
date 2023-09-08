@@ -21,10 +21,7 @@ final class FavouriteViewModel: ObservableObject {
     func onAppear() {
         load()
         updateUI()
-        nm.fetchesCoins()
     }
-   
-    var nm = NetworkManager()
     // MARK: - Private
     private var cdm = CoreDataManager()
     private var cdmItems = Array(Set([Coin]()))

@@ -13,7 +13,6 @@ class ContentViewModel: ObservableObject {
     @Published var error: Error?
     @Published var allCoins: [CoinModel] = []
     @Published var allImages: [String: CoinImage] = [:]
-    @Published var imagesLoaded = false
     
     init() {
         loadData()
@@ -21,8 +20,6 @@ class ContentViewModel: ObservableObject {
     //MARK: - Private variables and functions
     
     private var networkLayer = NetworkLayer()
-    private let BASE_URL = "https://pro-api.coinmarketcap.com"
-    private let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
     private var ids: [String] = []
     private var stringIds: String = ""
         //All ids as a String to make a request for logos
