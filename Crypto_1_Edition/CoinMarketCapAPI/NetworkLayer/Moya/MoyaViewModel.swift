@@ -20,7 +20,6 @@ final class MoyaViewModel: ObservableObject {
     }
     
     //MARK: - Private variables and functions
-    
     private var stringIds: String = ""
     private var ids: [String] = []
     private let networkManager = NetworkManager()
@@ -31,14 +30,13 @@ final class MoyaViewModel: ObservableObject {
     }
     
     private func loadMoyaCoins() {
-        networkManager.fetchAllMoyaCoins { result in
+        networkManager.fetchAllMoyaCoins { [weak self] result in
             switch result {
             case .success(let data):
                 let result = data.data
-                self.moyaCoins = result
-                self.idAsString()
-                self.loadMoyaImages()
-                print(self.stringIds)
+                self?.moyaCoins = result
+                self?.idAsString()
+                self?.loadMoyaImages()
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -46,11 +44,11 @@ final class MoyaViewModel: ObservableObject {
     }
     
     private func loadMoyaImages() {
-        networkManager.fetchAllMoyaImages(withId: stringIds) {  result in
+        networkManager.fetchAllMoyaImages(withId: stringIds) { [weak self] result in
             switch result {
             case .success(let data):
                 let result = data.data
-                self.moyaImages = result
+                self?.moyaImages = result
             case .failure(let error):
                 print(error.localizedDescription)
             }

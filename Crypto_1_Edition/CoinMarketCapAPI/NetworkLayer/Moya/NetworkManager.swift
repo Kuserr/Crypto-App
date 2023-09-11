@@ -18,8 +18,8 @@ typealias ImagesMoyaCallback = (Result<ResponseImage, Error>) -> Void
 typealias AllMoyaCoinsCallback = (Result<Response, Error>) -> Void
 
 final class NetworkManager: Networkable, ObservableObject {
-    let provider = MoyaProvider<NetworkTarget>(plugins: [NetworkLoggerPlugin()])
-    
+    private let provider = MoyaProvider<NetworkTarget>(plugins: [NetworkLoggerPlugin()])
+    // Decoding CoinModels from JSON data
     func fetchAllMoyaCoins(completion: @escaping AllMoyaCoinsCallback) {
         provider.request(.getCoinModels) { result in
             switch result {
@@ -35,7 +35,7 @@ final class NetworkManager: Networkable, ObservableObject {
             }
         }
     }
-    
+    // Decoding CoinImages from JSON data
     func fetchAllMoyaImages(withId: String, completion: @escaping ImagesMoyaCallback) {
         provider.request(.getCoinImages(coinsIds: withId)) { result in
             switch result {

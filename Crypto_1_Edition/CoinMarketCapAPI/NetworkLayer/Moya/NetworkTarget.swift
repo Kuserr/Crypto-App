@@ -10,15 +10,17 @@ import SwiftUI
 import Moya
 
 
-
 enum NetworkTarget {
     case getCoinModels
     case getCoinImages(coinsIds: String)
 }
 
-let token = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
-
 extension NetworkTarget: TargetType {
+    
+    private var token: String {
+        let apiToken = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
+        return apiToken
+    }
     
     var baseURL: URL {
         guard let url = URL(string: "https://pro-api.coinmarketcap.com") else {fatalError()}

@@ -22,7 +22,7 @@ final class NetworkLayer: ObservableObject {
     init() {
     }
     
-    //Load all coins(CoinModel) from API
+    //Load CoinModels from API
     func fetchCoins(completion: @escaping AllCoinsCallback) {
         var urlString: String {
             return  "\(BASE_URL)/v1/cryptocurrency/listings/latest?start=1&limit=100&sort=market_cap&cryptocurrency_type=all&tag=all"
@@ -48,7 +48,7 @@ final class NetworkLayer: ObservableObject {
         }
     }
     
-    //Loading Images, descriptions, urls from API
+    //Load CoinImage from API
     func fetchAllImages(stringId: String, completion: @escaping ImagesCallback) {
         var urlString: String {
             return  "\(BASE_URL)/v2/cryptocurrency/info?id=\(stringId)&aux=urls,logo,description"

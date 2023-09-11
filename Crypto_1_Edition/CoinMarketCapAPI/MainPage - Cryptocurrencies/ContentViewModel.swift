@@ -22,7 +22,7 @@ class ContentViewModel: ObservableObject {
     private var networkLayer = NetworkLayer()
     private var ids: [String] = []
     private var stringIds: String = ""
-        //All ids as a String to make a request for logos
+        //All ids as a String to make a request for CoinImages
     private func idsAsString() {
             ids = allCoins.map {String($0.id)}
             stringIds = ids.map {String($0)}.joined(separator: ",")
