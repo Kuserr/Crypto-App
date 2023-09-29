@@ -21,18 +21,16 @@ typealias AllCoinsCallback = (Result<Response, CoinError>) -> Void
 final class NetworkLayer: ObservableObject {
     init() {
     }
-    
-    //Load CoinModels from API
-    func fetchCoins(completion: @escaping AllCoinsCallback) {
-        var urlString: String {
-            return  "\(BASE_URL)/v1/cryptocurrency/listings/latest?start=1&limit=100&sort=market_cap&cryptocurrency_type=all&tag=all"
+// Load CoinModels from API
+    func fetchCoins(completion: @escaping AllCoinsCallback) { var urlString: String {
+            return  "\(BASEURL)/v1/cryptocurrency/listings/latest?start=1&limit=100&sort=market_cap&cryptocurrency_type=all&tag=all"
         }
         guard let url = URL(string: urlString) else {
             print("DEBUG: Invalid URL")
             return
         }
         cancellable?.cancel()
-        cancellable = session.dataTaskPublisher(for: (urlRequest(withUrl: url))).tryMap() { element -> Data in
+        cancellable = session.dataTaskPublisher(for: (urlRequest(withUrl: url))).tryMap { element -> Data in
             guard let httpResponse = element.response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
                 throw CoinError.invalidURL
@@ -47,18 +45,17 @@ final class NetworkLayer: ObservableObject {
             completion(.success(result))
         }
     }
-    
-    //Load CoinImage from API
+    // Load CoinImage from API
     func fetchAllImages(stringId: String, completion: @escaping ImagesCallback) {
         var urlString: String {
-            return  "\(BASE_URL)/v2/cryptocurrency/info?id=\(stringId)&aux=urls,logo,description"
+            return  "\(BASEURL)/v2/cryptocurrency/info?id=\(stringId)&aux=urls,logo,description"
         }
         guard let url = URL(string: urlString) else {
             print("DEBUG: Invalid URL")
             return
         }
         cancellable?.cancel()
-        cancellable = session.dataTaskPublisher(for: (urlRequest(withUrl: url))).tryMap() { element -> Data in
+        cancellable = session.dataTaskPublisher(for: (urlRequest(withUrl: url))).tryMap { element -> Data in
             guard let httpResponse = element.response as? HTTPURLResponse,
                   httpResponse.statusCode == 200 else {
                 throw CoinError.invalidURL
@@ -69,28 +66,24 @@ final class NetworkLayer: ObservableObject {
         .receive(on: DispatchQueue.main)
         .sink { result in
             completion(.failure(.invalidData))
-        } receiveValue: { result in
+        } receiveValue: {result in
             completion(.success(result))
         }
     }
-    //MARK: - Private
-    private let BASE_URL = "https://pro-api.coinmarketcap.com"
+    // MARK: - Private
+    private let BASEURL = "https://pro-api.coinmarketcap.com"
     private let token: String = "c3cab33c-c6fa-4863-8f49-45091e5f5f5e"
     private let config: URLSessionConfiguration = {
         let config = URLSessionConfiguration.default
         config.timeoutIntervalForRequest = 30
         return config
     }()
-    
     private lazy var session: URLSession = {
         let session = URLSession(configuration: config)
         return session
     }()
-    
     private var cancellable: AnyCancellable?
-    
-    private func urlRequest(withUrl: URL) -> URLRequest{
-        var request = URLRequest(url: withUrl)
+    private func urlRequest(withUrl: URL) -> URLRequest { var request = URLRequest(url: withUrl)
         request.setValue("application/json", forHTTPHeaderField: "Accept")
         request.setValue("deflate, gzip", forHTTPHeaderField: "Accept-Encoding")
         request.httpMethod = "GET"

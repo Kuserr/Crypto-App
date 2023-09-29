@@ -11,7 +11,6 @@ struct CoinDetailView: View {
     @ObservedObject var viewModel: CoinDetailViewModel
     @State private var showingAlert = false
     @State private var alertForDelete = false
-    
     var body: some View {
         Form {
             Section {
@@ -31,12 +30,10 @@ struct CoinDetailView: View {
             } header: {
                 Text(viewModel.foundersSectionTitle).fontWeight(.bold)
             }
-
             Button("Add to fav") {viewModel.addId() }
             Button("Remove from fav") {viewModel.removeId() }
                 .navigationBarTitle(viewModel.navigationBarTitle)
-            
-            Section { 
+            Section {
                 Button("Add to Portfolio") {
                     showingAlert.toggle()
                 }
@@ -58,13 +55,11 @@ struct CoinDetailView: View {
             Button("Save", action: viewModel.coinQuantityDel)
             Button("Cancel", role: .cancel) {}
         }
-    } 
+    }
 }
-
 
 struct CoinDetailView_Previews: PreviewProvider {
     static var previews: some View {
         CoinDetailView(viewModel: CoinDetailViewModel(coin: Coin.coins.first!))
-        
     }
 }

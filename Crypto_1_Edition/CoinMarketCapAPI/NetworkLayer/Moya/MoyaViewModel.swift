@@ -14,21 +14,17 @@ final class MoyaViewModel: ObservableObject {
     @Published var error: Error?
     @Published var moyaCoins: [CoinModel] = []
     @Published var moyaImages: [String: CoinImage] = [:]
-    
-    init(){
+    init() {
         loadMoyaCoins()
     }
-    
-    //MARK: - Private variables and functions
+    // MARK: - Private variables and functions
     private var stringIds: String = ""
     private var ids: [String] = []
     private let networkManager = NetworkManager()
-    
     private func idAsString() {
         ids = moyaCoins.map {String($0.id)}
         stringIds = ids.map {String($0)}.joined(separator: ",")
     }
-    
     private func loadMoyaCoins() {
         networkManager.fetchAllMoyaCoins { [weak self] result in
             switch result {
@@ -42,7 +38,6 @@ final class MoyaViewModel: ObservableObject {
             }
         }
     }
-    
     private func loadMoyaImages() {
         networkManager.fetchAllMoyaImages(withId: stringIds) { [weak self] result in
             switch result {

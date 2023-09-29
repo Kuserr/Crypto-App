@@ -41,7 +41,6 @@ extension Coin: Hashable {
     }
 }
 
-
 extension Coin {
     static var coins: [Coin] {
         return [

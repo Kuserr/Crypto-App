@@ -11,17 +11,15 @@ import Foundation
 class CoreDataManager {
     private static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CoinsContainer")
-        container.loadPersistentStores { description, error in
+        container.loadPersistentStores {description, error in
             if let error = error {
                 fatalError("Core Data Store failed: \(error.localizedDescription)")
             }
         }
         return container
     }()
-    
     // Get a reference to a managed object context
     let context = CoreDataManager.persistentContainer.viewContext
-    
     func save(coin: Coin) {
         let coinss = Coinss(context: context)
         coinss.name = coin.name
@@ -52,7 +50,6 @@ class CoreDataManager {
             print("Error - coin not found or already deleted")
         }
     }
-    
     func load() -> [Coinss] {
         let request = Coinss.getAllCoinsRequest()
         do {

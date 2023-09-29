@@ -8,7 +8,6 @@
 import Foundation
 
 final class FavouriteViewModel: ObservableObject {
-    
     @Published var items = [Coin]().sorted {
         $0.name < $1.name
     }
@@ -30,7 +29,7 @@ final class FavouriteViewModel: ObservableObject {
             $0.name < $1.name
         }
     }
-    //Update UI
+    // Update UI
     private func updateUI() {
         items = Array(cdmItems).sorted {
             $0.name < $1.name
@@ -40,7 +39,7 @@ final class FavouriteViewModel: ObservableObject {
     private func removePortfolioId(id: String) {
          cdm.removeCoin(withId: id)
      }
-    //to remove Coin by Swipe from Favourites
+    // Remove Coin by Swipe from Favourites
     private func removeCoin(withIndex indeX: IndexSet) {
         for index in indeX {
             let coin = items[index]

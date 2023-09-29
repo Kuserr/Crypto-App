@@ -13,27 +13,23 @@ class ContentViewModel: ObservableObject {
     @Published var error: Error?
     @Published var allCoins: [CoinModel] = []
     @Published var allImages: [String: CoinImage] = [:]
-    
     init() {
         loadData()
     }
-    //MARK: - Private variables and functions
-    
+    // MARK: - Private variables and functions
     private var networkLayer = NetworkLayer()
     private var ids: [String] = []
     private var stringIds: String = ""
-        //All ids as a String to make a request for CoinImages
+    // All ids as a String to make a request for CoinImages
     private func idsAsString() {
             ids = allCoins.map {String($0.id)}
             stringIds = ids.map {String($0)}.joined(separator: ",")
         }
-     
     private func loadData() {
             Task(priority: .high) {
                 loadCoins()
             }
         }
-    
     private func loadCoins() {
         networkLayer.fetchCoins { [weak self] result in
             switch result {
@@ -47,7 +43,6 @@ class ContentViewModel: ObservableObject {
             }
         }
     }
-    
     private func loadImages() {
         networkLayer.fetchAllImages(stringId: stringIds) { [weak self] result in
             switch result {
@@ -60,4 +55,3 @@ class ContentViewModel: ObservableObject {
         }
     }
     }
-

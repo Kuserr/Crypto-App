@@ -7,12 +7,10 @@
 
 import SwiftUI
 
-
 struct CoinFullListView: View {
-    //@StateObject private var viewModels = ContentViewModel()
+    // @StateObject private var viewModels = ContentViewModel()
     @StateObject var moyaViewModel = MoyaViewModel()
     @State private var showAlert = false
-    
     var body: some View {
         NavigationStack {
             List {
@@ -52,4 +50,3 @@ struct CoinFullListView_Previews: PreviewProvider {
         CoinFullListView()
     }
 }
-

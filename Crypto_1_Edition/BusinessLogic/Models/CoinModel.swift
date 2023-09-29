@@ -7,7 +7,6 @@
 
 import Foundation
 
-
 struct Response: Codable {
     var data: [CoinModel]
 }
@@ -17,17 +16,14 @@ struct CoinModel: Codable, Identifiable {
     let name, symbol: String
     let cmcRank: Int
     let quote: Quote
-    
     enum CodingKeys: String, CodingKey {
         case id, name, symbol
         case cmcRank = "cmc_rank"
         case quote
     }
 }
-    
     struct Quote: Codable {
         let usd: Usd
-        
         enum CodingKeys: String, CodingKey {
             case usd = "USD"
         }
@@ -45,12 +41,11 @@ struct Usd: Codable {
     }
 }
 
-//Images
+// Images
 struct CoinImage: Codable {
     let logo: String
     let description: String
     let urls: Urls
-    
     var imageUrl: URL? {
         return URL(string: logo)
     }
@@ -63,8 +58,7 @@ struct ResponseImage: Codable {
 struct Urls: Codable {
     let website: [String]
 }
-
-//Coin Example
+// Coin Example
 extension CoinModel {
     static var sample = CoinModel(
         id: 1,

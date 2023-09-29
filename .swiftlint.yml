@@ -1,0 +1,13 @@
+# implicitly
+line_length: 5000
+excluded: # excluded via string array
+    - id
+    - URL
+    - GlobalAPIKey
+disabled_rules: # rule identifiers turned on by default to exclude from running
+  - colon
+  - comma
+  - control_statement
+  - empty_enum_arguments
+  - unused_closure_parameter
+  - type_name

@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct CoinsListView: View {
-
     @ObservedObject var viewModel: CoinsListViewModel
-    
     var body: some View {
         NavigationView {
             Form {
@@ -28,7 +26,6 @@ struct CoinsListView: View {
         }
     }
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

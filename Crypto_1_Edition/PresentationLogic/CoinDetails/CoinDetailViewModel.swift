@@ -23,7 +23,6 @@ final class CoinDetailViewModel: ObservableObject {
     var aboutSectionTitle: String {
         return "What Is \(name) (\(shortName))?"
     }
-    
     var foundersSectionTitle: String {
         return "Who are the Founders of \(name)?"
     }
@@ -34,15 +33,13 @@ final class CoinDetailViewModel: ObservableObject {
     var cdm = CoreDataManager()
     private var portfolioManager = CoreDataPortfolio()
     private let context = CoreDataPortfolio.persistentContainer.viewContext
-    
     // Remove coin from CoreData - Favourite
     func removeId() {
         cdm.removeCoin(withId: id)
     }
-    
     // Save coin in CoreData - Add coin to Favourite
     func addId() {
-        if !savedItems.contains(id)  {
+        if !savedItems.contains(id) {
             savedItems.insert(id)
         }
         cdm.save(coin: Coin(name: self.name,
@@ -51,13 +48,11 @@ final class CoinDetailViewModel: ObservableObject {
                             descriptions: self.descriptions,
                             foundersDescription: self.foundersDescription))
     }
-     
     // Save Coin to CoreData - Portfolio
     func addPortfolioId() {
        portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: id))
     }
-    
-    //Update coins quantity in CoreData - Portfolio
+    // Update coins quantity in CoreData - Portfolio
     func updateCoin() {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -65,7 +60,7 @@ final class CoinDetailViewModel: ObservableObject {
         do {
            let coinn = try? context.fetch(request)
             if let coinn = coinn?.first {
-                coinn.quantity = coinn.quantity + (Double(self.quantity) ?? 0)
+                coinn.quantity += (Double(self.quantity) ?? 0)
             } else {
                 portfolioManager.save(coinn: PortfolioCoinModel(quantity: Double(quantity) ?? 0, shortId: self.id))
             }
@@ -74,8 +69,7 @@ final class CoinDetailViewModel: ObservableObject {
             print("Error - coin not found or already deleted")
         }
     }
-    
-    //Delete coins quantity in CoreData - Portfolio
+    // Delete coins quantity in CoreData - Portfolio
     func coinQuantityDel() {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -83,7 +77,7 @@ final class CoinDetailViewModel: ObservableObject {
         do {
             let coinn = try context.fetch(request)
             if let coinn = coinn.first {
-                coinn.quantity = coinn.quantity - (Double(self.quantity) ?? 0)
+                coinn.quantity -= (Double(self.quantity) ?? 0)
                 if coinn.quantity >= 0 {
                     try context.save()
                 } else {
@@ -100,8 +94,7 @@ final class CoinDetailViewModel: ObservableObject {
    func removePortfolioId() {
        portfolioManager.removeCoin(withId: self.id)
     }
-   
-    //Check the quantity of coins in CoreData
+    // Check the quantity of coins in CoreData
     func checkQuantity() -> Double {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -137,8 +130,6 @@ final class CoinDetailViewModel: ObservableObject {
             }
             return myCoinQuantity ?? 0
         }
-    
-    
     init(coin: Coin) {
         self.id = coin.id
         self.name = coin.name
@@ -147,6 +138,4 @@ final class CoinDetailViewModel: ObservableObject {
         self.shortName = coin.shortName
         self.foundersDescription = coin.foundersDescription
     }
-    
 }
-

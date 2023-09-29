@@ -26,17 +26,15 @@ struct PortfolioListRow: View {
                     Text("\(pcm.quantity)")
                     .frame(maxWidth: .infinity, alignment: .trailing)}
             }
-            
-        } 
+        }
     icon: {
         Image(pcm.id)
             .resizable()
             .scaledToFit()
     }
     .frame(width: 320.0)
-    } 
-} 
-
+    }
+}
 
 struct PortfolioListRow_Previews: PreviewProvider {
     static var previews: some View {

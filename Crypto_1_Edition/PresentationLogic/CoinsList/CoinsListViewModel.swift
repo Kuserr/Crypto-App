@@ -7,7 +7,6 @@
 
 import Combine
 
-
 final class CoinsListViewModel: ObservableObject {
     @Published var coins: [Coin] = Coin.coins
 }

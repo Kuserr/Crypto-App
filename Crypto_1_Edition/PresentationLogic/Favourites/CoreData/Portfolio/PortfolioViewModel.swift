@@ -13,7 +13,7 @@ final class PortfolioViewModel: ObservableObject {
     var gavenName: Coin?
     let allDefaultCoins: [Coin] = Coin.coins
     var cdp = CoreDataPortfolio()
-    //Update View
+    // Update View
     func onAppear() {
         load()
         updateUI()
@@ -30,26 +30,21 @@ final class PortfolioViewModel: ObservableObject {
     func giveMeCoin(withId id: String) -> Coin? {
         if let coinWithId = allDefaultCoins.first(where: {$0.id == id}) {
             gavenName = coinWithId
-            
         }
         return gavenName
     }
-    
     // Remove coin by swipe from CoreData
     func removeRows(at offsets: IndexSet) {
         removeCoin(withIndex: offsets)
         portfolioItems.remove(atOffsets: offsets)
         }
-  
     // MARK: - Private
-
     private var portItems = Array(Set([PortfolioCoinModel]())).sorted {$0.quantity > $1.quantity}
-    
-    //load Coins
+    // Load Coins
     private func load() {
         portItems = Array(Set(cdp.load().map({ PortfolioCoinModel(databaseObject: $0)}))).sorted {$0.quantity > $1.quantity}
     }
-    //Update UI
+    // Update UI
     private func updateUI() {
         portfolioItems = Array(portItems).sorted {$0.quantity > $1.quantity}
     }
@@ -58,8 +53,7 @@ final class PortfolioViewModel: ObservableObject {
     private func removePortfolioId(id: String) {
          cdp.removeCoin(withId: id)
      }
-    
-    //to remove Coin by Swipe from Portfolio
+    // Remove Coin by Swipe from Portfolio
     private func removeCoin(withIndex indeX: IndexSet) {
         for index in indeX {
             let coin = portfolioItems[index]

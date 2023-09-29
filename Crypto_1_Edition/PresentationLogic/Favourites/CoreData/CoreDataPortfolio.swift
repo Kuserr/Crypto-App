@@ -5,7 +5,6 @@
 //  Created by Сергей Курьян on 24.07.2023.
 //
 
-
 import CoreData
 import Foundation
 
@@ -31,8 +30,7 @@ class CoreDataPortfolio {
             print("Failed to save coin \(error)")
         }
     }
-  
-    //Remove coin from CoreData
+    // Remove coin from CoreData
     func removeCoin(withId id: String) {
         let predicate = NSPredicate(format: "id == %@", id)
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
@@ -47,8 +45,7 @@ class CoreDataPortfolio {
             print("Error - coin not found or already deleted")
         }
     }
-    
-    // load all existed coins from CoreData
+    // Load all existed coins from CoreData
     func load() -> [PortfolioCoin] {
         let request = PortfolioCoin.getAllPortfolioCoinRequest()
         do {
