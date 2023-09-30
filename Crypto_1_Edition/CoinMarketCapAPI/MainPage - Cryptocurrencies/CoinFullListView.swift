@@ -25,7 +25,11 @@ struct CoinFullListView: View {
                             coina: coin,
                             coinImage: moyaViewModel.moyaImages[String(coin.id)] ?? CoinImage.sample)})
                     } else {
-                        Text("Loading...") // Show loading indicator if image is not yet fetched
+                        // Show loading indicator if image is not yet fetched
+                        HStack {
+                            ActivityIndicator(style: .medium)
+                            Text("Loading...")
+                        }
                     }
                 }
             }

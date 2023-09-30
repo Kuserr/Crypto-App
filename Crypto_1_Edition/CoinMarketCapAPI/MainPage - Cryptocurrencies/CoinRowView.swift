@@ -16,18 +16,8 @@ struct CoinRowView: View {
             Text("\(coina.cmcRank)")
                 .font(.caption)
                 .foregroundColor(.gray)
-            // image
-            AsyncImage(url: coinImage.imageUrl) { image in
-                image
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 32, height:32)
-                    .foregroundColor(.red)
-            } placeholder: {
-                Circle()
-                    .frame(width: 32, height:32)
-                    .background(Color(.systemGray5))
-            }
+            // cached images
+            CachedImage(url: coinImage.logo)
             // coin name info
             VStack(alignment: .leading, spacing: 4) {
                 Text(coina.name)
