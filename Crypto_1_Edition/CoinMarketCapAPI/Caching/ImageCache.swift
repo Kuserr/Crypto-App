@@ -14,7 +14,7 @@ class ImageCache {
     private lazy var cache: CacheType = {
         let cache = CacheType()
         cache.countLimit = 100
-        cache.totalCostLimit = 80 * 1024 * 1024 // 50 MB
+        cache.totalCostLimit = 80 * 1024 * 1024 // 80 MB
         return cache
     }()
     func object(forkey key: NSString) -> Data? {

@@ -24,7 +24,9 @@ final class NetworkManager: Networkable, ObservableObject {
             switch result {
             case let .success(response):
                 do {
-                    let results = try JSONDecoder().decode(Response.self, from: response.data)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let results = try decoder.decode(Response.self, from: response.data)
                     completion(.success(results))
                 } catch let error {
                     completion(.failure(error))
@@ -40,7 +42,9 @@ final class NetworkManager: Networkable, ObservableObject {
             switch result {
             case let .success(response):
                 do {
-                    let results = try JSONDecoder().decode(ResponseImage.self, from: response.data)
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+                    let results = try decoder.decode(ResponseImage.self, from: response.data)
                     completion(.success(results))
                 } catch let error {
                     completion(.failure(error))

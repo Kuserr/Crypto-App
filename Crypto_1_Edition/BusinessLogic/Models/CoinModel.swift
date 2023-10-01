@@ -16,11 +16,6 @@ struct CoinModel: Codable, Identifiable {
     let name, symbol: String
     let cmcRank: Int
     let quote: Quote
-    enum CodingKeys: String, CodingKey {
-        case id, name, symbol
-        case cmcRank = "cmc_rank"
-        case quote
-    }
 }
     struct Quote: Codable {
         let usd: Usd
@@ -33,12 +28,6 @@ struct Usd: Codable {
     let price: Double
     let volumeChange24H: Double
     let percentChange24H: Double
-
-    enum CodingKeys: String, CodingKey {
-        case price
-        case volumeChange24H = "volume_change_24h"
-        case percentChange24H = "percent_change_24h"
-    }
 }
 
 // Images
