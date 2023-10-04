@@ -10,6 +10,7 @@ import SwiftUI
 struct PortfolioListRow: View {
     var pcm: PortfolioCoinModel
     var pvm: PortfolioViewModel
+    
     var body: some View {
         Label {
             if pcm.quantity <= 0.0001 {

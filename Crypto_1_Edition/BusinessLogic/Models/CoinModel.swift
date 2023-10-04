@@ -17,6 +17,7 @@ struct CoinModel: Codable, Identifiable {
     let cmcRank: Int
     let quote: Quote
 }
+
     struct Quote: Codable {
         let usd: Usd
         enum CodingKeys: String, CodingKey {

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FavouritesView: View {
     @ObservedObject var clvm: FavouriteViewModel
+    
     var body: some View {
         Form {
             Section {

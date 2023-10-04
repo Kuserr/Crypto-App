@@ -11,6 +11,7 @@ struct AboutCoinView: View {
     var coinModel: CoinModel
     var coinImage: CoinImage
     var urls: Urls
+    
     var body: some View {
         NavigationStack {
             Form {

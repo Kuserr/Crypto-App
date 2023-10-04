@@ -28,6 +28,10 @@ struct Crypto_1_EditionApp: App {
                     .tabItem {
                         Label("Portfolio", systemImage: "chart.pie.fill")
                     }
+                DelegateView(coinModelsVM: CoinModelsViewModel())
+                    .tabItem {
+                        Label("Test", systemImage: "list.clipboard")
+                    }
             }
         }
     }
