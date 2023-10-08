@@ -29,6 +29,8 @@
 		F170A3FC2ACC4C1300EA88F2 /* CoinModelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170A3FB2ACC4C1300EA88F2 /* CoinModelProvider.swift */; };
 		F170A3FE2ACC4E3E00EA88F2 /* CoinModelsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170A3FD2ACC4E3E00EA88F2 /* CoinModelsViewModel.swift */; };
 		F170A4002ACC746200EA88F2 /* DelegateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F170A3FF2ACC746200EA88F2 /* DelegateView.swift */; };
+		F174F3E32AD091080050A0C3 /* FactoryPattern.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174F3E22AD091080050A0C3 /* FactoryPattern.swift */; };
+		F174F3E52AD0A8070050A0C3 /* FactoryMethodView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F174F3E42AD0A8070050A0C3 /* FactoryMethodView.swift */; };
 		F19455A02A6EE169002E5A3F /* CoreDataPortfolio.swift in Sources */ = {isa = PBXBuildFile; fileRef = F194559F2A6EE169002E5A3F /* CoreDataPortfolio.swift */; };
 		F19455A42A6EE1A7002E5A3F /* PortfolioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19455A32A6EE1A7002E5A3F /* PortfolioView.swift */; };
 		F19455A62A6EE1C9002E5A3F /* PortfolioViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19455A52A6EE1C9002E5A3F /* PortfolioViewModel.swift */; };
@@ -73,6 +75,8 @@
 		F170A3FB2ACC4C1300EA88F2 /* CoinModelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModelProvider.swift; sourceTree = "<group>"; };
 		F170A3FD2ACC4E3E00EA88F2 /* CoinModelsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModelsViewModel.swift; sourceTree = "<group>"; };
 		F170A3FF2ACC746200EA88F2 /* DelegateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DelegateView.swift; sourceTree = "<group>"; };
+		F174F3E22AD091080050A0C3 /* FactoryPattern.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryPattern.swift; sourceTree = "<group>"; };
+		F174F3E42AD0A8070050A0C3 /* FactoryMethodView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FactoryMethodView.swift; sourceTree = "<group>"; };
 		F194559F2A6EE169002E5A3F /* CoreDataPortfolio.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataPortfolio.swift; sourceTree = "<group>"; };
 		F19455A32A6EE1A7002E5A3F /* PortfolioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioView.swift; sourceTree = "<group>"; };
 		F19455A52A6EE1C9002E5A3F /* PortfolioViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioViewModel.swift; sourceTree = "<group>"; };
@@ -192,6 +196,15 @@
 			path = DetailsAboutCoins;
 			sourceTree = "<group>";
 		};
+		F14CB7512AD2D256001F5280 /* FactoryPattern */ = {
+			isa = PBXGroup;
+			children = (
+				F174F3E42AD0A8070050A0C3 /* FactoryMethodView.swift */,
+				F174F3E22AD091080050A0C3 /* FactoryPattern.swift */,
+			);
+			path = FactoryPattern;
+			sourceTree = "<group>";
+		};
 		F16A05212A8F93280052489F /* CoinMarketCapAPI */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,9 +230,9 @@
 		F170A4012ACD6D2800EA88F2 /* DelegatePattern */ = {
 			isa = PBXGroup;
 			children = (
+				F170A3FF2ACC746200EA88F2 /* DelegateView.swift */,
 				F170A3FB2ACC4C1300EA88F2 /* CoinModelProvider.swift */,
 				F170A3FD2ACC4E3E00EA88F2 /* CoinModelsViewModel.swift */,
-				F170A3FF2ACC746200EA88F2 /* DelegateView.swift */,
 			);
 			path = DelegatePattern;
 			sourceTree = "<group>";
@@ -271,6 +284,7 @@
 			children = (
 				F19DE3442A9DE86200C4CAEB /* NetworkLayer.swift */,
 				F19C51822AA6725800F8EC85 /* Moya */,
+				F14CB7512AD2D256001F5280 /* FactoryPattern */,
 				F170A4012ACD6D2800EA88F2 /* DelegatePattern */,
 			);
 			path = NetworkLayer;
@@ -423,11 +437,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F174F3E32AD091080050A0C3 /* FactoryPattern.swift in Sources */,
 				F16A05202A8F8CB80052489F /* CoinModel.swift in Sources */,
 				3096D5B42A4D6ED000F3FB2E /* CoinsListViewModel.swift in Sources */,
 				302A1F3F2A78E76C008C78FD /* PortfolioCoin.swift in Sources */,
 				F19C51812AA640C300F8EC85 /* MoyaViewModel.swift in Sources */,
 				F1D7048F2AC74D5E00A84E27 /* ImageRetriver.swift in Sources */,
+				F174F3E52AD0A8070050A0C3 /* FactoryMethodView.swift in Sources */,
 				302A1F412A78EA33008C78FD /* PortfolioCoinModel.swift in Sources */,
 				F1D704962AC82CB300A84E27 /* ActivityIndicatorView.swift in Sources */,
 				3096D5B92A4D75AA00F3FB2E /* CoinListRow.swift in Sources */,
