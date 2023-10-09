@@ -16,6 +16,10 @@ class CoinModelProvider {
         delegates.append(delegate)
         fetchMoyaCoins()
     }
+    
+    func unsubscribe(_ delegate: CoinsDelegate) {
+        delegates.removeAll()
+    }
     // MARK: - Private
     private var delegates: [CoinsDelegate] = []
     private let provider = MoyaProvider<NetworkTarget>(plugins: [NetworkLoggerPlugin()])

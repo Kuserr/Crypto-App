@@ -12,14 +12,19 @@ import Foundation
 
 class CoinModelsViewModel: ObservableObject {
     @Published var coinModels: [CoinModel] = []
-    
-    init() {
+    // Showing list of CoinModels
+    func showAll() {
         CoinModelProvider.shared.subscribe(self)
+    }
+    // Hide list of CoinModels
+    func hideAll() {
+        coinModels.removeAll()
     }
 }
 
 extension CoinModelsViewModel: CoinsDelegate {
     func receive(_ result: [CoinModel]) {
         coinModels = result
+        CoinModelProvider.shared.unsubscribe(self)
     }
 }

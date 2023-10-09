@@ -16,6 +16,12 @@ struct DelegateView: View {
                 Text("Coin name: \(coin.name)")
             }
         }
+        .navigationBarItems(leading:
+                            Button("Load") {coinModelsVM.showAll()},
+                            trailing:
+                            Button("Hide") {coinModelsVM.hideAll()
+
+        })
     }
 }
 

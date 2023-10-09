@@ -31,10 +31,8 @@ public class CoinsModel: Coins {
 }
 
 public class TopCoinsFactory {
-    
-    static let shared = TopCoinsFactory()
-    private init() {}
-    func sortCoins(for model: CoinModel) -> CoinsModel {
+
+    static func sortCoins(for model: CoinModel) -> CoinsModel {
         let name = model.name
         let id = model.id
         let cmcRank = model.cmcRank
@@ -61,7 +59,7 @@ final class FactoryViewModel: ObservableObject {
     
         private func loadData() {
             for coin in coinsData {
-                itemCoins.append(TopCoinsFactory.shared.sortCoins(for: coin))
+                itemCoins.append(TopCoinsFactory.sortCoins(for: coin))
             }
         }
     
