@@ -11,6 +11,7 @@ struct CoinFullListView: View {
     // @StateObject private var viewModels = ContentViewModel()
     @StateObject var moyaViewModel = MoyaViewModel()
     @State private var showAlert = false
+    
     var body: some View {
         NavigationStack {
             List {

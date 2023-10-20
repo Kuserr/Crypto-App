@@ -8,11 +8,14 @@
 import SwiftUI
 
 struct CoinDetailView: View {
+    
     @ObservedObject var viewModel: CoinDetailViewModel
     @State private var showingAlert = false
     @State private var alertForDelete = false
+    
     var body: some View {
         Form {
+            
             Section {
                 VStack {
                     Image(viewModel.name)
@@ -25,6 +28,7 @@ struct CoinDetailView: View {
             } header: {
                 Text(viewModel.aboutSectionTitle).fontWeight(.bold)
             }
+            
             Section {
                 Text(viewModel.foundersDescription)
             } header: {
@@ -33,6 +37,7 @@ struct CoinDetailView: View {
             Button("Add to fav") {viewModel.addId() }
             Button("Remove from fav") {viewModel.removeId() }
                 .navigationBarTitle(viewModel.navigationBarTitle)
+            
             Section {
                 Button("Add to Portfolio") {
                     showingAlert.toggle()

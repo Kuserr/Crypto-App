@@ -23,16 +23,15 @@ final class CoinDetailViewModel: ObservableObject {
     var aboutSectionTitle: String {
         return "What Is \(name) (\(shortName))?"
     }
+    
     var foundersSectionTitle: String {
         return "Who are the Founders of \(name)?"
     }
-
+    
     var navigationBarTitle: String {
         return "About \(name)"
     }
     var cdm = CoreDataManager()
-    private var portfolioManager = CoreDataPortfolio()
-    private let context = CoreDataPortfolio.persistentContainer.viewContext
     // Remove coin from CoreData - Favourite
     func removeId() {
         cdm.removeCoin(withId: id)
@@ -89,7 +88,6 @@ final class CoinDetailViewModel: ObservableObject {
             print("Error - coin not found or already deleted")
         }
     }
-
     // Remove coin from CoreData - Portfolio
    func removePortfolioId() {
        portfolioManager.removeCoin(withId: self.id)
@@ -130,6 +128,7 @@ final class CoinDetailViewModel: ObservableObject {
             }
             return myCoinQuantity ?? 0
         }
+    
     init(coin: Coin) {
         self.id = coin.id
         self.name = coin.name
@@ -138,4 +137,7 @@ final class CoinDetailViewModel: ObservableObject {
         self.shortName = coin.shortName
         self.foundersDescription = coin.foundersDescription
     }
+    // MARK: - Private
+    private var portfolioManager = CoreDataPortfolio()
+    private let context = CoreDataPortfolio.persistentContainer.viewContext
 }

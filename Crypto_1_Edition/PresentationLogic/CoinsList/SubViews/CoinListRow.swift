@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct CoinListRow: View {
+    
     var coin: Coin
 
     var body: some View {

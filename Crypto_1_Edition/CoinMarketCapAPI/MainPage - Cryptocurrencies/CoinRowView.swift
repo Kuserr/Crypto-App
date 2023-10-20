@@ -10,6 +10,7 @@ import SwiftUI
 struct CoinRowView: View {
     let coina: CoinModel
     let coinImage: CoinImage
+    
     var body: some View {
         HStack {
             // market cap rank

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PortfolioView: View {
     @StateObject var pvm: PortfolioViewModel
+    
     var body: some View {
         NavigationView {
             Form {

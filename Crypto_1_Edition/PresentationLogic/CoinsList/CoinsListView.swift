@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct CoinsListView: View {
+    
     @ObservedObject var viewModel: CoinsListViewModel
+    
     var body: some View {
         NavigationView {
             Form {

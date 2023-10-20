@@ -13,6 +13,7 @@ class ContentViewModel: ObservableObject {
     @Published var error: Error?
     @Published var allCoins: [CoinModel] = []
     @Published var allImages: [String: CoinImage] = [:]
+    
     init() {
         loadData()
     }
@@ -25,11 +26,13 @@ class ContentViewModel: ObservableObject {
             ids = allCoins.map {String($0.id)}
             stringIds = ids.map {String($0)}.joined(separator: ",")
         }
+    // Load data on the screen
     private func loadData() {
             Task(priority: .high) {
                 loadCoins()
             }
         }
+    
     private func loadCoins() {
         networkLayer.fetchCoins { [weak self] result in
             switch result {
@@ -43,6 +46,7 @@ class ContentViewModel: ObservableObject {
             }
         }
     }
+    
     private func loadImages() {
         networkLayer.fetchAllImages(stringId: stringIds) { [weak self] result in
             switch result {

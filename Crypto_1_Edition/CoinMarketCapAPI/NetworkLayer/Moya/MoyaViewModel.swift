@@ -25,6 +25,7 @@ final class MoyaViewModel: ObservableObject {
         ids = moyaCoins.map {String($0.id)}
         stringIds = ids.map {String($0)}.joined(separator: ",")
     }
+    
     private func loadMoyaCoins() {
         networkManager.fetchAllMoyaCoins { [weak self] result in
             switch result {
@@ -38,6 +39,7 @@ final class MoyaViewModel: ObservableObject {
             }
         }
     }
+    
     private func loadMoyaImages() {
         networkManager.fetchAllMoyaImages(withId: stringIds) { [weak self] result in
             switch result {
