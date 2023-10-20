@@ -18,6 +18,13 @@
 		F135DEE82A7BD8A3000F7B23 /* PortfolioListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F135DEE72A7BD8A3000F7B23 /* PortfolioListRow.swift */; };
 		F135DEEA2A7BD938000F7B23 /* Coinss.swift in Sources */ = {isa = PBXBuildFile; fileRef = F135DEE92A7BD938000F7B23 /* Coinss.swift */; };
 		F14118B02A9951C800240A8F /* AboutCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14118AF2A9951C800240A8F /* AboutCoinView.swift */; };
+		F143FA542AE2C5D6006DAB3B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F143FA532AE2C5D6006DAB3B /* FirebaseAnalytics */; };
+		F143FA562AE2C5D6006DAB3B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F143FA552AE2C5D6006DAB3B /* FirebaseCrashlytics */; };
+		F143FA582AE2C660006DAB3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F143FA572AE2C65F006DAB3B /* GoogleService-Info.plist */; };
+		F143FA5E2AE2CBF2006DAB3B /* CrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143FA5D2AE2CBF2006DAB3B /* CrashView.swift */; };
+		F143FA632AE2D930006DAB3B /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F143FA622AE2D930006DAB3B /* FirebaseAnalyticsSwift */; };
+		F143FA652AE2D957006DAB3B /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F143FA642AE2D956006DAB3B /* AdSupport.framework */; };
+		F143FA672AE2D96F006DAB3B /* AnalyticsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143FA662AE2D96F006DAB3B /* AnalyticsView.swift */; };
 		F14B62F62AA0F2C200B80AC4 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = F14B62F52AA0F2C200B80AC4 /* Moya */; };
 		F14B62F82AA103A500B80AC4 /* NetworkTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B62F72AA103A500B80AC4 /* NetworkTarget.swift */; };
 		F14B62FC2AA1332E00B80AC4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14B62FB2AA1332E00B80AC4 /* NetworkManager.swift */; };
@@ -65,6 +72,10 @@
 		F135DEE72A7BD8A3000F7B23 /* PortfolioListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioListRow.swift; sourceTree = "<group>"; };
 		F135DEE92A7BD938000F7B23 /* Coinss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coinss.swift; sourceTree = "<group>"; };
 		F14118AF2A9951C800240A8F /* AboutCoinView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCoinView.swift; sourceTree = "<group>"; };
+		F143FA572AE2C65F006DAB3B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F143FA5D2AE2CBF2006DAB3B /* CrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CrashView.swift; sourceTree = "<group>"; };
+		F143FA642AE2D956006DAB3B /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		F143FA662AE2D96F006DAB3B /* AnalyticsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsView.swift; sourceTree = "<group>"; };
 		F14B62F72AA103A500B80AC4 /* NetworkTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTarget.swift; sourceTree = "<group>"; };
 		F14B62FB2AA1332E00B80AC4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		F16A051F2A8F8CB80052489F /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
@@ -104,6 +115,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F143FA632AE2D930006DAB3B /* FirebaseAnalyticsSwift in Frameworks */,
+				F143FA652AE2D957006DAB3B /* AdSupport.framework in Frameworks */,
+				F143FA562AE2C5D6006DAB3B /* FirebaseCrashlytics in Frameworks */,
+				F143FA542AE2C5D6006DAB3B /* FirebaseAnalytics in Frameworks */,
 				F14B62F62AA0F2C200B80AC4 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -194,6 +209,23 @@
 				F14118AF2A9951C800240A8F /* AboutCoinView.swift */,
 			);
 			path = DetailsAboutCoins;
+			sourceTree = "<group>";
+		};
+		F143FA5A2AE2CA87006DAB3B /* Analytics */ = {
+			isa = PBXGroup;
+			children = (
+				F143FA5D2AE2CBF2006DAB3B /* CrashView.swift */,
+				F143FA662AE2D96F006DAB3B /* AnalyticsView.swift */,
+			);
+			path = Analytics;
+			sourceTree = "<group>";
+		};
+		F143FA612AE2D930006DAB3B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F143FA642AE2D956006DAB3B /* AdSupport.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		F14CB7512AD2D256001F5280 /* FactoryPattern */ = {
@@ -295,6 +327,7 @@
 			children = (
 				F19FAF532A48C36200777138 /* Crypto_1_Edition */,
 				F19FAF522A48C36200777138 /* Products */,
+				F143FA612AE2D930006DAB3B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -312,8 +345,10 @@
 				F135DEDD2A718A62000F7B23 /* Crypto-1-Edition-Info.plist */,
 				F16A05212A8F93280052489F /* CoinMarketCapAPI */,
 				3096D5B12A4D6EA400F3FB2E /* PresentationLogic */,
+				F143FA5A2AE2CA87006DAB3B /* Analytics */,
 				3096D5AD2A4D6CED00F3FB2E /* BusinessLogic */,
 				F19FAF542A48C36200777138 /* Crypto_1_EditionApp.swift */,
+				F143FA572AE2C65F006DAB3B /* GoogleService-Info.plist */,
 				F19FAF582A48C36400777138 /* Assets.xcassets */,
 				F19FAF5A2A48C36400777138 /* Preview Content */,
 			);
@@ -350,6 +385,7 @@
 				F19FAF4E2A48C36200777138 /* Frameworks */,
 				F19FAF4F2A48C36200777138 /* Resources */,
 				F1C46B4D2AC6FBAB004AEA01 /* ShellScript */,
+				F143FA592AE2C89A006DAB3B /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -358,6 +394,9 @@
 			name = Crypto_1_Edition;
 			packageProductDependencies = (
 				F14B62F52AA0F2C200B80AC4 /* Moya */,
+				F143FA532AE2C5D6006DAB3B /* FirebaseAnalytics */,
+				F143FA552AE2C5D6006DAB3B /* FirebaseCrashlytics */,
+				F143FA622AE2D930006DAB3B /* FirebaseAnalyticsSwift */,
 			);
 			productName = Crypto_1_Edition;
 			productReference = F19FAF512A48C36200777138 /* Crypto_1_Edition.app */;
@@ -389,6 +428,7 @@
 			mainGroup = F19FAF482A48C36100777138;
 			packageReferences = (
 				F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */,
+				F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			productRefGroup = F19FAF522A48C36200777138 /* Products */;
 			projectDirPath = "";
@@ -406,12 +446,35 @@
 			files = (
 				F19FAF5C2A48C36400777138 /* Preview Assets.xcassets in Resources */,
 				F19FAF592A48C36400777138 /* Assets.xcassets in Resources */,
+				F143FA582AE2C660006DAB3B /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		F143FA592AE2C89A006DAB3B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Resources/DWARF/${PRODUCT_NAME}",
+				"${DWARF_DSYM_FOLDER_PATH}/${DWARF_DSYM_FILE_NAME}/Contents/Info.plist",
+				"$(TARGET_BUILD_DIR)/$(UNLOCALIZED_RESOURCES_FOLDER_PATH)/GoogleService-Info.plist",
+				"$(TARGET_BUILD_DIR)/$(EXECUTABLE_PATH)",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n\"${BUILD_DIR%/Build/*}/SourcePackages/checkouts/firebase-ios-sdk/Crashlytics/run\"\n";
+		};
 		F1C46B4D2AC6FBAB004AEA01 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			alwaysOutOfDate = 1;
@@ -451,6 +514,7 @@
 				F1DCD89B2A49FBBA0037868A /* FavouritesView.swift in Sources */,
 				F19FAF572A48C36200777138 /* CoinsListView.swift in Sources */,
 				3096D5AC2A4D6CC100F3FB2E /* CoinDetailView.swift in Sources */,
+				F143FA5E2AE2CBF2006DAB3B /* CrashView.swift in Sources */,
 				F16A052E2A8FA9B10052489F /* ContentViewModel.swift in Sources */,
 				F19DE3452A9DE86200C4CAEB /* NetworkLayer.swift in Sources */,
 				F170A3FC2ACC4C1300EA88F2 /* CoinModelProvider.swift in Sources */,
@@ -475,6 +539,7 @@
 				F14B62F82AA103A500B80AC4 /* NetworkTarget.swift in Sources */,
 				F19455A02A6EE169002E5A3F /* CoreDataPortfolio.swift in Sources */,
 				F1F764E92A65EA8600967E9A /* CoinsContainer.xcdatamodeld in Sources */,
+				F143FA672AE2D96F006DAB3B /* AnalyticsView.swift in Sources */,
 				F1F764E62A65EA6A00967E9A /* CoreDataManager.swift in Sources */,
 				F135DEE82A7BD8A3000F7B23 /* PortfolioListRow.swift in Sources */,
 			);
@@ -605,6 +670,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_ASSET_PATHS = "\"Crypto_1_Edition/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
@@ -683,6 +749,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
 		F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Moya/Moya.git";
@@ -694,6 +768,21 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		F143FA532AE2C5D6006DAB3B /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F143FA552AE2C5D6006DAB3B /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		F143FA622AE2D930006DAB3B /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
 		F14B62F52AA0F2C200B80AC4 /* Moya */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */;
