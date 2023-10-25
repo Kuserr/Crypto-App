@@ -11,7 +11,7 @@ enum CoinError: Error, LocalizedError {
     case invalidURL
     case serverError
     case invalidData
-    case unkown(Error)
+    case unknown(Error)
     
     var errorDescription: String? {
         switch self {
@@ -21,7 +21,7 @@ enum CoinError: Error, LocalizedError {
             return "There was an error with the server. Please try again later"
         case .invalidData:
             return "The coin data is invalid. Please try again later"
-        case .unkown(let error):
+        case .unknown(let error):
             return error.localizedDescription
         }
     }
