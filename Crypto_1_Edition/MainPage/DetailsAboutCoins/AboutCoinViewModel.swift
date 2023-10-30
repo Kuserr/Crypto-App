@@ -11,11 +11,6 @@ final class AboutCoinViewModel: ObservableObject {
     
     @Published var quantity = ""
     var favCoins = Set([String]())
-    private var id: String
-    private var name: String
-    private var symbol: String
-    private var quote: Quote
-    private var cmcRank: Int
     var myCoinQuantity: Double?
     
     init(coin: CoinModel) {
@@ -27,7 +22,7 @@ final class AboutCoinViewModel: ObservableObject {
     }
     // Save Coin to CoreData - Favourites
     func addToFavourite() {
-        if !FavouritesManager.shared.load().contains(where: {$0.name == name}) {
+        if favouritesLoad.contains(where: {$0.name == name}) {
         } else {
             return
         }
@@ -117,4 +112,13 @@ final class AboutCoinViewModel: ObservableObject {
         }
         return myCoinQuantity ?? 0
     }
+    
+    // MARK: - Private
+    
+    private var id: String
+    private var name: String
+    private var symbol: String
+    private var quote: Quote
+    private var cmcRank: Int
+    private let favouritesLoad = FavouritesManager.shared.load()
 }

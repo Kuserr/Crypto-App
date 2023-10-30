@@ -9,7 +9,7 @@ import Foundation
 
 final class PortfolioViewModel: ObservableObject {
     
-    @Published var portfCoins = [CryptoPortfolioCoin]().sorted {
+    @Published var portfolioCoins = [CryptoPortfolioCoin]().sorted {
         $0.quantity > $1.quantity }
     
     func onAppear() {
@@ -19,9 +19,11 @@ final class PortfolioViewModel: ObservableObject {
     // Remove coin by swipe from CoreData
     func swipeToRemove(at offsets: IndexSet) {
         removeCoin(withIndex: offsets)
-        portfCoins.remove(atOffsets: offsets)
+        portfolioCoins.remove(atOffsets: offsets)
         }
+    
     // MARK: - Private
+    
     private var loadedCoins = [CryptoPortfolioCoin]()
     // Load coins from CoreData - Portfolio
     private func load() {
@@ -29,18 +31,18 @@ final class PortfolioViewModel: ObservableObject {
     }
     // Update UI
     private func updateUI() {
-        portfCoins = loadedCoins.sorted {
+        portfolioCoins = loadedCoins.sorted {
             $0.quantity > $1.quantity }
-        print("Now - there are \(portfCoins) ")
+        print("Now - there are \(portfolioCoins) ")
     }
     // Remove Coin from CoreData
     private func removeFromPortfolio(id: String) {
         PortfolioManager.shared.removeCoin(withId: id)
      }
-    // Remove Coin by Swipe portfCoins
+    // Remove Coin by Swipe portfolioCoins
     private func removeCoin(withIndex indeX: IndexSet) {
         for index in indeX {
-            let coin = portfCoins[index]
+            let coin = portfolioCoins[index]
             removeFromPortfolio(id: coin.id)
         }
     }

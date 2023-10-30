@@ -19,7 +19,9 @@ final class CoinFullListViewModel: ObservableObject {
     init() {
         loadMoyaCoins()
     }
+    
     // MARK: - Private variables and functions
+    
     private var stringIds: String = ""
     private var ids: [String] = []
     private let networkManager = NetworkManager()

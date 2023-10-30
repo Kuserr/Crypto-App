@@ -26,6 +26,7 @@ final class FavouriteViewModel: ObservableObject {
         }
     
     // MARK: - Private
+    
     private var favCoins = [FavouriteCoin]()
     private func load() {
         favCoins = FavouritesManager.shared.load()

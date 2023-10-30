@@ -17,7 +17,7 @@ class ImageCache {
         cache.totalCostLimit = 100 * 1024 * 1024 // 100 MB
         return cache
     }()
-    func object(forkey key: NSString) -> Data? {
+    func object(forKey key: NSString) -> Data? {
         cache.object(forKey: key) as? Data
     }
     func set(object: NSData, forKey key: NSString) {

@@ -17,12 +17,12 @@ struct PortfolioView: View {
             Form {
                 Section {
                     List {
-                        ForEach(portfolioVM.portfCoins, id: \.id) { coin in
-                            if let index = portfolioVM.portfCoins.firstIndex(where: { $0.id == coin.id }) {
+                        ForEach(portfolioVM.portfolioCoins, id: \.id) { coin in
+                            if let index = portfolioVM.portfolioCoins.firstIndex(where: { $0.id == coin.id }) {
                                 PortfolioRowView(coinImage: viewModel.moyaImages[String(coin.id)] ?? CoinImage.sample,
-                                                 portfolioCoin: portfolioVM.portfCoins[index],
+                                                 portfolioCoin: portfolioVM.portfolioCoins[index],
                                                  coinModel: viewModel.moyaCoins.first(where: { String($0.id) == coin.id }) ?? CoinModel.sample,
-                                                 quantity: $portfolioVM.portfCoins[index].quantity)
+                                                 quantity: $portfolioVM.portfolioCoins[index].quantity)
                                 .deleteDisabled(coin.quantity != Double(0))
                             }
                         }
