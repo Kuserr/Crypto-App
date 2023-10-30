@@ -22,40 +22,28 @@ struct Crypto_1_EditionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     var body: some Scene {
         WindowGroup {
-            TabView {
-                CoinFullListView(moyaViewModel: MoyaViewModel())
-                    .tabItem {
-                        Label("Cryptocurrencies", systemImage: "list.bullet")
-                    }
-                CoinsListView(viewModel: CoinsListViewModel())
-                    .tabItem {
-                        Label("Overview", systemImage: "list.clipboard")
-                    }
-                FavouritesView(clvm: FavouriteViewModel())
-                    .tabItem {
-                        Label("Favourites", systemImage: "star")
-                    }
-                PortfolioView(pvm: PortfolioViewModel())
-                    .tabItem {
-                        Label("Portfolio", systemImage: "chart.pie.fill")
-                    }
-                DelegateView(coinModelsVM: CoinModelsViewModel())
-                    .tabItem {
-                        Label("Delegate", systemImage: "list.clipboard")
-                    }
-                FactoryMethodView(factoryVM: FactoryViewModel())
-                    .tabItem {
-                        Label("FactoryMethod", systemImage: "list.clipboard")
-                    }
-                CrashView()
-                    .tabItem {
-                        Label("CrashTest", systemImage: "chart.pie.fill")
-                    }
-                AnalyticsView()
-                    .tabItem {
-                        Label("AnalyticTest", systemImage: "star")
-                    }
-            }
+                TabView {
+                    CoinFullListView(viewModel: CoinFullListViewModel())
+                        .tabItem {
+                            Label("Cryptocurrencies", systemImage: "list.bullet")
+                        }
+                    FavouriteView(favVM: FavouriteViewModel(), viewModel: CoinFullListViewModel())
+                        .tabItem {
+                            Label("Favourites", systemImage: "star")
+                        }
+                    PortfolioView(viewModel: CoinFullListViewModel(), portfolioVM: PortfolioViewModel())
+                        .tabItem {
+                            Label("Portfolio", systemImage: "chart.pie.fill")
+                        }
+                    CrashView()
+                        .tabItem {
+                            Label("CrashTest", systemImage: "chart.pie.fill")
+                        }
+                    AnalyticsView()
+                        .tabItem {
+                            Label("AnalyticTest", systemImage: "star")
+                        }
+                }
         }
     }
 }
