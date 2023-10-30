@@ -15,7 +15,7 @@ final class CachedImageManager: ObservableObject {
     @MainActor
     func load(_ imgUrl: String,
               cache: ImageCache = .shared) async {
-        if let imageData = cache.object(forkey: imgUrl as NSString) {
+        if let imageData = cache.object(forKey: imgUrl as NSString) {
             self.data = imageData
             print("Fetching image from the cache: \(imgUrl)")
             return
