@@ -10,7 +10,6 @@ import Foundation
 final class AboutCoinViewModel: ObservableObject {
     
     @Published var quantity = ""
-    var favCoins = Set([String]())
     var myCoinQuantity: Double?
     
     init(coin: CoinModel) {
@@ -20,13 +19,14 @@ final class AboutCoinViewModel: ObservableObject {
         self.quote = coin.quote
         self.cmcRank = coin.cmcRank
     }
+    
     // Save Coin to CoreData - Favourites
     func addToFavourite() {
-        if favouritesLoad.contains(where: {$0.name == name}) {
-        } else {
+        if isCoinInFav() == true {
             return
+        } else {
+            FavouritesManager.shared.save(coinModel: CoinModel(id: Int(id) ?? 0, name: name, symbol: symbol, cmcRank: cmcRank, quote: quote))
         }
-        FavouritesManager.shared.save(coinModel: CoinModel(id: Int(id) ?? 0, name: name, symbol: symbol, cmcRank: cmcRank, quote: quote))
     }
     
     // Save Coin to CoreData - Portfolio
@@ -121,4 +121,26 @@ final class AboutCoinViewModel: ObservableObject {
     private var quote: Quote
     private var cmcRank: Int
     private let favouritesLoad = FavouritesManager.shared.load()
+    private var isInFav: Bool = false
+    // Check if coin is already in Favourites
+    private func isCoinInFav() -> Bool {
+        let predicate = NSPredicate(format: "id == %@", self.id)
+        let request = FavouriteCoin.getAllFavCoinsRequest()
+        request.predicate = predicate
+        do {
+            let favCoin = try FavouritesManager.shared.context.fetch(request)
+            if let coin = favCoin.first {
+                if coin.name == name {
+                    isInFav = true
+                    return true
+                } else {
+                    isInFav = false
+                    return isInFav
+                }
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+        return isInFav
+    }
 }
