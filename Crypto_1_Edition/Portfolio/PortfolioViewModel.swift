@@ -11,6 +11,11 @@ final class PortfolioViewModel: ObservableObject {
     
     @Published var portfolioCoins = [CryptoPortfolioCoin]().sorted {
         $0.quantity > $1.quantity }
+    let dataService: PortfolioManager
+    
+    init(dataService: PortfolioManager) {
+        self.dataService = dataService
+    }
     
     func onAppear() {
         load()
@@ -27,7 +32,7 @@ final class PortfolioViewModel: ObservableObject {
     private var loadedCoins = [CryptoPortfolioCoin]()
     // Load coins from CoreData - Portfolio
     private func load() {
-        loadedCoins = PortfolioManager.shared.load()
+        loadedCoins = dataService.load()
     }
     // Update UI
     private func updateUI() {
@@ -37,7 +42,7 @@ final class PortfolioViewModel: ObservableObject {
     }
     // Remove Coin from CoreData
     private func removeFromPortfolio(id: String) {
-        PortfolioManager.shared.removeCoin(withId: id)
+        dataService.removeCoin(withId: id)
      }
     // Remove Coin by Swipe portfolioCoins
     private func removeCoin(withIndex indeX: IndexSet) {

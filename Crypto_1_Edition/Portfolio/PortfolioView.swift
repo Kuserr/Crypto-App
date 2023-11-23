@@ -10,7 +10,12 @@ import SwiftUI
 struct PortfolioView: View {
     
     @ObservedObject var viewModel: CoinFullListViewModel
-    @ObservedObject var portfolioVM: PortfolioViewModel
+    @StateObject private var portfolioVM: PortfolioViewModel
+    
+    init(dataService: PortfolioManager, viewModel: CoinFullListViewModel) {
+        _portfolioVM = StateObject(wrappedValue: PortfolioViewModel(dataService: dataService))
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         NavigationView {

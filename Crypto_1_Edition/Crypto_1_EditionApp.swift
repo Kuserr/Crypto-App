@@ -23,15 +23,15 @@ struct Crypto_1_EditionApp: App {
     var body: some Scene {
         WindowGroup {
                 TabView {
-                    CoinFullListView(viewModel: CoinFullListViewModel())
+                    CoinFullListView(dataService: PortfolioManager())
                         .tabItem {
                             Label("Cryptocurrencies", systemImage: "list.bullet")
                         }
-                    FavouriteView(favVM: FavouriteViewModel(), viewModel: CoinFullListViewModel())
+                    FavouriteView(dataService: FavouritesManager(), viewModel: CoinFullListViewModel(dataService: NetworkManager()))
                         .tabItem {
                             Label("Favourites", systemImage: "star")
                         }
-                    PortfolioView(viewModel: CoinFullListViewModel(), portfolioVM: PortfolioViewModel())
+                    PortfolioView(dataService: PortfolioManager(), viewModel: CoinFullListViewModel(dataService: NetworkManager()))
                         .tabItem {
                             Label("Portfolio", systemImage: "chart.pie.fill")
                         }

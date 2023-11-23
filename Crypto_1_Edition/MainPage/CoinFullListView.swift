@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct CoinFullListView: View {
-    @StateObject var viewModel = CoinFullListViewModel()
+    @StateObject var viewModel: CoinFullListViewModel
     @State private var showAlert = false
+    
+    init(dataService: PortfolioManager) {
+        _viewModel = StateObject(wrappedValue: CoinFullListViewModel(dataService: NetworkManager()))
+    }
     
     var body: some View {
         NavigationStack {
@@ -19,7 +23,7 @@ struct CoinFullListView: View {
                     NavigationLink(destination:
                                     AboutCoinView(coinModel: coin,
                                                   coinImage: viewModel.moyaImages[String(coin.id)] ?? CoinImage.sample,
-                                                  urls: coinImage.urls, viewModel: AboutCoinViewModel(coin: coin)),
+                                                  urls: coinImage.urls, viewModel: AboutCoinViewModel(coin: coin, dataService: PortfolioManager(), dataServiceFav: FavouritesManager())),
                 label: {
                         CoinRowView(
                             coina: coin,
@@ -51,6 +55,6 @@ struct CoinFullListView: View {
 
 struct CoinFullListView_Previews: PreviewProvider {
     static var previews: some View {
-        CoinFullListView()
+        CoinFullListView(dataService: PortfolioManager())
     }
 }

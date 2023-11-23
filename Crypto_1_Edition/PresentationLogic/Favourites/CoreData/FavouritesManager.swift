@@ -8,9 +8,7 @@
 import CoreData
 import Foundation
 
-class FavouritesManager {
-    
-    static let shared = FavouritesManager()
+final class FavouritesManager {
     
     static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "FavouritesContainer")

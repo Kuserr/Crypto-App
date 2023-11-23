@@ -8,9 +8,7 @@
 import CoreData
 import Foundation
 
-class PortfolioManager {
-    
-    static let shared = PortfolioManager()
+final class PortfolioManager {
     
     static var persistentContainer: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "CryptoPortfolioContainer")

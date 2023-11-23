@@ -28,6 +28,17 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "F1F5CD9E2B0BC4F600AD1F3E"
+               BuildableName = "Crypto_1_Edition_Tests.xctest"
+               BlueprintName = "Crypto_1_Edition_Tests"
+               ReferencedContainer = "container:Crypto_1_Edition.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

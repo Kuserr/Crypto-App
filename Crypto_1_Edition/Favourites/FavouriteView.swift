@@ -9,8 +9,13 @@ import SwiftUI
 
 struct FavouriteView: View {
     
-    @ObservedObject var favVM: FavouriteViewModel
+    @StateObject var favVM: FavouriteViewModel
     @ObservedObject var viewModel: CoinFullListViewModel
+    
+    init(dataService: FavouritesManager, viewModel: CoinFullListViewModel) {
+        _favVM = StateObject(wrappedValue: FavouriteViewModel(dataService: dataService))
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         
@@ -35,6 +40,6 @@ struct FavouriteView: View {
 
 struct FavouriteView_Previews: PreviewProvider {
     static var previews: some View {
-        FavouriteView(favVM: FavouriteViewModel(), viewModel: CoinFullListViewModel())
+        FavouriteView(dataService: FavouritesManager(), viewModel: CoinFullListViewModel(dataService: NetworkManager()))
     }
 }

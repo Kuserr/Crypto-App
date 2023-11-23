@@ -11,13 +11,18 @@ final class AboutCoinViewModel: ObservableObject {
     
     @Published var quantity = ""
     var myCoinQuantity: Double?
+    var isInFav: Bool = false
+    let dataService: PortfolioManager
+    let dataServiceFav: FavouritesManager
     
-    init(coin: CoinModel) {
+    init(coin: CoinModel, dataService: PortfolioManager, dataServiceFav: FavouritesManager) {
         self.id = String(coin.id)
         self.name = coin.name
         self.symbol = coin.symbol
         self.quote = coin.quote
         self.cmcRank = coin.cmcRank
+        self.dataService = dataService
+        self.dataServiceFav = dataServiceFav
     }
     
     // Save Coin to CoreData - Favourites
@@ -25,13 +30,13 @@ final class AboutCoinViewModel: ObservableObject {
         if isCoinInFav() == true {
             return
         } else {
-            FavouritesManager.shared.save(coinModel: CoinModel(id: Int(id) ?? 0, name: name, symbol: symbol, cmcRank: cmcRank, quote: quote))
+            dataServiceFav.save(coinModel: CoinModel(id: Int(id) ?? 0, name: name, symbol: symbol, cmcRank: cmcRank, quote: quote))
         }
     }
     
     // Save Coin to CoreData - Portfolio
     func addToPortfolio() {
-        PortfolioManager.shared.save(portfolioModel: CryptoPortfolioModel(quantity: Double(quantity) ?? 0, id: id, name: name, symbol: symbol))
+        dataService.save(portfolioModel: CryptoPortfolioModel(quantity: Double(quantity) ?? 0, id: id, name: name, symbol: symbol))
     }
     
     func updateCoin() {
@@ -39,20 +44,20 @@ final class AboutCoinViewModel: ObservableObject {
         let request = CryptoPortfolioCoin.getAllCryptoPortfolioCoinRequest()
         request.predicate = predicate
         do {
-            let coinn = try? PortfolioManager.shared.context.fetch(request)
+            let coinn = try? dataService.context.fetch(request)
             if let coinn = coinn?.first {
                 coinn.quantity += (Double(self.quantity) ?? 0)
             } else {
-                PortfolioManager.shared.save(portfolioModel: CryptoPortfolioModel(quantity: Double(quantity) ?? 0, id: id, name: name, symbol: symbol))
+                dataService.save(portfolioModel: CryptoPortfolioModel(quantity: Double(quantity) ?? 0, id: id, name: name, symbol: symbol))
             }
-            try PortfolioManager.shared.context.save()
+            try dataService.context.save()
         } catch {
             print("Error - Portfolio coin not found or already deleted")
         }
     }
     // Remove coin from CoreData - Portfolio
     func removeFromFavourite() {
-        FavouritesManager.shared.removeCoin(withId: String(id))
+        dataServiceFav.removeCoin(withId: String(id))
     }
     
     // Return coin quantity from CoreData
@@ -61,7 +66,7 @@ final class AboutCoinViewModel: ObservableObject {
         let request = CryptoPortfolioCoin.getAllCryptoPortfolioCoinRequest()
             request.predicate = predicate
             do {
-                let coinn = try PortfolioManager.shared.context.fetch(request)
+                let coinn = try dataService.context.fetch(request)
                 if let coinn = coinn.first {
                     myCoinQuantity = coinn.quantity
                 }
@@ -77,16 +82,16 @@ final class AboutCoinViewModel: ObservableObject {
         let request = CryptoPortfolioCoin.getAllCryptoPortfolioCoinRequest()
         request.predicate = predicate
         do {
-            let coinn = try PortfolioManager.shared.context.fetch(request)
+            let coinn = try dataService.context.fetch(request)
             if let coinn = coinn.first {
                 coinn.quantity -= (Double(quantity) ?? 0)
                 if coinn.quantity >= 0 {
-                    try PortfolioManager.shared.context.save()
+                    try dataService.context.save()
                 } else {
                     coinn.quantity = 0
                 }
             }
-            try PortfolioManager.shared.context.save()
+            try dataService.context.save()
         } catch {
             print("Error - coin not found or already deleted")
         }
@@ -97,7 +102,7 @@ final class AboutCoinViewModel: ObservableObject {
         let request = CryptoPortfolioCoin.getAllCryptoPortfolioCoinRequest()
         request.predicate = predicate
         do {
-            let coinn = try PortfolioManager.shared.context.fetch(request)
+            let coinn = try dataService.context.fetch(request)
             if let coinn = coinn.first {
                 if coinn.quantity >= 0 {
                     myCoinQuantity = coinn.quantity
@@ -120,15 +125,13 @@ final class AboutCoinViewModel: ObservableObject {
     private var symbol: String
     private var quote: Quote
     private var cmcRank: Int
-    private let favouritesLoad = FavouritesManager.shared.load()
-    private var isInFav: Bool = false
     // Check if coin is already in Favourites
     private func isCoinInFav() -> Bool {
         let predicate = NSPredicate(format: "id == %@", self.id)
         let request = FavouriteCoin.getAllFavCoinsRequest()
         request.predicate = predicate
         do {
-            let favCoin = try FavouritesManager.shared.context.fetch(request)
+            let favCoin = try dataServiceFav.context.fetch(request)
             if let coin = favCoin.first {
                 if coin.name == name {
                     isInFav = true

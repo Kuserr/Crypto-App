@@ -9,10 +9,14 @@ import Foundation
 
 final class FavouriteViewModel: ObservableObject {
     
-    static let shared = FavouriteViewModel()
+    let dataService: FavouritesManager
     
     @Published var sortedCoins = [FavouriteCoin]().sorted {
         $0.name < $1.name
+    }
+    
+    init(dataService: FavouritesManager) {
+        self.dataService = dataService
     }
     
     func onAppear() {
@@ -29,7 +33,7 @@ final class FavouriteViewModel: ObservableObject {
     
     private var favCoins = [FavouriteCoin]()
     private func load() {
-        favCoins = FavouritesManager.shared.load()
+        favCoins = dataService.load()
     }
     
     private func updateUI() {
@@ -39,7 +43,7 @@ final class FavouriteViewModel: ObservableObject {
     }
     // Remove coin from CoreData - Favourites
     private func removeFromCoreData(id: String) {
-        FavouritesManager.shared.removeCoin(withId: id)
+        dataService.removeCoin(withId: id)
      }
     // Remove Coin by Swipe from Favourites
     private func removeFromFavourites(withIndex index: IndexSet) {

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		F106B9D12A8FBC3D0063E6E1 /* CoinError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F106B9D02A8FBC3D0063E6E1 /* CoinError.swift */; };
 		F14118B02A9951C800240A8F /* AboutCoinView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F14118AF2A9951C800240A8F /* AboutCoinView.swift */; };
-		F143FA542AE2C5D6006DAB3B /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F143FA532AE2C5D6006DAB3B /* FirebaseAnalytics */; };
 		F143FA562AE2C5D6006DAB3B /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F143FA552AE2C5D6006DAB3B /* FirebaseCrashlytics */; };
 		F143FA582AE2C660006DAB3B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F143FA572AE2C65F006DAB3B /* GoogleService-Info.plist */; };
 		F143FA5E2AE2CBF2006DAB3B /* CrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F143FA5D2AE2CBF2006DAB3B /* CrashView.swift */; };
@@ -27,6 +26,7 @@
 		F15682222AE703AD008B3025 /* CryptoPortfolioCoin.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15682212AE703AD008B3025 /* CryptoPortfolioCoin.swift */; };
 		F15682242AE70541008B3025 /* CryptoPortfolioModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15682232AE70541008B3025 /* CryptoPortfolioModel.swift */; };
 		F15682262AE7E250008B3025 /* PortfolioRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F15682252AE7E250008B3025 /* PortfolioRowView.swift */; };
+		F159F9412B0F7B7700BDD235 /* UnitTestingCoinFullListViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F159F9402B0F7B7700BDD235 /* UnitTestingCoinFullListViewModel_Tests.swift */; };
 		F16676E02AE9178A005A7372 /* BackgroundImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16676DF2AE9178A005A7372 /* BackgroundImageView.swift */; };
 		F16A05202A8F8CB80052489F /* CoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A051F2A8F8CB80052489F /* CoinModel.swift */; };
 		F16A05272A8F9A020052489F /* CoinFullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A05262A8F9A020052489F /* CoinFullListView.swift */; };
@@ -47,7 +47,25 @@
 		F1D704922AC74ED100A84E27 /* CachedImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D704912AC74ED100A84E27 /* CachedImageManager.swift */; };
 		F1D704942AC74F0100A84E27 /* CachedImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D704932AC74F0100A84E27 /* CachedImage.swift */; };
 		F1D704962AC82CB300A84E27 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D704952AC82CB300A84E27 /* ActivityIndicatorView.swift */; };
+		F1F5CDA22B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5CDA12B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.swift */; };
+		F1F5CDA92B0C138200AD1F3E /* UnitTestingAboutCoinViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5CDA82B0C138200AD1F3E /* UnitTestingAboutCoinViewModel_Tests.swift */; };
+		F1F5CDAD2B0CAF9600AD1F3E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F1F5CDAC2B0CAF9600AD1F3E /* FirebaseAnalytics */; };
+		F1F5CDAF2B0CAFA700AD1F3E /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1F5CDAE2B0CAFA700AD1F3E /* FirebaseAuth */; };
+		F1F5CDB12B0CAFB600AD1F3E /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = F1F5CDB02B0CAFB600AD1F3E /* FirebaseAnalytics */; };
+		F1F5CDB32B0CAFC400AD1F3E /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = F1F5CDB22B0CAFC400AD1F3E /* FirebaseCrashlytics */; };
+		F1F5CDB52B0CAFD600AD1F3E /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = F1F5CDB42B0CAFD600AD1F3E /* FirebaseAnalyticsSwift */; };
+		F1F5CDB92B0CE3B300AD1F3E /* UnitTestingFavouritesManager_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F5CDB82B0CE3B300AD1F3E /* UnitTestingFavouritesManager_Tests.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1F5CDA32B0BC4F600AD1F3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F19FAF492A48C36100777138 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F19FAF502A48C36200777138;
+			remoteInfo = Crypto_1_Edition;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F106B9D02A8FBC3D0063E6E1 /* CoinError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinError.swift; sourceTree = "<group>"; };
@@ -67,6 +85,7 @@
 		F15682212AE703AD008B3025 /* CryptoPortfolioCoin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPortfolioCoin.swift; sourceTree = "<group>"; };
 		F15682232AE70541008B3025 /* CryptoPortfolioModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoPortfolioModel.swift; sourceTree = "<group>"; };
 		F15682252AE7E250008B3025 /* PortfolioRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PortfolioRowView.swift; sourceTree = "<group>"; };
+		F159F9402B0F7B7700BDD235 /* UnitTestingCoinFullListViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingCoinFullListViewModel_Tests.swift; sourceTree = "<group>"; };
 		F16676DF2AE9178A005A7372 /* BackgroundImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundImageView.swift; sourceTree = "<group>"; };
 		F16A051F2A8F8CB80052489F /* CoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinModel.swift; sourceTree = "<group>"; };
 		F16A05262A8F9A020052489F /* CoinFullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFullListView.swift; sourceTree = "<group>"; };
@@ -88,6 +107,10 @@
 		F1D704912AC74ED100A84E27 /* CachedImageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageManager.swift; sourceTree = "<group>"; };
 		F1D704932AC74F0100A84E27 /* CachedImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImage.swift; sourceTree = "<group>"; };
 		F1D704952AC82CB300A84E27 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
+		F1F5CD9F2B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Crypto_1_Edition_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1F5CDA12B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_1_Edition_Tests.swift; sourceTree = "<group>"; };
+		F1F5CDA82B0C138200AD1F3E /* UnitTestingAboutCoinViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingAboutCoinViewModel_Tests.swift; sourceTree = "<group>"; };
+		F1F5CDB82B0CE3B300AD1F3E /* UnitTestingFavouritesManager_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitTestingFavouritesManager_Tests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,10 +119,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				F143FA632AE2D930006DAB3B /* FirebaseAnalyticsSwift in Frameworks */,
+				F1F5CDAD2B0CAF9600AD1F3E /* FirebaseAnalytics in Frameworks */,
 				F143FA652AE2D957006DAB3B /* AdSupport.framework in Frameworks */,
 				F143FA562AE2C5D6006DAB3B /* FirebaseCrashlytics in Frameworks */,
-				F143FA542AE2C5D6006DAB3B /* FirebaseAnalytics in Frameworks */,
 				F14B62F62AA0F2C200B80AC4 /* Moya in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1F5CD9C2B0BC4F600AD1F3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F5CDB52B0CAFD600AD1F3E /* FirebaseAnalyticsSwift in Frameworks */,
+				F1F5CDB32B0CAFC400AD1F3E /* FirebaseCrashlytics in Frameworks */,
+				F1F5CDB12B0CAFB600AD1F3E /* FirebaseAnalytics in Frameworks */,
+				F1F5CDAF2B0CAFA700AD1F3E /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -139,8 +173,8 @@
 		F14118AC2A99507200240A8F /* MainPage */ = {
 			isa = PBXGroup;
 			children = (
-				F19C51802AA640C300F8EC85 /* CoinFullListViewModel.swift */,
 				F16A05262A8F9A020052489F /* CoinFullListView.swift */,
+				F19C51802AA640C300F8EC85 /* CoinFullListViewModel.swift */,
 				F14118AE2A99512900240A8F /* DetailsAboutCoins */,
 			);
 			path = MainPage;
@@ -260,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				F19FAF532A48C36200777138 /* Crypto_1_Edition */,
+				F1F5CDA02B0BC4F600AD1F3E /* Crypto_1_Edition_Tests */,
 				F19FAF522A48C36200777138 /* Products */,
 				F143FA612AE2D930006DAB3B /* Frameworks */,
 			);
@@ -269,6 +304,7 @@
 			isa = PBXGroup;
 			children = (
 				F19FAF512A48C36200777138 /* Crypto_1_Edition.app */,
+				F1F5CD9F2B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -311,6 +347,17 @@
 			path = Caching;
 			sourceTree = "<group>";
 		};
+		F1F5CDA02B0BC4F600AD1F3E /* Crypto_1_Edition_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F1F5CDA12B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.swift */,
+				F1F5CDA82B0C138200AD1F3E /* UnitTestingAboutCoinViewModel_Tests.swift */,
+				F1F5CDB82B0CE3B300AD1F3E /* UnitTestingFavouritesManager_Tests.swift */,
+				F159F9402B0F7B7700BDD235 /* UnitTestingCoinFullListViewModel_Tests.swift */,
+			);
+			path = Crypto_1_Edition_Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -331,13 +378,37 @@
 			name = Crypto_1_Edition;
 			packageProductDependencies = (
 				F14B62F52AA0F2C200B80AC4 /* Moya */,
-				F143FA532AE2C5D6006DAB3B /* FirebaseAnalytics */,
 				F143FA552AE2C5D6006DAB3B /* FirebaseCrashlytics */,
 				F143FA622AE2D930006DAB3B /* FirebaseAnalyticsSwift */,
+				F1F5CDAC2B0CAF9600AD1F3E /* FirebaseAnalytics */,
 			);
 			productName = Crypto_1_Edition;
 			productReference = F19FAF512A48C36200777138 /* Crypto_1_Edition.app */;
 			productType = "com.apple.product-type.application";
+		};
+		F1F5CD9E2B0BC4F600AD1F3E /* Crypto_1_Edition_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1F5CDA72B0BC4F600AD1F3E /* Build configuration list for PBXNativeTarget "Crypto_1_Edition_Tests" */;
+			buildPhases = (
+				F1F5CD9B2B0BC4F600AD1F3E /* Sources */,
+				F1F5CD9C2B0BC4F600AD1F3E /* Frameworks */,
+				F1F5CD9D2B0BC4F600AD1F3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1F5CDA42B0BC4F600AD1F3E /* PBXTargetDependency */,
+			);
+			name = Crypto_1_Edition_Tests;
+			packageProductDependencies = (
+				F1F5CDAE2B0CAFA700AD1F3E /* FirebaseAuth */,
+				F1F5CDB02B0CAFB600AD1F3E /* FirebaseAnalytics */,
+				F1F5CDB22B0CAFC400AD1F3E /* FirebaseCrashlytics */,
+				F1F5CDB42B0CAFD600AD1F3E /* FirebaseAnalyticsSwift */,
+			);
+			productName = Crypto_1_Edition_Tests;
+			productReference = F1F5CD9F2B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
@@ -351,6 +422,10 @@
 				TargetAttributes = {
 					F19FAF502A48C36200777138 = {
 						CreatedOnToolsVersion = 14.2;
+					};
+					F1F5CD9E2B0BC4F600AD1F3E = {
+						CreatedOnToolsVersion = 14.2;
+						TestTargetID = F19FAF502A48C36200777138;
 					};
 				};
 			};
@@ -372,6 +447,7 @@
 			projectRoot = "";
 			targets = (
 				F19FAF502A48C36200777138 /* Crypto_1_Edition */,
+				F1F5CD9E2B0BC4F600AD1F3E /* Crypto_1_Edition_Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,6 +460,13 @@
 				F19FAF5C2A48C36400777138 /* Preview Assets.xcassets in Resources */,
 				F19FAF592A48C36400777138 /* Assets.xcassets in Resources */,
 				F143FA582AE2C660006DAB3B /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1F5CD9D2B0BC4F600AD1F3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,7 +555,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F1F5CD9B2B0BC4F600AD1F3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1F5CDA92B0C138200AD1F3E /* UnitTestingAboutCoinViewModel_Tests.swift in Sources */,
+				F159F9412B0F7B7700BDD235 /* UnitTestingCoinFullListViewModel_Tests.swift in Sources */,
+				F1F5CDB92B0CE3B300AD1F3E /* UnitTestingFavouritesManager_Tests.swift in Sources */,
+				F1F5CDA22B0BC4F600AD1F3E /* Crypto_1_Edition_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1F5CDA42B0BC4F600AD1F3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F19FAF502A48C36200777138 /* Crypto_1_Edition */;
+			targetProxy = F1F5CDA32B0BC4F600AD1F3E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F19FAF5D2A48C36400777138 /* Debug */ = {
@@ -652,6 +754,40 @@
 			};
 			name = Release;
 		};
+		F1F5CDA52B0BC4F600AD1F3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Siarhei.Kuryan.Crypto-1-Edition-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crypto_1_Edition.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Crypto_1_Edition";
+			};
+			name = Debug;
+		};
+		F1F5CDA62B0BC4F600AD1F3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "me.Siarhei.Kuryan.Crypto-1-Edition-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Crypto_1_Edition.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Crypto_1_Edition";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -669,6 +805,15 @@
 			buildConfigurations = (
 				F19FAF602A48C36400777138 /* Debug */,
 				F19FAF612A48C36400777138 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1F5CDA72B0BC4F600AD1F3E /* Build configuration list for PBXNativeTarget "Crypto_1_Edition_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1F5CDA52B0BC4F600AD1F3E /* Debug */,
+				F1F5CDA62B0BC4F600AD1F3E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -695,11 +840,6 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		F143FA532AE2C5D6006DAB3B /* FirebaseAnalytics */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
-			productName = FirebaseAnalytics;
-		};
 		F143FA552AE2C5D6006DAB3B /* FirebaseCrashlytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
@@ -714,6 +854,31 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		F1F5CDAC2B0CAF9600AD1F3E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F1F5CDAE2B0CAFA700AD1F3E /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		F1F5CDB02B0CAFB600AD1F3E /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		F1F5CDB22B0CAFC400AD1F3E /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
+		F1F5CDB42B0CAFD600AD1F3E /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 

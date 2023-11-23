@@ -30,7 +30,6 @@ struct Usd: Codable {
     let volumeChange24H: Double
     let percentChange24H: Double
 }
-
 // Images
 struct CoinImage: Codable {
     let logo: String
