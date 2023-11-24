@@ -20,8 +20,10 @@ class AppDelegate: NSObject, UIApplicationDelegate {
 @main
 struct Crypto_1_EditionApp: App {
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
+    
     var body: some Scene {
         WindowGroup {
+            RootView()
                 TabView {
                     CoinFullListView(dataService: PortfolioManager())
                         .tabItem {
@@ -35,6 +37,10 @@ struct Crypto_1_EditionApp: App {
                         .tabItem {
                             Label("Portfolio", systemImage: "chart.pie.fill")
                         }
+                    SettingsView()
+                        .tabItem {
+                            Label("Settings", systemImage: "gear")
+                        }
                     CrashView()
                         .tabItem {
                             Label("CrashTest", systemImage: "chart.pie.fill")
@@ -44,6 +50,6 @@ struct Crypto_1_EditionApp: App {
                             Label("AnalyticTest", systemImage: "star")
                         }
                 }
-        }
+            }
     }
 }

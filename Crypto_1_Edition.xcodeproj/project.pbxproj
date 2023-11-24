@@ -32,6 +32,12 @@
 		F16A05272A8F9A020052489F /* CoinFullListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A05262A8F9A020052489F /* CoinFullListView.swift */; };
 		F16A05292A8F9A8F0052489F /* CoinRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A05282A8F9A8F0052489F /* CoinRowView.swift */; };
 		F16A052C2A8F9DEF0052489F /* Double.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16A052B2A8F9DEF0052489F /* Double.swift */; };
+		F1977DAE2B0FC21700B8361D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = F1977DAD2B0FC21700B8361D /* FirebaseAuth */; };
+		F1977DB22B0FC7E900B8361D /* AuthenticationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1977DB12B0FC7E900B8361D /* AuthenticationManager.swift */; };
+		F1977DB62B0FF97D00B8361D /* AuthenticationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1977DB52B0FF97D00B8361D /* AuthenticationView.swift */; };
+		F1977DB82B0FF9B400B8361D /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1977DB72B0FF9B400B8361D /* AuthenticationViewModel.swift */; };
+		F1977DBA2B0FFC0400B8361D /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1977DB92B0FFC0400B8361D /* RootView.swift */; };
+		F1977DBC2B0FFC3500B8361D /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1977DBB2B0FFC3500B8361D /* SettingsView.swift */; };
 		F19C51812AA640C300F8EC85 /* CoinFullListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19C51802AA640C300F8EC85 /* CoinFullListViewModel.swift */; };
 		F19FACF42AE5AF3800D2B797 /* FavouriteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FACF32AE5AF3800D2B797 /* FavouriteView.swift */; };
 		F19FACF62AE5B1D000D2B797 /* FavouriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F19FACF52AE5B1D000D2B797 /* FavouriteViewModel.swift */; };
@@ -91,6 +97,11 @@
 		F16A05262A8F9A020052489F /* CoinFullListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFullListView.swift; sourceTree = "<group>"; };
 		F16A05282A8F9A8F0052489F /* CoinRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinRowView.swift; sourceTree = "<group>"; };
 		F16A052B2A8F9DEF0052489F /* Double.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Double.swift; sourceTree = "<group>"; };
+		F1977DB12B0FC7E900B8361D /* AuthenticationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationManager.swift; sourceTree = "<group>"; };
+		F1977DB52B0FF97D00B8361D /* AuthenticationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationView.swift; sourceTree = "<group>"; };
+		F1977DB72B0FF9B400B8361D /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
+		F1977DB92B0FFC0400B8361D /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		F1977DBB2B0FFC3500B8361D /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		F19C51802AA640C300F8EC85 /* CoinFullListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinFullListViewModel.swift; sourceTree = "<group>"; };
 		F19FACF32AE5AF3800D2B797 /* FavouriteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteView.swift; sourceTree = "<group>"; };
 		F19FACF52AE5B1D000D2B797 /* FavouriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteViewModel.swift; sourceTree = "<group>"; };
@@ -119,6 +130,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F143FA632AE2D930006DAB3B /* FirebaseAnalyticsSwift in Frameworks */,
+				F1977DAE2B0FC21700B8361D /* FirebaseAuth in Frameworks */,
 				F1F5CDAD2B0CAF9600AD1F3E /* FirebaseAnalytics in Frameworks */,
 				F143FA652AE2D957006DAB3B /* AdSupport.framework in Frameworks */,
 				F143FA562AE2C5D6006DAB3B /* FirebaseCrashlytics in Frameworks */,
@@ -162,6 +174,7 @@
 		3096D5B12A4D6EA400F3FB2E /* PresentationLogic */ = {
 			isa = PBXGroup;
 			children = (
+				F16A052A2A8F9DD90052489F /* Extensions */,
 				F16676DE2AE9176A005A7372 /* Background */,
 				F19FACF72AE5B31C00D2B797 /* Entities */,
 				F1D704902AC74EAE00A84E27 /* Caching */,
@@ -227,7 +240,6 @@
 			isa = PBXGroup;
 			children = (
 				F19DE3432A9DE7CE00C4CAEB /* NetworkLayer */,
-				F16A052A2A8F9DD90052489F /* Extensions */,
 			);
 			path = CoinMarketCapAPI;
 			sourceTree = "<group>";
@@ -252,6 +264,18 @@
 			);
 			name = CoreData;
 			path = Favourites/CoreData;
+			sourceTree = "<group>";
+		};
+		F1977DB02B0FC5B400B8361D /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				F1977DB12B0FC7E900B8361D /* AuthenticationManager.swift */,
+				F1977DB92B0FFC0400B8361D /* RootView.swift */,
+				F1977DBB2B0FFC3500B8361D /* SettingsView.swift */,
+				F1977DB52B0FF97D00B8361D /* AuthenticationView.swift */,
+				F1977DB72B0FF9B400B8361D /* AuthenticationViewModel.swift */,
+			);
+			path = Authentication;
 			sourceTree = "<group>";
 		};
 		F19C51822AA6725800F8EC85 /* Moya */ = {
@@ -313,11 +337,12 @@
 			isa = PBXGroup;
 			children = (
 				F135DEDD2A718A62000F7B23 /* Crypto-1-Edition-Info.plist */,
-				F143FA5A2AE2CA87006DAB3B /* Analytics */,
-				F16A05212A8F93280052489F /* CoinMarketCapAPI */,
+				F1977DB02B0FC5B400B8361D /* Authentication */,
 				F14118AC2A99507200240A8F /* MainPage */,
 				F19FACF22AE5AEDD00D2B797 /* Favourites */,
 				F15682172AE6FAE7008B3025 /* Portfolio */,
+				F16A05212A8F93280052489F /* CoinMarketCapAPI */,
+				F143FA5A2AE2CA87006DAB3B /* Analytics */,
 				3096D5B12A4D6EA400F3FB2E /* PresentationLogic */,
 				3096D5AD2A4D6CED00F3FB2E /* BusinessLogic */,
 				F19FAF542A48C36200777138 /* Crypto_1_EditionApp.swift */,
@@ -381,6 +406,7 @@
 				F143FA552AE2C5D6006DAB3B /* FirebaseCrashlytics */,
 				F143FA622AE2D930006DAB3B /* FirebaseAnalyticsSwift */,
 				F1F5CDAC2B0CAF9600AD1F3E /* FirebaseAnalytics */,
+				F1977DAD2B0FC21700B8361D /* FirebaseAuth */,
 			);
 			productName = Crypto_1_Edition;
 			productReference = F19FAF512A48C36200777138 /* Crypto_1_Edition.app */;
@@ -526,6 +552,7 @@
 				F19C51812AA640C300F8EC85 /* CoinFullListViewModel.swift in Sources */,
 				F19FACF42AE5AF3800D2B797 /* FavouriteView.swift in Sources */,
 				F1D7048F2AC74D5E00A84E27 /* ImageRetriver.swift in Sources */,
+				F1977DBC2B0FFC3500B8361D /* SettingsView.swift in Sources */,
 				F15682162AE6CACF008B3025 /* FavouriteRowView.swift in Sources */,
 				F1D704962AC82CB300A84E27 /* ActivityIndicatorView.swift in Sources */,
 				F19FACF62AE5B1D000D2B797 /* FavouriteViewModel.swift in Sources */,
@@ -536,6 +563,7 @@
 				F16A05272A8F9A020052489F /* CoinFullListView.swift in Sources */,
 				F19FACFE2AE5B95800D2B797 /* FavouritesManager.swift in Sources */,
 				F1D704942AC74F0100A84E27 /* CachedImage.swift in Sources */,
+				F1977DB82B0FF9B400B8361D /* AuthenticationViewModel.swift in Sources */,
 				F19FACF92AE5B3B000D2B797 /* AboutCoinViewModel.swift in Sources */,
 				F19FACFC2AE5B7EA00D2B797 /* FavouritesContainer.xcdatamodeld in Sources */,
 				F16676E02AE9178A005A7372 /* BackgroundImageView.swift in Sources */,
@@ -544,11 +572,14 @@
 				F14118B02A9951C800240A8F /* AboutCoinView.swift in Sources */,
 				F106B9D12A8FBC3D0063E6E1 /* CoinError.swift in Sources */,
 				F19FAF552A48C36200777138 /* Crypto_1_EditionApp.swift in Sources */,
+				F1977DB22B0FC7E900B8361D /* AuthenticationManager.swift in Sources */,
 				F16A05292A8F9A8F0052489F /* CoinRowView.swift in Sources */,
 				F15682192AE6FB27008B3025 /* PortfolioViewModel.swift in Sources */,
 				F15682242AE70541008B3025 /* CryptoPortfolioModel.swift in Sources */,
 				F1D7048D2AC74C9A00A84E27 /* ImageCache.swift in Sources */,
 				F14B62F82AA103A500B80AC4 /* NetworkTarget.swift in Sources */,
+				F1977DB62B0FF97D00B8361D /* AuthenticationView.swift in Sources */,
+				F1977DBA2B0FFC0400B8361D /* RootView.swift in Sources */,
 				F156821B2AE6FB3F008B3025 /* PortfolioView.swift in Sources */,
 				F19FAD002AE5B9F400D2B797 /* FavouriteCoin.swift in Sources */,
 				F143FA672AE2D96F006DAB3B /* AnalyticsView.swift in Sources */,
@@ -854,6 +885,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = F14B62F42AA0F2C200B80AC4 /* XCRemoteSwiftPackageReference "Moya" */;
 			productName = Moya;
+		};
+		F1977DAD2B0FC21700B8361D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F143FA522AE2C5D5006DAB3B /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
 		};
 		F1F5CDAC2B0CAF9600AD1F3E /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
