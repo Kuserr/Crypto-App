@@ -45,10 +45,10 @@ struct Crypto_1_EditionApp: App {
                         .tabItem {
                             Label("CrashTest", systemImage: "chart.pie.fill")
                         }
-                    AnalyticsView()
-                        .tabItem {
-                            Label("AnalyticTest", systemImage: "star")
-                        }
+//                    AnalyticsView()
+//                        .tabItem {
+//                            Label("AnalyticTest", systemImage: "star")
+//                        }
                 }
             }
     }

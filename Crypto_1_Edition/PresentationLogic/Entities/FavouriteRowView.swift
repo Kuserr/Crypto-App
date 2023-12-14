@@ -18,30 +18,43 @@ struct FavouriteRowView: View {
         HStack {
             // cached images
             CachedImage(url: coinImage.logo)
-            // coin name info
-            VStack(alignment: .leading, spacing: 1) {
-                Text(favCoin.name)
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .padding(.leading, 4)
-                Text(favCoin.symbol.uppercased())
-                    .font(.caption)
-                    .padding(.leading, 6)
-            }
+            coinNameInfo
             .padding(.leading, 2)
             Spacer()
-            // coin price info
-            VStack(alignment: .trailing, spacing: 4) {
-                Text(coinModel.quote.usd.price.toCurrency())
-                    .font(.subheadline)
-                    .fontWeight(.semibold)
-                    .padding(.leading, 4)
-                Text(coinModel.quote.usd.volumeChange24H.toPercentString())
-                    .font(.caption)
-                    .padding(.leading, 6)
-                    .foregroundColor(coinModel.quote.usd.percentChange24H > 0 ? .green : .red)
-            }
+            coinPriceInfo
         }
         .padding(.horizontal)
+    }
+}
+
+// MARK: - Coin name info
+private extension FavouriteRowView {
+    var coinNameInfo: some View {
+        VStack(alignment: .leading, spacing: 1) {
+            Text(favCoin.name)
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .padding(.leading, 4)
+            Text(favCoin.symbol.uppercased())
+                .font(.caption)
+                .padding(.leading, 6)
+        }
+    }
+}
+
+// MARK: - Coin price info
+
+private extension FavouriteRowView {
+    var coinPriceInfo: some View {
+        VStack(alignment: .trailing, spacing: 4) {
+            Text(coinModel.quote.usd.price.toCurrency())
+                .font(.subheadline)
+                .fontWeight(.semibold)
+                .padding(.leading, 4)
+            Text(coinModel.quote.usd.volumeChange24H.toPercentString())
+                .font(.caption)
+                .padding(.leading, 6)
+                .foregroundColor(coinModel.quote.usd.percentChange24H > 0 ? .green : .red)
+        }
     }
 }

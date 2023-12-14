@@ -17,26 +17,7 @@ struct CoinFullListView: View {
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(viewModel.moyaCoins) { coin in
-                    if let coinImage = viewModel.moyaImages[String(coin.id)] {
-                    NavigationLink(destination:
-                                    AboutCoinView(coinModel: coin,
-                                                  coinImage: viewModel.moyaImages[String(coin.id)] ?? CoinImage.sample,
-                                                  urls: coinImage.urls, viewModel: AboutCoinViewModel(coin: coin, dataService: PortfolioManager(), dataServiceFav: FavouritesManager())),
-                label: {
-                        CoinRowView(
-                            coina: coin,
-                            coinImage: viewModel.moyaImages[String(coin.id)] ?? CoinImage.sample)})
-                    } else {
-                        // Show loading indicator if image is not yet fetched
-                        HStack {
-                            ActivityIndicator(style: .medium)
-                            Text("Loading...")
-                        }
-                    }
-                }
-            }
+            list
             .onReceive(viewModel.$error, perform: { error in
                 if error != nil {
                     showAlert.toggle()
@@ -49,6 +30,32 @@ struct CoinFullListView: View {
                 )
             })
             .navigationTitle("Cryptocurrencies")
+        }
+    }
+}
+
+// MARK: - List view
+private extension CoinFullListView {
+    var list: some View {
+        List {
+            ForEach(viewModel.moyaCoins) { coin in
+                if let coinImage = viewModel.moyaImages[String(coin.id)] {
+                NavigationLink(destination:
+                                AboutCoinView(coinModel: coin,
+                                              coinImage: viewModel.moyaImages[String(coin.id)] ?? CoinImage.sample,
+                                              urls: coinImage.urls, viewModel: AboutCoinViewModel(coin: coin, dataService: PortfolioManager(), dataServiceFav: FavouritesManager())),
+            label: {
+                    CoinRowView(
+                        coina: coin,
+                        coinImage: viewModel.moyaImages[String(coin.id)] ?? CoinImage.sample)})
+                } else {
+                    // Show loading indicator if image is not yet fetched
+                    HStack {
+                        ActivityIndicator(style: .medium)
+                        Text("Loading...")
+                    }
+                }
+            }
         }
     }
 }

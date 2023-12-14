@@ -33,15 +33,21 @@ final class CoinFullListViewModel: ObservableObject {
     }
     
     private func loadMoyaCoins() {
-        dataService.fetchAllMoyaCoins { [weak self] result in
-            switch result {
-            case .success(let data):
-                let result = data.data
-                self?.moyaCoins = result
-                self?.idAsString()
-                self?.loadMoyaImages()
-            case .failure(let error):
-                print(error.localizedDescription)
+        let semaphore = DispatchSemaphore(value: 1)
+        let globalQueue = DispatchQueue.global()
+        globalQueue.async {
+            semaphore.wait()
+            self.dataService.fetchAllMoyaCoins { [weak self] result in
+                switch result {
+                case .success(let data):
+                    let result = data.data
+                    self?.moyaCoins = result
+                    self?.idAsString()
+                    semaphore.signal()
+                    self?.loadMoyaImages()
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
             }
         }
     }

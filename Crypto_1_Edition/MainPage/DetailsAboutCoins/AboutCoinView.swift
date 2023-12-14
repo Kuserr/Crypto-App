@@ -24,20 +24,8 @@ struct AboutCoinView: View {
                 Section {
                     VStack {
                         Spacer()
-                        AsyncImage(url: coinImage.imageUrl) { image in
-                            image
-                                .resizable()
-                                .scaledToFit()
-                                .frame(width: 45, height:45)
-                                .foregroundColor(.red)
-                        } placeholder: {
-                            Circle()
-                                .frame(width: 45, height:45)
-                                .background(Color(.systemGray5))
-                        }
-                        Link(destination: URL(string:(urls.website).joined(separator: ""))!) {
-                            Text(Image(systemName: "link.circle.fill")) + Text("Learn More")
-                        }
+                        asyncImage
+                        link
                         Spacer()
                         Text(coinImage.description)
                             .multilineTextAlignment(.leading)
@@ -79,6 +67,35 @@ struct AboutCoinView: View {
                 }
                 Button("Cancel", role: .cancel) {}
             }
-        }.navigationTitle("About \(coinModel.name)")
+        }
+        .navigationTitle("About \(coinModel.name)")
+    }
+}
+
+// MARK: - Async image View
+
+private extension AboutCoinView {
+    var asyncImage: some View {
+        AsyncImage(url: coinImage.imageUrl) { image in
+            image
+                .resizable()
+                .scaledToFit()
+                .frame(width: 45, height:45)
+                .foregroundColor(.red)
+        } placeholder: {
+            Circle()
+                .frame(width: 45, height:45)
+                .background(Color(.systemGray5))
+        }
+    }
+}
+
+// MARK: - Coin description link
+
+private extension AboutCoinView {
+    var link: some View {
+        Link(destination: URL(string:(urls.website).joined(separator: ""))!) {
+            Text(Image(systemName: "link.circle.fill")) + Text("Learn More")
+        }
     }
 }

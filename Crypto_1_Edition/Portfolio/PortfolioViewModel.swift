@@ -38,7 +38,6 @@ final class PortfolioViewModel: ObservableObject {
     private func updateUI() {
         portfolioCoins = loadedCoins.sorted {
             $0.quantity > $1.quantity }
-        print("Now - there are \(portfolioCoins) ")
     }
     // Remove Coin from CoreData
     private func removeFromPortfolio(id: String) {
